@@ -1,0 +1,327 @@
+body {
+    font-family: "myriad-pro", sans-serif;
+    font-size: 16px;
+    margin: 0;
+    color: #000000;
+}
+
+.txtAlign {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body > * {
+    margin: 10px 10%;
+    color: black;
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+    height: 30px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+    .top > div > img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .top > div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+    }
+
+header {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+}
+
+    header > * {
+        margin: 5px;
+    }
+
+.imageHdr {
+    flex: 7;
+}
+
+.otherHdr {
+    display: flex;
+    flex-direction: row;
+    flex: 3;
+    gap: 30px;
+    font-weight: bold;
+    font-size: 20px;
+    justify-content: right;
+    align-items: center;
+}
+
+    .otherHdr > * {
+        text-decoration: none;
+        color: black;
+        transition: 300ms;
+    }
+
+        .otherHdr > *:hover {
+            transform: translateY(5px);
+            text-decoration: 4px solid orange underline;
+        }
+
+footer {
+    margin: 0;
+    background: #252525;
+    height: auto;
+    padding-bottom: 24px;
+    color: #fff;
+}
+
+.subFooter {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 0px 13% 0px 13%;
+    padding-top: 2%;
+    gap: 50px;
+}
+
+.copyright {
+    font-size: 15px;
+    color: gray;
+    padding-top: 15px;
+}
+
+.footerHeader {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+li::marker {
+    color: orange;
+    font-size: 25px;
+}
+
+li > a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 19px;
+}
+
+    li > a:hover {
+        text-decoration: orange underline;
+        color: orange;
+        transition: 150ms;
+    }
+
+.dotazy {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dotazytxt {
+    font-size: 15px;
+}
+
+.datum {
+    color: gray;
+    font-size: 12px;
+}
+
+.newsletter {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+    .newsletter > * {
+        border-radius: 10px;
+    }
+
+.newslettersubtext {
+    font-size: 15px;
+}
+
+
+.typy {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    gap: 30px;
+}
+
+    .typy > * {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        color: #fff;
+        text-decoration: none;
+        transition: transform 350ms;
+    }
+
+        .typy > *::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        .typy > * > label {
+            font-size: 35px;
+            font-weight: bold;
+            position: absolute;
+            cursor: pointer;
+            margin-bottom: 30px;
+        }
+
+        .typy > * > div {
+            position: absolute;
+            z-index: 1;
+            margin-top: 30px;
+            font-size: 23px;
+        }
+
+        .typy > * > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            overflow: clip;
+        }
+
+        .typy > *:hover {
+            transform: scale(1.05);
+        }
+
+.zobrazitvse {
+    padding: 10px;
+    text-decoration: none;
+    display: flex;
+    height: 70px;
+    width: 12%;
+    font-size: 24px;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
+    border-radius: 5px;
+}
+
+.hledat {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+    .hledat > * {
+        height: 30px;
+        width: 180px;
+        border-radius: 5px;
+        padding-left: 5px;
+        font-size: 12px;
+    }
+
+.searchbutton {
+    height: 36px;
+    width: 240px;
+    background: orange;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+    .searchbutton:hover {
+        background: #ffbF00;
+        transition: 150ms;
+    }
+
+.nabidkaMenu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 30px;
+    row-gap: 56px;
+}
+
+.nabidka > a {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+.nabidka > * {
+    color: black;
+    text-decoration: none;
+    margin-top: 8px;
+}
+
+.nabidka > a > img {
+    transition: transform 350ms;
+    width: 100%;
+}
+
+    .nabidka > a > img:hover {
+        transform: scale(1.05);
+    }
+
+.nabidka > div {
+    font-size: 18px;
+}
+
+.headline {
+    color: orange;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.rent {
+    color: gray;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.subtext {
+    font-size: 18px;
+}
+.person img {
+    border-radius: 50%;
+}
+.inputForm {
+    display: grid;
+    grid-template-rows: repeat(4, 2fr) 3fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.namesurname, .writeusamessage, .submitBtn {
+    grid-column: 1 / 3;
+}
+
+.writeusamessage {
+    grid-row: 3 / 5;
+}
+
+.inputForm > * {
+    padding-left: 10px;
+}
+
+    .inputForm > *::placeholder {
+        color: black;
+        font-size: 18px;
+    }

@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RealityGažík.styles.css" asp-append-version="true" />
+        <title>INTENSE</title>
+        <link rel="stylesheet" href="https://use.typekit.net/sfc8cjy.css">
+</head>
+<body>
+    <div class="top">
+        <div><img src="/Images/podklady/postaLogo.png" alt="Postal logo">info@realintense.org</div>
+        <div><img src="/Images/podklady/telefonLogo.png" alt="Telephone logo">+420 777 666 777</div>
+    </div>
+    <header>
+        <div class="imageHdr">
+            <a href="index.html">
+                <img src="/Images/podklady/logo-dark.png" alt="logo">
+            </a>
+        </div>
+        <div class="otherHdr">
+            <a href="index.html" class="home txtAlign">HOME</a>
+            <a href="katalog">KATALOG</a>
+            <a href="kontakt">KONTAKT</a>
+        </div>
+    </header>
+
+     @RenderBody()
+
+    <footer>
+        <div class="subFooter">
+            <div>
+                <div class="footerHeader">NEWSLETTER</div>
+                <div class="newslettersubtext">Keep up with the latest company news and events. Enter your email and subscribe to our newsletter.</div>
+                <form class="newsletter">
+                    <input type="email" class="blabla" placeholder="Zadejte svůj email...">
+                    <input type="submit" class="searchbutton txtAlign" value="ODESLAT">
+                </form>
+            </div>
+            <div class="uzdotazy">
+                <div class="footerHeader">UŽITEČNÉ ODKAZY</div>
+                <ul>
+                    <li><a href="/bytypronajem">Byty pronájem</a></li>
+                    <li><a href="/bytyprodej">Byty prodej</a></li>
+                    <li><a href="/domypronajem">Domy pronájem</a></li>
+                    <li><a href="/domyprodej">Domy prodej</a></li>
+                </ul>
+            </div>
+            <div class="dotazy">
+                <div class="footerHeader">NOVINKY</div>
+                <div class="dotazytxt">
+                    <div class="datum">14.5.2016</div>
+                    Lorem Ipsum je demonstrativní výplňový text používaný v tiskařském a knihařském průmyslu. Lorem Ipsum je považováno za standard v této oblasti už od začátku 16. stoletíňový text používaný v
+                </div>
+                <div class="dotazytxt">
+                    <div class="datum">14.5.2016</div>
+                    Lorem Ipsum je demonstrativní výplňový text používaný v tiskařském a knihařském průmyslu. Lorem Ipsum je považováno za standard v této oblasti už od začátku 16. stoletíňový text používaný v
+                </div>
+            </div>
+        </div>
+        <div class="copyright txtAlign">Copyright 2016 - Real Estate</div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

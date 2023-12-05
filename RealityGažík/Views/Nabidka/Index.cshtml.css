@@ -1,0 +1,270 @@
+﻿.main {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainImg {
+    width: 100%;
+    height: 700px;
+}
+
+.imageSlider {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    gap: 10px;
+}
+
+    .imageSlider > a > img, .nextPhotos {
+        width: 100%;
+        height: 100px;
+        transition: 350ms;
+    }
+
+        .imageSlider > a > img:hover {
+            transform: scale(1.01);
+            border: 2px solid orange;
+        }
+
+.nextPhotos {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #fff;
+    text-decoration: none;
+}
+
+    .nextPhotos::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+
+    .nextPhotos > div {
+        font-size: 20px;
+        position: absolute;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+.headlineDetail {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+}
+
+.right {
+    text-align: right;
+}
+
+h1 {
+    color: darkorange;
+    margin-bottom: 5px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.location {
+    color: gray;
+    font-size: 24px;
+}
+
+.energyClass {
+    background: limegreen;
+    color: #fff;
+    display: flex;
+    padding: 10px;
+    height: 32px;
+    width: 42%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+.letterC {
+    font-size: 40px;
+    padding-right: 5px;
+}
+
+h2 {
+    font-size: 35px;
+    margin: 35px 0 5px 0;
+}
+
+.forProperty {
+    color: gray;
+    font-size: 30px;
+}
+
+.count {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.energyClass2 {
+    display: none;
+}
+
+.count > * > a {
+    color: darkorange;
+    font-size: 30px;
+}
+
+.calculator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.alotofText {
+    margin-top: 30px;
+    color: gray;
+    font-size: 20px;
+}
+
+.tables {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 32px;
+    margin-bottom: 50px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr {
+    background: rgba(255,134,0,.25);
+}
+
+td {
+    padding: 5px;
+    font-size: 15px;
+}
+
+tr:nth-child(even) {
+    background: rgba(255,134,0,.1);
+}
+
+td:nth-child(odd) {
+    font-weight: bold;
+}
+
+td:nth-child(even) {
+    text-align: right;
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.contactSeller {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 15px;
+    margin: auto 14%;
+}
+
+.contactSellerHeader {
+    grid-column: 1 / 3;
+    color: darkorange;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.person {
+    grid-column: 1 / 3;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.personinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    .personinfo > * {
+        color: black;
+        font-size: 18px;
+    }
+
+.personName {
+    font-size: 22px;
+}
+
+.awards {
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.award {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 15px;
+    color: #7a7a7a;
+}
+
+    .award > img {
+        height: 80px;
+        width: 80px;
+        margin-bottom: 10px;
+    }
+
+.writeus {
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin: 0 auto;
+    width: 60%;
+}
+
+.writeusHeader {
+    grid-column: 1 / 3;
+    color: darkorange;
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.map {
+    width: 100%;
+    height: 323px;
+    margin: 0;
+}

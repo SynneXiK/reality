@@ -1,0 +1,119 @@
+﻿<div class="main">
+    <a href="gallery">
+        <img src="/Images/podklady/offers/@{@ViewBag.Offer.id@ViewBag.Offer.name}.jpg" class="mainImg" alt="Detailed picture">
+    </a>
+
+    <div class="imageSlider">
+        @for (int i = 0; i < Math.Min(ViewBag.Images.Count - 1,5); i++)
+        {
+            <a href="gallery">
+                <img src="/Images/podklady/detailObrazky/@ViewBag.Images[i].path" alt="Detailed picture">
+            </a>
+        }
+        @if(ViewBag.Images.Count > 6)
+        {
+            <a href="gallery" class="nextPhotos">
+                <img src="/Images/podklady\detailObrazky\@ViewBag.Images[ViewBag.Images.Count - 1].path" class="nextPhotos" alt="Detailed picture">
+                <div>dalších @(ViewBag.Images.Count - 5) <br> fotek</div>
+            </a>
+        }ale ji
+        
+    </div>
+</div>
+
+<div class="headlineDetail">
+    <div class="left">
+        <h1>@ViewBag.Offer.name</h1>
+        <div class="location">@ViewBag.Offer.location</div>
+        <div class="energyClass">
+            <div>Energetická třída</div>
+            <div class="letterC">C</div>
+        </div>
+    </div>
+    <div class="right">
+        <h2>@ViewBag.Offer.price Kč</h2>
+        <div class="forProperty">za nemovitost</div>
+        <div class="count">
+            <div class="energyClass2">
+                <div>Energetická třída</div>
+                <div class="letterC txtAlign">C</div>
+            </div>
+            <div class="calculator">
+                <img src="/Images/podklady/pinpng.com-calculator-png-63258.png" alt="Calculator"> <a href="/spocitat">spočítat hypotéku</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="alotofText">
+    @ViewBag.Offer.description
+</div>
+
+<div class="tables">
+    <table>
+        <tbody>
+            @for (int i = 0; i < ViewBag.Values.Count; i = i + 2)
+            {
+                <tr>
+                    <td>@ViewBag.Labels[i].label</td>
+                    <td>@ViewBag.Values[i].value</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <table>
+        <tbody>
+            @for (int i = 1; i < ViewBag.Values.Count; i = i + 2)
+            {
+                <tr>
+                    <td>@ViewBag.Labels[i].label</td>
+                    <td>@ViewBag.Values[i].value</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div class="contact">
+    <div class="contactSeller">
+        <div class="contactSellerHeader txtAlign">Kontaktujte prodejce</div>
+        <div class="person">
+            <img src="~/Images/podklady/admins/@ViewBag.Seller.pfp" height="88px" width="88px">
+            <div class="personinfo">
+                <div class="personName">@ViewBag.Seller.name</div>
+                <a class="email" href="mailto:@ViewBag.Seller.email">
+                    <img src="/Images/podklady/email.png" alt="email image">
+                    @ViewBag.Seller.email
+                </a>
+                <a class="email" href="tel:@ViewBag.Seller.tel">
+                    <img src="/Images/podklady/customer-care.png" alt="telephone image">
+                    @ViewBag.Seller.tel
+                </a>
+            </div>
+        </div>
+        <div class="awards">
+            <div class="award">
+                <img src="/Images/podklady/Major-Network-of-the-Year-40-or-more-offices.png" alt="award">
+                Makléř roku <br> 2020
+            </div>
+            <div class="award">
+                <img src="/Images/podklady/CCA-full-color-700px-300x282.png" alt="award">
+                Cena zákazníků <br> 2021
+            </div>
+
+        </div>
+    </div>
+    <div class="writeus">
+        <div class="writeusHeader">Napište nám, ozveme se</div>
+        @model Inquiry
+        <form class="inputForm" asp-action="createinquiry" asp-route-id="@ViewBag.Offer.id">
+            <input asp-for="name" class="namesurname" placeholder="Vaše jméno a příjmení" required>
+            <input asp-for="tel" class="telephone" placeholder="Telefon" required>
+            <input asp-for="email" class="email" placeholder="E-mail" required>
+            <input asp-for="text" class="writeusamessage" placeholder="Napište nám zprávu" required>
+            <button type="submit" class="submitBtn">ODESLAT POPTÁVKU</button>
+        </form>
+    </div>
+</div>
+<iframe src="https://frame.mapy.cz/s/lotopofuvu" width="400" height="280" frameborder="0" class="map"></iframe>

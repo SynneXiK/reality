@@ -1,0 +1,79 @@
+﻿    <div class="Search">
+        <img src="Images/podklady/slide-01-1920x640.jpg" alt="Slide" width="1920" height="640">
+        <div>
+            <h1>Vyberte si svůj nový byt</h1>
+            <form class="hledat">
+                <input type="text" placeholder="Vyhledat podle města..." />
+                <input type="submit" value="HLEDAT" class="searchbutton" />
+            </form>
+        </div>
+    </div>
+    <div class="typy">
+        <a asp-action="index" asp-route-filter="b">
+            <img src="Images/podklady/home-img-03-442-280.jpg" alt="Byty" width="442" height="280">
+            <label>Byty</label>
+            <div>
+                @ViewBag.OffersCount[0] nabídek
+            </div>
+        </a>
+    <a asp-action="index" asp-route-filter="l">
+            <img src="Images/podklady/home-img-04-442-280.jpg" alt="Luxusni" width="442" height="280">
+            <label>Luxusni</label>
+        <div>@ViewBag.OffersCount[1] nabídek</div>
+        </a>
+    <a asp-action="index" asp-route-filter="d">
+            <img src="Images/podklady/home-img-01-442-280.jpg" alt="Domy" width="442" height="280">
+            <label>Domy</label>
+        <div>@ViewBag.OffersCount[2] nabídek</div>
+        </a>
+    <a asp-action="index" asp-route-filter="c">
+            <img src="Images/podklady/home-img-02-442-280.jpg" alt="Chaty" width="442" height="280">
+            <label>Chaty</label>
+        <div>@ViewBag.OffersCount[3] nabídek</div>
+        </a>
+    </div>
+    <h2 class="txtAlign">Naše nabídka</h2>
+    <hr>
+    <div class="nabidkaMenu">
+        @foreach (Offer item in ViewBag.Offers)
+        {
+            <div class="nabidka">
+                <a asp-controller="nabidka" asp-action="index" asp-route-id="@item.id">
+                <img src="Images/podklady/offers/@{@item.id@item.name}.jpg" alt="@item.name picture" />
+                    <div class="headline">@item.name</div>
+                    <div class="rent">@item.price,-</div>
+                    <div class="subtext">
+
+                    @Html.Raw(item.description.Substring(0, Math.Min(300, item.description.Length)))
+                    
+                    </div>
+                </a>
+            </div>
+        }
+   
+    </div>
+    <a asp-action="index" asp-route-count="@(ViewBag.count + 6)" asp-route-filter="@ViewBag.filter" class="zobrazitvse searchbutton txtAlign">ZOBRAZIT DALŠÍ</a>
+
+    <h2 class="txtAlign zkZakazniku">Zkušenosti zákazníků</h2>
+    <hr>
+
+    <div class="zkusenosti">
+        <div class="person">
+            <img src="Images/podklady/user-lisa-evans-80x80.jpg" alt="Lisa Evans">
+            <div class="review">
+                <div class="reviewtxt">Thank you for your prompt response and the help that you gave me. You always have quick solution to any problem. What an excellent level of customer service!</div>
+                <div class="reviewauth">Lisa Evans</div>
+            </div>
+
+        </div>
+
+        <div class="person">
+            <img src="Images/podklady/user-nicholas-lane-80x80.jpg" alt="Nicholas Lane">
+            <div class="review">
+                <div class="reviewtxt">Thank you for your prompt response and the help that you gave me. You always have quick solution to any problem. What an excellent level of customer service!</div>
+                <div class="reviewauth">Nicholas Lane</div>
+            </div>
+        </div>
+    </div>
+
+
