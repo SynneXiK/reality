@@ -1,8 +1,10 @@
-﻿<div class="nabidkaMenu">
+﻿<partial name="_profile"></partial>
+
+<div class="nabidkaMenu">
     @foreach (Offer item in ViewBag.Offers)
     {
         <div class="nabidka">
-            <a asp-controller="profil" asp-action="offerUpdate" asp-route-id="@item.id">
+            <a asp-controller="profil" asp-action="offerUpdate" asp-route-idOffer="@item.id">
                 <img src="/Images/podklady/offers/@{@item.id@item.name}.jpg" alt="@item.name picture" />
                 <div class="headline">@item.name</div>
                 <div class="rent">@item.price,-</div>

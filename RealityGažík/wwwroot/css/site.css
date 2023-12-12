@@ -357,3 +357,32 @@ li > a {
 .home {
     text-decoration:none;
 }
+.brokerIcon{
+    color: black;
+    transition: .5s;
+}
+.brokerIcon:hover {
+    color: darkblue;
+    transform: translateY(1px);
+}
+.labelsList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.labelListbelow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#addTextboxButton {
+    background-color: #56ae57;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}

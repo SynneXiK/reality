@@ -2,9 +2,10 @@
 {
     public interface UpdateModel
     {
-        string email { get; set; }
-        string name { get; set; }
-        string tel { get; set; }
-        string username { get; set; }
+        public int id { get; set; }
+        public string email { get; set; }
+        public string name { get; set; }
+        public string tel { get; set; }
+        public string username { get; set; }
     }
 }

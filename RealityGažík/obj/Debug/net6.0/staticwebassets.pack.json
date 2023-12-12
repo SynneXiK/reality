@@ -1,479 +1,495 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\RealityGažík.bundle.scp.css",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\RealityGažík.bundle.scp.css",
       "PackagePath": "staticwebassets\\RealityGažík.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\CCA-full-color-700px-300x282.png",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\CCA-full-color-700px-300x282.png",
       "PackagePath": "staticwebassets\\Images\\podklady\\CCA-full-color-700px-300x282.png"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\Major-Network-of-the-Year-40-or-more-offices.png",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\Major-Network-of-the-Year-40-or-more-offices.png",
       "PackagePath": "staticwebassets\\Images\\podklady\\Major-Network-of-the-Year-40-or-more-offices.png"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\Thumbs.db",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\Thumbs.db",
       "PackagePath": "staticwebassets\\Images\\podklady\\Thumbs.db"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\admins\\jirkakral.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\admins\\jirkakral.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\admins\\jirkakral.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\backgroundimagedetail.png",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\backgroundimagedetail.png",
       "PackagePath": "staticwebassets\\Images\\podklady\\backgroundimagedetail.png"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\customer-care.png",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\bin.png",
+      "PackagePath": "staticwebassets\\Images\\podklady\\bin.png"
+    },
+    {
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\customer-care.png",
       "PackagePath": "staticwebassets\\Images\\podklady\\customer-care.png"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\detailObrazky\\Thumbs.db",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\detailObrazky\\Thumbs.db",
       "PackagePath": "staticwebassets\\Images\\podklady\\detailObrazky\\Thumbs.db"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\detailObrazky\\obr01.png",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\detailObrazky\\obr01.png",
       "PackagePath": "staticwebassets\\Images\\podklady\\detailObrazky\\obr01.png"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\detailObrazky\\obr02.png",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\detailObrazky\\obr02.png",
       "PackagePath": "staticwebassets\\Images\\podklady\\detailObrazky\\obr02.png"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\detailObrazky\\obr03.png",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\detailObrazky\\obr03.png",
       "PackagePath": "staticwebassets\\Images\\podklady\\detailObrazky\\obr03.png"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\detailObrazky\\obr04.png",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\detailObrazky\\obr04.png",
       "PackagePath": "staticwebassets\\Images\\podklady\\detailObrazky\\obr04.png"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\detailObrazky\\obr05.png",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\detailObrazky\\obr05.png",
       "PackagePath": "staticwebassets\\Images\\podklady\\detailObrazky\\obr05.png"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\detailObrazky\\obr06.png",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\detailObrazky\\obr06.png",
       "PackagePath": "staticwebassets\\Images\\podklady\\detailObrazky\\obr06.png"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\email.png",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\email.png",
       "PackagePath": "staticwebassets\\Images\\podklady\\email.png"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\home-img-01-442-280.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\home-img-01-442-280.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\home-img-01-442-280.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\home-img-02-442-280.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\home-img-02-442-280.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\home-img-02-442-280.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\home-img-03-442-280.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\home-img-03-442-280.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\home-img-03-442-280.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\home-img-04-442-280.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\home-img-04-442-280.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\home-img-04-442-280.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\home-img-05-370x250.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\home-img-05-370x250.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\home-img-05-370x250.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\home-img-06-370x250.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\home-img-06-370x250.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\home-img-06-370x250.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\home-img-07-370x250.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\home-img-07-370x250.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\home-img-07-370x250.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\jarmila.png",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\jarmila.png",
       "PackagePath": "staticwebassets\\Images\\podklady\\jarmila.png"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\logo-dark.png",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\logo-dark.png",
       "PackagePath": "staticwebassets\\Images\\podklady\\logo-dark.png"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\10SF Flat.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\10SF Flat.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\10SF Flat.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\11Vesecky ahoj.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\11Vesecky ahoj.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\11Vesecky ahoj.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\12SF Flat.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\12SF Flat.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\12SF Flat.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\13SF Flat.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\13SF Flat.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\13SF Flat.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\14Vesecky ahoj.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\14Vesecky ahoj.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\14Vesecky ahoj.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\15SF Flat.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\15SF Flat.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\15SF Flat.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\16SF Flat.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\16SF Flat.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\16SF Flat.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\17Vesecky ahoj.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\17Vesecky ahoj.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\17Vesecky ahoj.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\18SF Flat.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\18SF Flat.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\18SF Flat.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\19SF Flat.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\19SF Flat.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\19SF Flat.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\1Davitův Byt.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\1Davitův Byt.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\1Davitův Byt.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\20Vesecky ahoj.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\20Vesecky ahoj.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\20Vesecky ahoj.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\21SF Flat.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\21SF Flat.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\21SF Flat.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\22SF Flat.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\22SF Flat.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\22SF Flat.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\23Vesecky ahoj.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\23Vesecky ahoj.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\23Vesecky ahoj.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\24SF Flat.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\24SF Flat.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\24SF Flat.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\25SF Flat.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\25SF Flat.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\25SF Flat.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\3SF Flat.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\3SF Flat.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\3SF Flat.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\4SF Flat.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\4SF Flat.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\4SF Flat.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\5Vesecky ahoj.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\5Vesecky ahoj.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\5Vesecky ahoj.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\6SF Flat.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\6SF Flat.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\6SF Flat.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\7SF Flat.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\7SF Flat.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\7SF Flat.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\8Vesecky ahoj.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\8Vesecky ahoj.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\8Vesecky ahoj.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\9SF Flat.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\offers\\9SF Flat.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\offers\\9SF Flat.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\pinpng.com-calculator-png-63258.png",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\pinpng.com-calculator-png-63258.png",
       "PackagePath": "staticwebassets\\Images\\podklady\\pinpng.com-calculator-png-63258.png"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\postaLogo.png",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\postaLogo.png",
       "PackagePath": "staticwebassets\\Images\\podklady\\postaLogo.png"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\slide-01-1920x640.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\slide-01-1920x640.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\slide-01-1920x640.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\slide-02-1920x640.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\slide-02-1920x640.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\slide-02-1920x640.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\slide-03-1920x640.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\slide-03-1920x640.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\slide-03-1920x640.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\telefonLogo.png",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\telefonLogo.png",
       "PackagePath": "staticwebassets\\Images\\podklady\\telefonLogo.png"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\user-ethan-dean-80x80.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\user-ethan-dean-80x80.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\user-ethan-dean-80x80.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\user-lisa-evans-80x80.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\user-lisa-evans-80x80.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\user-lisa-evans-80x80.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\Images\\podklady\\user-nicholas-lane-80x80.jpg",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\Images\\podklady\\user-nicholas-lane-80x80.jpg",
       "PackagePath": "staticwebassets\\Images\\podklady\\user-nicholas-lane-80x80.jpg"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\css\\changeButton.css",
+      "PackagePath": "staticwebassets\\css\\changeButton.css"
+    },
+    {
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\favicon.ico",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\css\\tables.css",
+      "PackagePath": "staticwebassets\\css\\tables.css"
+    },
+    {
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\js\\changes.js",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\js\\changes.js",
       "PackagePath": "staticwebassets\\js\\changes.js"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\js\\indexSlider.js",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\js\\indexSlider.js",
       "PackagePath": "staticwebassets\\js\\indexSlider.js"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\js\\nextTxtBox.js",
+      "PackagePath": "staticwebassets\\js\\nextTxtBox.js"
+    },
+    {
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\Users\\gazikmarcel\\Desktop\\RealityGažík06\\RealityGažík\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
