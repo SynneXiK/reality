@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace RealityGažík.Attributes
 {
-    public class SecuredAttribute : Attribute, IActionFilter
+    public class UserSecuredAttribute : Attribute, IActionFilter
     {
         public void OnActionExecuted(ActionExecutedContext context) // po akci
         {

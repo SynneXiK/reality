@@ -1,17 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RealityGažík.Attributes;
 using RealityGažík.Models;
 using RealityGažík.Models.Database;
 
 namespace RealityGažík.Controllers
 {
-    public class ProfilController : BaseController
+    public class ProfilController : ProfilBaseController
     {
         private readonly ILogger<ProfilController> _logger;
         public ProfilController(ILogger<ProfilController> logger)
         {
             _logger = logger;
         }
-
+        [UserSecured]
         public IActionResult Index()
         {
             LoginModel user;
@@ -25,32 +26,48 @@ namespace RealityGažík.Controllers
 
             return View();
         }
+        [BrokerSecured]
         public IActionResult Offers()
         {
             this.ViewBag.Offers = MyContext.Offers.Where(x => x.idBroker == this.id || this.isAdmin == true);
             return View();
         }
+        [AdminSecured]
         public IActionResult Brokers()
         {
             this.ViewBag.Brokers = MyContext.Admins.Where(x => x.isAdmin != true);
             return View();
         }
+        [AdminSecured]
         public IActionResult Users()
         {
             this.ViewBag.Users = MyContext.Users.ToList();
             return View();
         }
-        public IActionResult Labels()
+        [AdminSecured]
+        public IActionResult Labels(int count = 0)
         {
-            this.ViewBag.Labels = MyContext.Labels.ToList();
-            return View();
+            List<Label> labels = MyContext.Labels.ToList();
+            if(count > 0)
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    labels.Add(new Label { id = 0, label = "" });
+                }
+            }
+            this.ViewBag.Labels = labels;
+            this.ViewBag.count = count;
+
+            return View(labels);
         }
+        [BrokerSecured]
         public IActionResult OfferUpdate(int idOffer)
         {
             this.ViewBag.Offer = MyContext.Offers.FirstOrDefault(x => x.id == idOffer);
             return View();
         }
         [HttpPost]
+        [BrokerSecured]
         public IActionResult Save(LoginModel model)
         {
             var userToUpdate = isUser ? MyContext.Users.Find(id) : MyContext.Admins.Find(id) as UpdateModel;
@@ -68,6 +85,7 @@ namespace RealityGažík.Controllers
             return RedirectToAction("Index");
         }
         [HttpPost]
+        [BrokerSecured]
         public IActionResult SaveOffer(Offer model)
         {
             Offer offer = MyContext.Offers.Find(model.id)!;
@@ -82,6 +100,7 @@ namespace RealityGažík.Controllers
             this.TempData["Message"] = "Changes Saved";
             return RedirectToAction("offerupdate", new { idOffer = model.id} );
         }
+        [AdminSecured]
         public IActionResult BrokerRemove(int idBroker)
         {
             Admin broker = MyContext.Admins.Find(idBroker)!;
@@ -91,6 +110,7 @@ namespace RealityGažík.Controllers
             this.TempData["Message"] = "Changes Saved";
             return RedirectToAction("brokers");
         }
+        [AdminSecured]
         public IActionResult BrokerPromote(int idBroker)
         {
             Admin broker = MyContext.Admins.Find(idBroker)!;
@@ -100,6 +120,7 @@ namespace RealityGažík.Controllers
             this.TempData["Message"] = "Changes Saved";
             return RedirectToAction("brokers");
         }
+        [AdminSecured]
         public IActionResult UserRemove(int idUser)
         {
             User user = MyContext.Users.Find(idUser)!;
@@ -109,6 +130,7 @@ namespace RealityGažík.Controllers
             this.TempData["Message"] = "Changes Saved";
             return RedirectToAction("users");
         }
+        [AdminSecured]
         public IActionResult UserPromote(int idUser, bool isAdmin = false)
         {
             User user = MyContext.Users.Find(idUser)!;
@@ -127,6 +149,26 @@ namespace RealityGažík.Controllers
             MyContext.SaveChanges();
             this.TempData["Message"] = "Changes Saved";
             return RedirectToAction("users");
+        }
+        [HttpPost]
+        [AdminSecured]
+        public IActionResult LabelsSave(List<Label> models)
+        {
+            foreach (var label in models)
+            {
+                Label existingLabel = MyContext.Labels.Find(label.id)!;
+
+                if (existingLabel != null)
+                    existingLabel.label = label.label;
+
+                else
+                    MyContext.Labels.Add(label);
+                
+            }
+
+            MyContext.SaveChanges();
+            this.TempData["Message"] = "Changes Saved";
+            return RedirectToAction("labels");
         }
     }
 }

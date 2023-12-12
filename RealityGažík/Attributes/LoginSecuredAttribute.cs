@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace RealityGažík.Attributes
 {
-    public class SecuredAttribute : Attribute, IActionFilter
+    public class LoginSecuredAttribute : Attribute, IActionFilter
     {
         public void OnActionExecuted(ActionExecutedContext context) // po akci
         {
@@ -14,9 +14,9 @@ namespace RealityGažík.Attributes
         {
             Controller controller = (Controller)context.Controller;
 
-            if (controller.HttpContext.Session.GetInt32("login") == null)
+            if (controller.HttpContext.Session.GetInt32("login") != null)
             {
-                context.Result = controller.RedirectToAction("index", "login");
+                context.Result = controller.RedirectToAction("index", "home");
             }
         }
     }

@@ -237,6 +237,14 @@
       "PackagePath": "staticwebassets\\css\\changeButton.css"
     },
     {
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\css\\forms.css",
+      "PackagePath": "staticwebassets\\css\\forms.css"
+    },
+    {
+      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\css\\loginStyles.css",
+      "PackagePath": "staticwebassets\\css\\loginStyles.css"
+    },
+    {
       "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -255,10 +263,6 @@
     {
       "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\js\\indexSlider.js",
       "PackagePath": "staticwebassets\\js\\indexSlider.js"
-    },
-    {
-      "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\js\\nextTxtBox.js",
-      "PackagePath": "staticwebassets\\js\\nextTxtBox.js"
     },
     {
       "Id": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\js\\site.js",

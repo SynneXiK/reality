@@ -1,5 +1,6 @@
 ﻿@model UpdateModel
 <link rel="stylesheet" href="/css/changeButton.css">
+<link rel="stylesheet" href="/css/forms.css">
 
 <partial name="_profile"></partial>
 
@@ -8,29 +9,29 @@
     <div class="change">@TempData["Message"]</div>
 }
 
-<div class="">
-    <div class="">
+<div>
+    <div>
         <form asp-action="Save" method="post">
-            <div class="mb-3">
-                <label asp-for="username" class="form-label fs-4">Username</label>
-                <input asp-for="username" class="form-control form-control-lg" value="@ViewBag.User.username"/>
+            <div>
+                <label asp-for="username">Username</label>
+                <input asp-for="username" value="@ViewBag.User.username"/>
             </div>
-            <div class="mb-3">
-                <label asp-for="name" class="form-label fs-4">Name</label>
-                <input asp-for="name" class="form-control form-control-lg" value="@ViewBag.User.name" />
+            <div>
+                <label asp-for="name" >Name</label>
+                <input asp-for="name" value="@ViewBag.User.name" />
             </div>
-            <div class="mb-3">
-                <label asp-for="email" class="form-label fs-4">Email</label>
-                <input asp-for="email" class="form-control form-control-lg" value="@ViewBag.User.email" />
+            <div>
+                <label asp-for="email">Email</label>
+                <input asp-for="email" value="@ViewBag.User.email" />
             </div>
-            <div class="mb-3">
-                <label asp-for="tel" class="form-label fs-4">Telephone</label>
-                <input asp-for="tel" class="form-control form-control-lg" value="@ViewBag.User.tel" />
+            <div>
+                <label asp-for="tel" >Telephone</label>
+                <input asp-for="tel" value="@ViewBag.User.tel" />
             </div>
             
 
-            <div class="mb-3">
-                <button type="submit" class="btn btn-primary btn-lg btnSave">SAVE</button>
+            <div>
+                <button type="submit" class="btnSave">SAVE</button>
             </div>
         </form>
     </div>

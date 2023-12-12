@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RealityGažík.Attributes;
 using RealityGažík.Models;
 
 namespace RealityGažík.Controllers
@@ -6,12 +7,14 @@ namespace RealityGažík.Controllers
     public class LoginController : BaseController
     {
         [HttpGet]
+        [LoginSecured]
         public IActionResult Index()
         {
             return View(new LoginModel());
         }
 
         [HttpPost]
+        [LoginSecured]
         public IActionResult Index(LoginModel model)
         {
             var user = MyContext.Users.FirstOrDefault(u => u.username == model.username && u.password == model.password);

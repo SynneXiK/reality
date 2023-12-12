@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JHhYs4mksadp8QW1hceN5gkJYOlba76lGcGZlx3uH6M=",
+  "Hash": "YjFn8e44fDzHmek2O136uhedDKxtUEk0GuTTMz6qEeI=",
   "Source": "RealityGažík",
   "BasePath": "_content/RealityGažík",
   "Mode": "Default",
@@ -55,6 +55,25 @@
       "OriginalItemSpec": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\RealityGažík.bundle.scp.css"
     },
     {
+      "Identity": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\css\\forms.css",
+      "SourceId": "RealityGažík",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\",
+      "BasePath": "_content/RealityGažík",
+      "RelativePath": "css/forms.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\forms.css"
+    },
+    {
       "Identity": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\css\\changeButton.css",
       "SourceId": "RealityGažík",
       "SourceType": "Discovered",
@@ -72,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\changeButton.css"
+    },
+    {
+      "Identity": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\css\\loginStyles.css",
+      "SourceId": "RealityGažík",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\",
+      "BasePath": "_content/RealityGažík",
+      "RelativePath": "css/loginStyles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\loginStyles.css"
     },
     {
       "Identity": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\css\\site.css",
@@ -1250,25 +1288,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\indexSlider.js"
-    },
-    {
-      "Identity": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\js\\nextTxtBox.js",
-      "SourceId": "RealityGažík",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\",
-      "BasePath": "_content/RealityGažík",
-      "RelativePath": "js/nextTxtBox.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\nextTxtBox.js"
     },
     {
       "Identity": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\js\\site.js",

@@ -1,20 +1,21 @@
 ﻿@model LoginModel
+<link rel="stylesheet" href="/css/loginStyles.css">
 
-<div class="container mt-5 text-center logincontainer">
-    <div class="custom-form">
+<div class="logincontainer">
+    <div>
         <form asp-action="Index">
-            <div class="mb-3">
-                <label asp-for="username" class="form-label fs-4">Username</label>
-                <input asp-for="username" class="form-control form-control-lg" />
+            <div>
+                <label asp-for="username">Username</label>
+                <input asp-for="username"/>
             </div>
 
-            <div class="mb-3">
-                <label asp-for="password" class="form-label fs-4">Password</label>
-                <input asp-for="password" type="password" class="form-control form-control-lg" />
+            <div>
+                <label asp-for="password" >Password</label>
+                <input asp-for="password" type="password"/>
             </div>
 
-            <div class="mb-3">
-                <button type="submit" class="btn btn-primary btn-lg">Log In</button>
+            <div>
+                <button type="submit">Log In</button>
             </div>
         </form>
     </div>

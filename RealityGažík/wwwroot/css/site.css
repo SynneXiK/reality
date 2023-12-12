@@ -257,6 +257,7 @@ li > a {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 30px;
     row-gap: 56px;
+    margin: 50px 10%;
 }
 
 .nabidka > a {
@@ -336,9 +337,10 @@ li > a {
 .profilHdr {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin: auto 18%;
+    gap: 2%;
 }
 
     .profilHdr > * {
@@ -377,7 +379,7 @@ li > a {
     justify-content: center;
     align-items: center;
 }
-#addTextboxButton {
+.addTextboxButton {
     background-color: #56ae57;
     color: black;
     padding: 10px 20px;
@@ -385,4 +387,15 @@ li > a {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    text-decoration: none;
+    display: flex;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+}
+.buttonsLabel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
 }

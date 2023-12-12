@@ -1,6 +1,6 @@
 ﻿<link rel="stylesheet" href="/css/tables.css">
 <link rel="stylesheet" href="/css/changeButton.css">
-<script src="/js/nextTxtBox.js" defer></script>
+<link rel="stylesheet" href="/css/forms.css">
 <partial name="_profile"></partial>
 
 @if (TempData["Message"] != null)
@@ -8,29 +8,29 @@
     <div class="change">@TempData["Message"]</div>
 }
 
-<form asp-action="labelSave" class="labelsList" method="post">
-    @foreach (Label item in ViewBag.Labels)
-    {
-        <input type="text" value="@item.label"/>
-    }
-
-    <div id="extraTextboxContainer" class="labelListbelow">
-        <input type="text" />
+@{
+    var labels = ViewBag.Labels as List<Label>;
+}
+<form asp-action="labelsSave" method="post">
+    <div class="labelsList">
+        @for (int i = 0; i < labels!.Count; i++)
+        {
+            <input type="hidden" name="models[@i].id" value="@labels[i].id" />
+            <input type="text" name="models[@i].label" value="@labels[i].label" />
+        }
     </div>
 
-    <div class="buttons">
-        <a asp-action="labels" asp-route-count="@ViewBag.count+1" id="addTextboxButton">
+    <div class="buttonsLabel">
+        <a asp-action="labels" asp-route-count="@(ViewBag.count+1)" class="addTextboxButton">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
                 <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
             </svg>
         </a>
-
-        <button type="submit">SAVE</button>
+        <button type="submit" class="addTextboxButton">SAVE</button>
     </div>
-
-
 </form>
+
 
 
 

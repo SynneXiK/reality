@@ -1,6 +1,7 @@
 ﻿@model Offer
 
 <link rel="stylesheet" href="/css/changeButton.css">
+<link rel="stylesheet" href="/css/forms.css">
 <partial name="_profile"></partial>
 
 @if (TempData["Message"] != null)
@@ -9,33 +10,33 @@
 }
 
 <div>
-    <div class="form-container">
+    <div>
         <form asp-action="SaveOffer" method="post">
             <input type="hidden" asp-for="id" value="@ViewBag.Offer.id" />
-            <div class="label-container">
-                <label asp-for="name" class="form-label fs-4">Name</label>
-                <input asp-for="name" class="form-control form-control-lg" value="@ViewBag.Offer.name" />
+            <div>
+                <label asp-for="name">Name</label>
+                <input asp-for="name" value="@ViewBag.Offer.name" />
             </div>
-            <div class="label-container">
-                <label asp-for="price" class="form-label fs-4">Price</label>
-                <input asp-for="price" class="form-control form-control-lg" value="@ViewBag.Offer.price" />
+            <div>
+                <label asp-for="price">Price</label>
+                <input asp-for="price" value="@ViewBag.Offer.price" />
             </div>
-            <div class="label-container">
-                <label asp-for="location" class="form-label fs-4">Location</label>
-                <input asp-for="location" class="form-control form-control-lg" value="@ViewBag.Offer.location" />
+            <div>
+                <label asp-for="location" >Location</label>
+                <input asp-for="location" value="@ViewBag.Offer.location" />
             </div>
-            <div class="label-container">
-                <label asp-for="description" class="form-label fs-4">Description</label>
-                <input asp-for="description" class="form-control form-control-lg" value="@ViewBag.Offer.description" />
+            <div>
+                <label asp-for="description">Description</label>
+                <input asp-for="description" value="@ViewBag.Offer.description" />
             </div>
-            <div class="label-container">
-                <label asp-for="category" class="form-label fs-4">Category</label>
-                <input asp-for="category" class="form-control form-control-lg" value="@ViewBag.Offer.category" />
+            <div>
+                <label asp-for="category">Category</label>
+                <input asp-for="category" value="@ViewBag.Offer.category" />
             </div>
 
 
-            <div class="button-container">
-                <button type="submit" class="btn btn-primary btn-lg btnSave">SAVE</button>
+            <div>
+                <button type="submit" class="btnSave">SAVE</button>
             </div>
         </form>
     </div>
