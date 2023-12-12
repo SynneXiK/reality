@@ -1,0 +1,40 @@
+﻿@model Offer
+
+<partial name="_profile"></partial>
+
+@if (TempData["Message"] != null)
+{
+    <div class="change">@TempData["Message"]</div>
+}
+
+<div>
+    <div>
+        <form asp-action="Save" method="post">
+            <div class="mb-3">
+                <label asp-for="name" class="form-label fs-4">Name</label>
+                <input asp-for="name" class="form-control form-control-lg" value="@ViewBag.Offer.name" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="price" class="form-label fs-4">Price</label>
+                <input asp-for="price" class="form-control form-control-lg" value="@ViewBag.Offer.price" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="location" class="form-label fs-4">Location</label>
+                <input asp-for="location" class="form-control form-control-lg" value="@ViewBag.Offer.location" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="description" class="form-label fs-4">Description</label>
+                <input asp-for="description" class="form-control form-control-lg" value="@ViewBag.Offer.description" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="category" class="form-label fs-4">Category</label>
+                <input asp-for="category" class="form-control form-control-lg" value="@ViewBag.Offer.category" />
+            </div>
+
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary btn-lg btnSave">SAVE</button>
+            </div>
+        </form>
+    </div>
+</div>

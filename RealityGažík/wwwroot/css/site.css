@@ -325,3 +325,35 @@ li > a {
         color: black;
         font-size: 18px;
     }
+
+.logincontainer {
+    height: 540px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profilHdr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto 18%;
+}
+
+    .profilHdr > * {
+        border: 1px solid gray;
+        background: #c0c0c0;
+        border-radius: 5px;
+        padding: 20px 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+    }
+        .profilHdr > *:hover {
+            background: #a9a9a9;
+        }
+.home {
+    text-decoration:none;
+}

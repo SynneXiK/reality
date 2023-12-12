@@ -23,7 +23,7 @@ namespace RealityGažík.Controllers
                 offers = this.MyContext.Offers.Where(x => x.category == filter).ToList();
 
 
-            this.ViewBag.Offers = offers.Take(Math.Max(6,count));
+            this.ViewBag.Offers = offers.Take(Math.Max(6,count)).ToList();
 
             //var pictureRoutes = this.MyContext.Images.Where(x => x.idOffer == offers.Take(Math.Max(6, count)));
 

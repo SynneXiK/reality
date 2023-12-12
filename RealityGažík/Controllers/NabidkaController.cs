@@ -29,13 +29,14 @@ namespace RealityGažík.Controllers
 
             var labelIds = values.Select(y => y.idLabel).ToList();
 
-            this.ViewBag.Labels = this.MyContext.Labels
+            var Labels = this.MyContext.Labels
                 .Where(x => labelIds.Contains(x.id))
                 .ToList();
+            this.ViewBag.Labels = Labels;
 
             this.ViewBag.Seller = this.MyContext.Admins.FirstOrDefault(x => x.id == offer.idBroker);
 
-            this.ViewBag.Images = this.MyContext.Images.Where(x => x.idOffer == id).ToList();
+            this.ViewBag.Images = this.MyContext.Images.Where(x => x.idOffer == id).ToList(); 
 
             return View();
         }

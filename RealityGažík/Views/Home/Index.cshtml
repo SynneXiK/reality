@@ -32,7 +32,24 @@
         <div>@ViewBag.OffersCount[3] nabídek</div>
         </a>
     </div>
-    <h2 class="txtAlign">Naše nabídka</h2>
+
+<div class="range">
+    <div class="range-slider">
+        <span class="range-selected"></span>
+    </div>
+    <div class="range-input">
+        <input type="range" class="min" min="0" max="380" value="300" step="10">
+        <input type="range" class="max" min="0" max="380" value="350" step="10">
+    </div>
+    <div class="range-price">
+        <label for="min">Min</label>
+        <input type="number" name="min" value="300">
+        <label for="max">Max</label>
+        <input type="number" name="max" value="350">
+    </div>
+</div>
+
+<h2 class="txtAlign">Naše nabídka</h2>
     <hr>
     <div class="nabidkaMenu">
         @foreach (Offer item in ViewBag.Offers)
@@ -52,7 +69,10 @@
         }
    
     </div>
-    <a asp-action="index" asp-route-count="@(ViewBag.count + 6)" asp-route-filter="@ViewBag.filter" class="zobrazitvse searchbutton txtAlign">ZOBRAZIT DALŠÍ</a>
+    @if (ViewBag.count <= (ViewBag.Offers.Count))
+    {
+        <a asp-action="index" asp-route-count="@(ViewBag.count + 6)" asp-route-filter="@ViewBag.filter" class="zobrazitvse searchbutton txtAlign">ZOBRAZIT DALŠÍ</a>
+    }
 
     <h2 class="txtAlign zkZakazniku">Zkušenosti zákazníků</h2>
     <hr>
@@ -77,3 +97,4 @@
     </div>
 
 
+<script src="js/indexSlider.js"></script>

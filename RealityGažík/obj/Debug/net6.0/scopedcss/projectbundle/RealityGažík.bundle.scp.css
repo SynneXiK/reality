@@ -85,6 +85,155 @@ hr[b-oif3aw3v30] {
     text-align: right;
     font-size: 20px;
 }
+.range-slider[b-oif3aw3v30] {
+    height: 5px;
+    position: relative;
+    background-color: #e1e9f6;
+    border-radius: 2px;
+}
+
+.range-selected[b-oif3aw3v30] {
+    height: 100%;
+    left: 30%;
+    right: 30%;
+    position: absolute;
+    border-radius: 5px;
+    background-color: #1b53c0;
+}
+.range-input[b-oif3aw3v30] {
+    position: relative;
+}
+
+    .range-input input[b-oif3aw3v30] {
+        position: absolute;
+        width: 100%;
+        height: 5px;
+        top: -7px;
+        background: none;
+        pointer-events: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+
+        .range-input input[b-oif3aw3v30]::-webkit-slider-thumb {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            border: 3px solid #1b53c0;
+            background-color: #fff;
+            pointer-events: auto;
+            -webkit-appearance: none;
+        }
+
+        .range-input input[b-oif3aw3v30]::-moz-range-thumb {
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            border: 3px solid #1b53c0;
+            background-color: #fff;
+            pointer-events: auto;
+            -moz-appearance: none;
+        }
+range-price[b-oif3aw3v30] {
+    margin: 30px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.range-price label[b-oif3aw3v30] {
+    margin-right: 5px;
+}
+
+.range-price input[b-oif3aw3v30] {
+    width: 40px;
+    padding: 5px;
+}
+
+    .range-price input:first-of-type[b-oif3aw3v30] {
+        margin-right: 15px;
+    }
+/* _content/RealityGažík/Views/Login/Index.cshtml.rz.scp.css */
+.container[b-u9zkbhk9qr] {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mt-5[b-u9zkbhk9qr] {
+    margin-top: 3rem;
+}
+
+.text-center[b-u9zkbhk9qr] {
+    text-align: center;
+}
+
+.custom-form[b-u9zkbhk9qr] {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.mb-3[b-u9zkbhk9qr] {
+    margin-bottom: 1.5rem;
+}
+
+.form-label[b-u9zkbhk9qr] {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.form-control[b-u9zkbhk9qr] {
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control-lg[b-u9zkbhk9qr] {
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+}
+
+.btn[b-u9zkbhk9qr] {
+    display: inline-block;
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+    .btn:hover[b-u9zkbhk9qr] {
+        color: #fff;
+        background-color: #0056b3;
+        border-color: #0056b3;
+    }
+
+.btn-lg[b-u9zkbhk9qr] {
+    font-size: 1.25rem;
+    padding: 0.5rem 1rem;
+}
+
+.btn-primary[b-u9zkbhk9qr] {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
 /* _content/RealityGažík/Views/Nabidka/Index.cshtml.rz.scp.css */
 .main[b-3l2k8m8utp] {
     display: flex;
@@ -355,5 +504,14 @@ td:nth-child(even)[b-3l2k8m8utp] {
     width: 100%;
     height: 323px;
     margin: 0;
+}
+/* _content/RealityGažík/Views/Profil/Index.cshtml.rz.scp.css */
+.change[b-0opcl1eq2n] {
+    transition: max-height .5s;
+    max-height: 200px;
+    padding: 15px;
+    background: #5cb85c;
+    border: 1px solid black;
+    font-weight: bold;
 }
 /* _content/RealityGažík/Views/Shared/_Layout.cshtml.rz.scp.css */

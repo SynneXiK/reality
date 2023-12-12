@@ -1,0 +1,36 @@
+﻿@model UpdateModel
+
+<partial name="_profile"></partial>
+
+@if (TempData["Message"] != null)
+{
+    <div class="change">@TempData["Message"]</div>
+}
+
+<div class="">
+    <div class="">
+        <form asp-action="Save" method="post">
+            <div class="mb-3">
+                <label asp-for="username" class="form-label fs-4">Username</label>
+                <input asp-for="username" class="form-control form-control-lg" value="@ViewBag.User.username"/>
+            </div>
+            <div class="mb-3">
+                <label asp-for="name" class="form-label fs-4">Name</label>
+                <input asp-for="name" class="form-control form-control-lg" value="@ViewBag.User.name" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="email" class="form-label fs-4">Email</label>
+                <input asp-for="email" class="form-control form-control-lg" value="@ViewBag.User.email" />
+            </div>
+            <div class="mb-3">
+                <label asp-for="tel" class="form-label fs-4">Telephone</label>
+                <input asp-for="tel" class="form-control form-control-lg" value="@ViewBag.User.tel" />
+            </div>
+            
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary btn-lg btnSave">SAVE</button>
+            </div>
+        </form>
+    </div>
+</div>

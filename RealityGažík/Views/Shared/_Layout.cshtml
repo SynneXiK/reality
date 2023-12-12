@@ -15,18 +15,28 @@
     </div>
     <header>
         <div class="imageHdr">
-            <a href="index.html">
+            <a asp-controller="home" asp-action="index">
                 <img src="/Images/podklady/logo-dark.png" alt="logo">
             </a>
         </div>
         <div class="otherHdr">
-            <a href="index.html" class="home txtAlign">HOME</a>
+            <a asp-controller="home" asp-action="index" class="home txtAlign">HOME</a>
             <a href="katalog">KATALOG</a>
             <a href="kontakt">KONTAKT</a>
+            @if (!this.ViewBag.Authenticated)
+            {
+                <a asp-controller="login" asp-action="index" class="home txtAlign">LOGIN</a>
+            }
+            else
+            {
+                <a asp-controller="profil" asp-action="index" class="home txtAlign">PROFIL</a>
+                <a asp-controller="login" asp-action="logout" class="home txtAlign">LOGOUT</a>
+            }
         </div>
     </header>
 
-     @RenderBody()
+    @RenderBody()
+
 
     <footer>
         <div class="subFooter">

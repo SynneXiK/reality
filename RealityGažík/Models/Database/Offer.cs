@@ -13,6 +13,6 @@ namespace RealityGažík.Models.Database
         public string location {  get; set; }
         public string description { get; set; }
         public char category { get; set; }
-
+        
     }
 }

@@ -1,0 +1,18 @@
+﻿<div class="nabidkaMenu">
+    @foreach (Offer item in ViewBag.Offers)
+    {
+        <div class="nabidka">
+            <a asp-controller="profil" asp-action="offerUpdate" asp-route-id="@item.id">
+                <img src="/Images/podklady/offers/@{@item.id@item.name}.jpg" alt="@item.name picture" />
+                <div class="headline">@item.name</div>
+                <div class="rent">@item.price,-</div>
+                <div class="subtext">
+
+                    @Html.Raw(item.description.Substring(0, Math.Min(300, item.description.Length)))
+
+                </div>
+            </a>
+        </div>
+    }
+
+</div>
