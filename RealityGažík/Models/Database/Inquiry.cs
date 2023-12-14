@@ -14,6 +14,7 @@ namespace RealityGažík.Models.Database
         public string name { get; set; }
         public string tel { get; set; }
         public string email { get; set; }
+        [NotMapped]
         public string text { get; set; }
     }
 }

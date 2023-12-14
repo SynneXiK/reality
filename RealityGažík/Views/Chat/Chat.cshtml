@@ -1,0 +1,25 @@
+﻿<link rel="stylesheet" href="/css/messages.css">
+<partial name="_profile"></partial>
+
+
+<div class="messagesChat">
+    @foreach (Message item in this.ViewBag.Messages)
+    {
+        <div class="@((item.id == this.ViewBag.id && item.isAdmin == this.ViewBag.isAdmin) ? "usersMsg" : "othersMsg")">
+            <div class="singleMessage">
+                <div class="pfpAname">
+                    <img src="/Images/podklady/admins/jirkakral.jpg" alt="pfp">
+                    <div class="usernameDiv">@item.name</div>
+                </div>
+                <div class="msgADate">
+                    <div class="textVal">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium amet blanditiis commodi doloremque
+                        dolores eaque eius eligendi, ipsum maiores molestias nesciunt, non odit quod repellendus tempore vitae voluptatem. Adipisci, placeat.
+                    </div>
+                    <div class="textTime">11.1.2011</div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

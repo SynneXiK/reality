@@ -50,6 +50,14 @@ namespace RealityGažík.Controllers
             inquiry.idOffer = offer.id;
             inquiry.idUser = 2; // PŘEDĚLAT LOGICKY!
             this.MyContext.Inquiries.Add(inquiry);
+            this.MyContext.SaveChanges(); // abych získal id
+            this.MyContext.Messages.Add(new Message{
+                idInquiry = inquiry.id,
+                idUser = inquiry.idUser,
+                isAdmin = false, // taky předělat logicky
+                text = inquiry.text,
+                time = DateTime.Now
+            });
             this.MyContext.SaveChanges();
 
             return RedirectToAction("Index", new { id = id });

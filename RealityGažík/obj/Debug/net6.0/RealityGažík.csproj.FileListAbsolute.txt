@@ -694,3 +694,4 @@ C:\Users\gazikmarcel\Desktop\Reality07\RealityGažík\obj\Debug\net6.0\RealityGa
 C:\Users\gazikmarcel\Desktop\Reality07\RealityGažík\obj\Debug\net6.0\RealityGažík.genruntimeconfig.cache
 C:\Users\gazikmarcel\Desktop\Reality07\RealityGažík\obj\Debug\net6.0\ref\RealityGažík.dll
 C:\Users\gazikmarcel\Desktop\Reality07\RealityGažík\bin\Debug\net6.0\BCrypt.Net-Next.dll
+C:\Users\uzivatel\Desktop\reality\RealityGažík\bin\Debug\net6.0\BCrypt.Net-Next.dll
