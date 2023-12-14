@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css");
+
 body {
     font-family: "myriad-pro", sans-serif;
     font-size: 16px;
@@ -399,3 +401,15 @@ li > a {
     align-items: center;
     flex-direction: row;
 }
+.favorite {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+    .favorite > * {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        text-align: right;
+    }

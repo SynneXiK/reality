@@ -1,6 +1,11 @@
 ﻿@model LoginModel
 <link rel="stylesheet" href="/css/loginStyles.css">
 
+@if (TempData["Message"] != null)
+{
+    <div class="change">@TempData["Message"]</div>
+}
+
 <div class="logincontainer">
     <div>
         <form asp-action="Index">
@@ -18,6 +23,7 @@
                 <button type="submit">Log In</button>
             </div>
         </form>
+        <a asp-action="Register" class="txtAlign registerLink">REGISTER NOW</a>
     </div>
 </div>
 

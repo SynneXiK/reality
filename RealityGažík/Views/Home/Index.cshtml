@@ -33,7 +33,7 @@
         </a>
     </div>
 
-<div class="range">
+@*<div class="range">
     <div class="range-slider">
         <span class="range-selected"></span>
     </div>
@@ -47,7 +47,7 @@
         <label for="max">Max</label>
         <input type="number" name="max" value="350">
     </div>
-</div>
+</div>*@
 
 <h2 class="txtAlign">Naše nabídka</h2>
     <hr>
@@ -64,7 +64,11 @@
                     @Html.Raw(item.description.Substring(0, Math.Min(300, item.description.Length)))
                     
                     </div>
+                <div class="favorite">
+                    <i class="bi bi-star-fill"></i>
+                </div>
                 </a>
+                
             </div>
         }
    
