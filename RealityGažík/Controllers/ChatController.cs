@@ -15,7 +15,7 @@ namespace RealityGažík.Controllers
             List<Message> lastMsg = new List<Message>();
             foreach (Inquiry item in inquiries)
             {
-                lastMsg.Add(MyContext.Messages.Where(x => x.idInquiry == item.id).OrderBy(x => x.time).FirstOrDefault());
+                lastMsg.Add(MyContext.Messages.Where(x => x.idInquiry == item.id).OrderBy(x => x.time).FirstOrDefault()!);
             }
             this.ViewBag.LastMsg = lastMsg;
 

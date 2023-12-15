@@ -8,46 +8,82 @@
             </form>
         </div>
     </div>
+
     <div class="typy">
-        <a asp-action="index" asp-route-filter="b">
+    <a asp-action="simplefilter" asp-route-filter="b" asp-route-filterGl="@this.ViewBag.filterGl">
             <img src="Images/podklady/home-img-03-442-280.jpg" alt="Byty" width="442" height="280">
             <label>Byty</label>
             <div>
                 @ViewBag.OffersCount[0] nabídek
             </div>
         </a>
-    <a asp-action="index" asp-route-filter="l">
+    <a asp-action="simplefilter" asp-route-filter="l" asp-route-filterGl="@this.ViewBag.filterGl">
             <img src="Images/podklady/home-img-04-442-280.jpg" alt="Luxusni" width="442" height="280">
             <label>Luxusni</label>
-        <div>@ViewBag.OffersCount[1] nabídek</div>
+            <div>@ViewBag.OffersCount[1] nabídek</div>
         </a>
-    <a asp-action="index" asp-route-filter="d">
+    <a asp-action="simplefilter" asp-route-filter="d" asp-route-filterGl="@this.ViewBag.filterGl">
             <img src="Images/podklady/home-img-01-442-280.jpg" alt="Domy" width="442" height="280">
             <label>Domy</label>
-        <div>@ViewBag.OffersCount[2] nabídek</div>
+            <div>@ViewBag.OffersCount[2] nabídek</div>
         </a>
-    <a asp-action="index" asp-route-filter="c">
+    <a asp-action="simplefilter" asp-route-filter="c" asp-route-filterGl="@this.ViewBag.filterGl">
             <img src="Images/podklady/home-img-02-442-280.jpg" alt="Chaty" width="442" height="280">
             <label>Chaty</label>
-        <div>@ViewBag.OffersCount[3] nabídek</div>
+            <div>@ViewBag.OffersCount[3] nabídek</div>
         </a>
     </div>
 
-@*<div class="range">
-    <div class="range-slider">
-        <span class="range-selected"></span>
+@model Filter
+<form asp-action="SendFilter">
+    <div class="range">
+        <div class="range-slider">
+            <span class="range-selected"></span>
+        </div>
+        <div class="range-input">
+            <input type="range" class="min" min="0" max="@this.ViewBag.HighestPrice" value="0" step="100">
+            <input type="range" class="max" min="0" max="@this.ViewBag.HighestPrice" value="@this.ViewBag.Highest" step="100">
+        </div>
+        <div class="range-price">
+            <label for="min">Min</label>
+            <input type="number" name="min" value="0" asp-for="lowestPrice">
+            <label for="max">Max</label>
+            <input type="number" name="max" value="@this.ViewBag.HighestPrice" asp-for="highestPrice">
+        </div>
     </div>
-    <div class="range-input">
-        <input type="range" class="min" min="0" max="380" value="300" step="10">
-        <input type="range" class="max" min="0" max="380" value="350" step="10">
+    <div class="range">
+        <div class="range-slider">
+            <span class="range-selected"></span>
+        </div>
+        <div class="range-input">
+            <input type="range" class="min" min="0" max="@this.ViewBag.Highest" value="0" step="100">
+            <input type="range" class="max" min="0" max="@this.ViewBag.Highest" value="@this.ViewBag.Highest" step="100">
+        </div>
+        <div class="range-price">
+            <label for="min">Min</label>
+            <input type="number" name="min" value="0" asp-for="lowestPrice">
+            <label for="max">Max</label>
+            <input type="number" name="max" value="@this.ViewBag.Highest" asp-for="highestPrice">
+        </div>
     </div>
-    <div class="range-price">
-        <label for="min">Min</label>
-        <input type="number" name="min" value="300">
-        <label for="max">Max</label>
-        <input type="number" name="max" value="350">
+    <div class="dropdown">
+        <label for="aspect">Select a region:</label>
+        <select id="aspect" name="aspect" asp-for="region">
+            <option value="aspect1">Georgia</option>
+            <option value="aspect2">Czechia</option>
+            <option value="aspect3">Brazil</option>
+            <option value="aspect4">Turkey</option>
+            <option value="aspect5">Slovakia</option>
+            <option value="aspect6">Greece</option>
+            <option value="aspect7">Afghanistan</option>
+            <option value="aspect8">Tuvalu</option>
+            <option value="aspect9">São Tomé and Príncipe</option>
+            <option value="aspect10">Cat Land</option>
+        </select>
     </div>
-</div>*@
+</form>
+    
+
 
 <h2 class="txtAlign">Naše nabídka</h2>
     <hr>
