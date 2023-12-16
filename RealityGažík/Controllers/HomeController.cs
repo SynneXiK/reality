@@ -24,18 +24,26 @@ namespace RealityGažík.Controllers
             var offers = this.MyContext.Offers.ToList();
             Filter _filter = new Filter();
             _filter.count = 6;
+           
             if (filter != null)
             {
                 byte[] decodedJson = Convert.FromBase64String(filter);
                 string jsonString = Encoding.UTF8.GetString(decodedJson);
                 _filter = JsonSerializer.Deserialize<Filter>(jsonString)!;
-
-                offers = this.MyContext.Offers.Where(x => x.category == _filter.generalType).ToList();
+                _filter.highestPrice = 12966699;
+                _filter.lowestPrice = 0;
+                //offers = this.MyContext.Offers.Where(x => x.category == _filter.generalType).ToList();
+                offers = this.MyContext.Offers
+                    .Where(x => _filter.lowestPrice <= x.price && x.price <= _filter.highestPrice)
+                    .Where(x => x.category == _filter.generalType)
+                    .ToList();
             }
 
 
-            //this.ViewBag.Offers = offers.Take(Math.Max(6,_filter.count)).ToList();
-            //this.ViewBag.HighestPrice = offers.Max(x => x.price);
+            this.ViewBag.Offers = offers.Take(Math.Max(6, _filter.count)).ToList();
+            this.ViewBag.HighestPrice = offers.Max(x => x.price);
+            
+
             //var labelArea = this.MyContext.Labels.Where(x => x.label.Contains("plocha")).FirstOrDefault();
             //List<Value> valuesArea = this.MyContext.Values.Where(x => x.idLabel == labelArea!.id).ToList();
             //this.ViewBag.HighestArea = offers.Where(x => valuesArea.ForEach(v => v.idOffer == x.id));
