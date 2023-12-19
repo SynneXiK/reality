@@ -61,6 +61,22 @@ namespace RealityGažík.Controllers
             this.ViewBag.Offer = MyContext.Offers.FirstOrDefault(x => x.id == idOffer);
             return View();
         }
+        [BrokerSecured]
+        public IActionResult OfferRemove(int idOffer)
+        {
+            Offer offer = MyContext.Offers.Find(idOffer)!;
+            if(this.id == offer.idBroker || this.role == Roles.admin)
+            {
+                this.MyContext.Offers.Remove(offer);
+                this.MyContext.SaveChanges();
+                this.TempData["Message"] = "Offer Removed";
+            }
+            else
+                this.TempData["Message"] = "Permission Denied";
+
+
+            return RedirectToAction("offers");
+        }
         [HttpPost]
         [BrokerSecured]
         public IActionResult Save(Admin model)

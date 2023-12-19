@@ -17,7 +17,7 @@ namespace RealityGažík.Controllers
                     return true;
                 }
 
-                return x.idUser == this.id;
+                return x.idOwner == this.id;
             }).ToList();
 
             this.ViewBag.Inquiries = inquiries;
@@ -33,6 +33,7 @@ namespace RealityGažík.Controllers
         public IActionResult Chat(int idInquiry)
         {
             Inquiry inq = MyContext.Inquiries.Find(idInquiry)!;
+            Offer ofr = MyContext.Offers.Find(inq.idOffer)!;
 
             List<Message> messages = MyContext.Messages
             .Where(x => x.idInquiry == idInquiry)
@@ -41,11 +42,23 @@ namespace RealityGažík.Controllers
             this.ViewBag.Messages = messages;
             this.ViewBag.id = this.id;
 
-            Admin user = MyContext.Admins.Find(inq.idBroker)!;
+            Admin user = MyContext.Admins.Find(ofr.idBroker)!;
 
             this.ViewBag.name = user.name;
 
             return View();
+        }
+        [HttpPost]
+        public IActionResult NewMessage(Message msg)
+        {
+            msg.idUser = this.id;
+            msg.time = DateTime.Now;
+
+            this.MyContext.Messages.Add(msg);
+
+            this.MyContext.SaveChanges();
+
+            return RedirectToAction("chat", new { idInquiry = msg.idInquiry});
         }
     }
 }

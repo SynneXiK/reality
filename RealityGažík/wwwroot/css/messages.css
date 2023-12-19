@@ -76,6 +76,9 @@
     flex: 4;
     min-height: 100px;
 }
+.textVal img {
+    width: 100%;
+}
 
 .textTime {
     flex: 1;

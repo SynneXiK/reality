@@ -12,7 +12,7 @@
 <div>
     <div>
         <form asp-action="SaveOffer" method="post">
-            <input type="hidden" asp-for="id" value="@ViewBag.Offer.id" />
+            <input hidden asp-for="id" value="@ViewBag.Offer.id" />
             <div>
                 <label asp-for="name">Name</label>
                 <input asp-for="name" value="@ViewBag.Offer.name" />

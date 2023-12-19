@@ -5,7 +5,6 @@ namespace RealityGažík.Models
 {
     public class MyContext : DbContext
     {
-
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Favorite> Favorites { get; set; }
         public DbSet<Image> Images { get; set; }

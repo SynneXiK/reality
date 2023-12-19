@@ -40,20 +40,18 @@ namespace RealityGažík.Controllers
 
             return View();
         }
-        public IActionResult CreateInquiry(Inquiry inquiry, int id)
+        public IActionResult CreateInquiry(Inquiry inquiry, int id, Admin? user)
         {
             var offer = this.MyContext.Offers.Find(id);
-            var broker = this.MyContext.Admins.FirstOrDefault(x => x.id == id);
 
             inquiry.id = 0; // ntsm kde se tomu dává jednička a je moc pozdě večer abych se s tim sral ale bude to ez fr
-            inquiry.idBroker = broker!.id;
+            inquiry.idOwner = user!.id;
             inquiry.idOffer = offer!.id;
-            inquiry.idUser = 2; // PŘEDĚLAT LOGICKY!
             this.MyContext.Inquiries.Add(inquiry);
             this.MyContext.SaveChanges(); // abych získal id
             this.MyContext.Messages.Add(new Message{
                 idInquiry = inquiry.id,
-                idUser = inquiry.idUser,
+                idUser = inquiry.idOwner,
                 text = inquiry.text,
                 time = DateTime.Now
             });

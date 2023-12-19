@@ -14,9 +14,8 @@
             <th>Name</th>
             <th>Email</th>
             <th>Tel</th>
+            <th>Edit</th>
             <th>Remove</th>
-            <th>Promote</th>
-            <th>Demote</th>
         </tr>
     </thead>
     <tbody>
@@ -28,18 +27,13 @@
                 <td>@item.location</td>
                 <td>@item.description.Substring(0, Math.Min(20, item.description.Length))</td>
                 <td class="brokerIcon">
-                    <a asp-controller="profil" asp-action="brokerRemove" asp-route-idBroker="@item.id">
+                    <a asp-controller="profil" asp-action="offerUpdate" asp-route-idOffer="@item.id">
+                        <i class="bi bi-pencil-square brokerIcon"></i>
+                    </a>
+                </td>
+                <td class="brokerIcon">
+                    <a asp-controller="profil" asp-action="offerRemove" asp-route-idOffer="@item.id">
                         <i class="bi bi-trash brokerIcon"></i>
-                    </a>
-                </td>
-                <td class="brokerIcon">
-                    <a asp-controller="profil" asp-action="brokerPromote" asp-route-idBroker="@item.id">
-                        <i class="bi bi-award brokerIcon"></i>
-                    </a>
-                </td>
-                <td class="brokerIcon">
-                    <a asp-controller="profil" asp-action="brokerDemote" asp-route-idBroker="@item.id">
-                        <i class="bi bi-arrow-down-circle brokerIcon"></i>
                     </a>
                 </td>
             </tr>
