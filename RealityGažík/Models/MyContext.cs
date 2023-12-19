@@ -12,7 +12,6 @@ namespace RealityGažík.Models
         public DbSet<Inquiry> Inquiries { get; set; }
         public DbSet<Label> Labels { get; set; }
         public DbSet<Offer> Offers { get; set; }
-        public DbSet<User> Users { get; set; }
         public DbSet<Value> Values { get; set; }
         public DbSet<Message> Messages { get; set; }
 

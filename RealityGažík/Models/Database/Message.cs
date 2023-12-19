@@ -8,7 +8,6 @@ namespace RealityGažík.Models.Database
         public int id {  get; set; }
         public int idInquiry { get; set; }
         public int idUser { get; set; }
-        public bool isAdmin { get; set; }
         public string text { get; set; }
         public DateTime time { get; set; }
     }

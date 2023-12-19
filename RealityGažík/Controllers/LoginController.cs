@@ -20,28 +20,12 @@ namespace RealityGažík.Controllers
         [LoginSecured]
         public IActionResult Index(Admin model)
         {
-            //var user = MyContext.Users.Where(u => u.username == model.username).FirstOrDefault();
-
-            //if(user != null && BCrypt.Net.BCrypt.Verify(model.password, user.password))
-            //{
-            //    this.HttpContext.Session.SetInt32("login", user.id);
-            //    this.HttpContext.Session.SetString("isuser", "true");
-            //    return RedirectToAction("Index", "Home");
-            //}
-
-            //if (user != null)
-            //{
-            //    this.HttpContext.Session.SetInt32("login", user.id);
-            //    this.HttpContext.Session.SetString("isuser", "true");
-            //    return RedirectToAction("Index", "Home");
-            //}
-
-            Admin admin = MyContext.Admins.Where(a => a.username == model.username).FirstOrDefault();
+            Admin admin = MyContext.Admins.Where(a => a.username == model.username).FirstOrDefault()!;
 
             if (admin != null && BCrypt.Net.BCrypt.Verify(model.password, admin.password))
             {
                 this.HttpContext.Session.SetInt32("login", admin.id);
-                this.HttpContext.Session.SetString("role", Convert.ToString(admin.role)!);
+                this.HttpContext.Session.SetString("role", admin.role);
                 return RedirectToAction("Index", "Home");
             }
 
@@ -51,17 +35,22 @@ namespace RealityGažík.Controllers
         
         public IActionResult Register()
         {
-
             return View();
         }
         public IActionResult UploadRegister(Admin user)
         {
+            if (MyContext.Admins.Any(a => a.username == user.username))
+            {
+                this.TempData["Message"] = "Username already in use";
+                return RedirectToAction("register", "login");
+            }
+
             user.password = BCrypt.Net.BCrypt.HashPassword(user.password);
             MyContext.Admins.Add(user);
 
             MyContext.SaveChanges();
             this.TempData["Message"] = "Account created";
-            return RedirectToAction("Index", "Login");
+            return RedirectToAction("Index", "login");
         }
         public IActionResult Logout()
         {

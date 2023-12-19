@@ -11,15 +11,11 @@ namespace RealityGažík.Controllers
     public abstract class BaseController : Controller
     {
         protected int id = 0;
-        protected bool isAdmin = false;
-        protected bool isUser = false;
         protected string role = "user";
         protected MyContext MyContext { get; set; } = new MyContext();
         public override void OnActionExecuting(ActionExecutingContext context) // volá se před každou akcí -- executed po každé akci
         {
             this.id = this.HttpContext.Session.GetInt32("login").GetValueOrDefault();
-            this.isUser = Convert.ToBoolean(this.HttpContext.Session.GetString("isuser"));
-            this.isAdmin = Convert.ToBoolean(this.HttpContext.Session.GetString("isadmin"));
             this.role = this.HttpContext.Session.GetString("role")!;
 
             base.OnActionExecuting(context);

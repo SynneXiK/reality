@@ -10,8 +10,7 @@ namespace RealityGažík.Controllers
         {
             base.OnActionExecuting(context);
 
-            this.ViewBag.isUser = isUser;
-            this.ViewBag.isAdmin = isAdmin;
+            this.ViewBag.role = this.role;
         }
     }
 }

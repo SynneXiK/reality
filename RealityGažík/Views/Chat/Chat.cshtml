@@ -9,7 +9,7 @@
 <div class="messagesChat">
     @foreach (Message item in this.ViewBag.Messages)
     {
-        <div class="@((item.idUser == this.ViewBag.id && item.isAdmin == this.ViewBag.isAdmin) ? "usersMsg" : "othersMsg")">
+        <div class="@((item.idUser == this.ViewBag.id) ? "usersMsg" : "othersMsg")">
             <div class="singleMessage">
                 <div class="msgADate">
                     @if (item.text.EndsWith(".gif"))

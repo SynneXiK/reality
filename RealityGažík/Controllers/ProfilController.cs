@@ -15,13 +15,6 @@ namespace RealityGažík.Controllers
         [UserSecured]
         public IActionResult Index()
         {
-            //LoginModel user;
-
-            //if(isUser != true)
-            //    user = MyContext.Admins.Find(id)!;
-            //else
-            //    user = MyContext.Users.Find(id)!;
-
             Admin admin = MyContext.Admins.Find(id)!;
 
             this.ViewBag.User = admin;
@@ -37,13 +30,13 @@ namespace RealityGažík.Controllers
         [AdminSecured]
         public IActionResult Brokers()
         {
-            this.ViewBag.Brokers = MyContext.Admins.Where(x => x.role == Roles.broker);
+            this.ViewBag.Brokers = MyContext.Admins.Where(x => x.role != Roles.user);
             return View();
         }
         [AdminSecured]
         public IActionResult Users()
         {
-            this.ViewBag.Users = MyContext.Admins.Where(x => x.role == Roles.user).ToList();
+            this.ViewBag.Users = MyContext.Admins.Where(x => x.role == Roles.user);
             return View();
         }
         [AdminSecured]
@@ -70,9 +63,9 @@ namespace RealityGažík.Controllers
         }
         [HttpPost]
         [BrokerSecured]
-        public IActionResult Save(LoginModel model)
+        public IActionResult Save(Admin model)
         {
-            var userToUpdate = isUser ? MyContext.Users.Find(id) : MyContext.Admins.Find(id) as UpdateModel;
+            Admin userToUpdate = MyContext.Admins.Find(id)!;
 
             if (userToUpdate != null)
             {
@@ -112,6 +105,16 @@ namespace RealityGažík.Controllers
             this.TempData["Message"] = "Changes Saved";
             return RedirectToAction("brokers");
         }
+        public IActionResult BrokerDemote(int idBroker)
+        {
+            Admin broker = MyContext.Admins.Find(idBroker)!;
+            broker.role = Roles.user;
+
+            MyContext.SaveChanges();
+            this.TempData["Message"] = "Changes Saved";
+            return RedirectToAction("brokers");
+        }
+        
         [AdminSecured]
         public IActionResult BrokerPromote(int idBroker)
         {
@@ -125,8 +128,8 @@ namespace RealityGažík.Controllers
         [AdminSecured]
         public IActionResult UserRemove(int idUser)
         {
-            User user = MyContext.Users.Find(idUser)!;
-            MyContext.Users.Remove(user);
+            Admin user = MyContext.Admins.Find(idUser)!;
+            MyContext.Admins.Remove(user);
 
             MyContext.SaveChanges();
             this.TempData["Message"] = "Changes Saved";
@@ -135,18 +138,10 @@ namespace RealityGažík.Controllers
         [AdminSecured]
         public IActionResult UserPromote(int idUser, bool isAdmin = false)
         {
-            User user = MyContext.Users.Find(idUser)!;
-            Admin admin = new Admin{
-                username = user.username,
-                password = user.password,
-                name = user.name,
-                email = user.email,
-                tel = user.tel,
-                pfp = user.pfp,
-                role = Roles.broker
-            };
-            MyContext.Admins.Add(admin);
-            MyContext.Users.Remove(user);
+            Admin user = MyContext.Admins.Find(idUser)!;
+            user.role = Roles.broker;
+
+            MyContext.Admins.Add(user);
 
             MyContext.SaveChanges();
             this.TempData["Message"] = "Changes Saved";

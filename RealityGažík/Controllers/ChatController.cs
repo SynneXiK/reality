@@ -10,17 +10,11 @@ namespace RealityGažík.Controllers
         {
             List<Inquiry> inquiries = MyContext.Inquiries.ToList();
 
-            inquiries = MyContext.Inquiries.Where(x => this.isAdmin || x.idUser == this.id).ToList();
-
             inquiries = inquiries.Where(x =>
             {
-                if (this.isAdmin)
+                if (this.role == Roles.admin)
                 {
                     return true;
-                }
-                else if (!this.isAdmin && this.id == x.idBroker)
-                {
-                    return true; // broker offers
                 }
 
                 return x.idUser == this.id;
@@ -46,7 +40,6 @@ namespace RealityGažík.Controllers
 
             this.ViewBag.Messages = messages;
             this.ViewBag.id = this.id;
-            this.ViewBag.isAdmin = this.isAdmin;
 
             Admin user = MyContext.Admins.Find(inq.idBroker)!;
 

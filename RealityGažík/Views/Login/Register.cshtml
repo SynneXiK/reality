@@ -1,5 +1,11 @@
 ﻿@model Admin
 <link rel="stylesheet" href="/css/loginStyles.css">
+<link rel="stylesheet" href="/css/changeButton.css">
+
+@if (TempData["Message"] != null)
+{
+    <div class="change">@TempData["Message"]</div>
+}
 
 <div class="logincontainer">
     <div>

@@ -16,6 +16,7 @@
             <th>Tel</th>
             <th>Remove</th>
             <th>Promote</th>
+            <th>Demote</th>
         </tr>
     </thead>
     <tbody>
@@ -34,6 +35,11 @@
                 <td class="brokerIcon">
                     <a asp-controller="profil" asp-action="brokerPromote" asp-route-idBroker="@item.id">
                         <i class="bi bi-award brokerIcon"></i>
+                    </a>
+                </td>
+                <td class="brokerIcon">
+                    <a asp-controller="profil" asp-action="brokerDemote" asp-route-idBroker="@item.id">
+                        <i class="bi bi-arrow-down-circle brokerIcon"></i>
                     </a>
                 </td>
             </tr>

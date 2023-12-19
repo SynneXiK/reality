@@ -46,15 +46,14 @@ namespace RealityGažík.Controllers
             var broker = this.MyContext.Admins.FirstOrDefault(x => x.id == id);
 
             inquiry.id = 0; // ntsm kde se tomu dává jednička a je moc pozdě večer abych se s tim sral ale bude to ez fr
-            inquiry.idBroker = broker.id;
-            inquiry.idOffer = offer.id;
+            inquiry.idBroker = broker!.id;
+            inquiry.idOffer = offer!.id;
             inquiry.idUser = 2; // PŘEDĚLAT LOGICKY!
             this.MyContext.Inquiries.Add(inquiry);
             this.MyContext.SaveChanges(); // abych získal id
             this.MyContext.Messages.Add(new Message{
                 idInquiry = inquiry.id,
                 idUser = inquiry.idUser,
-                isAdmin = false, // taky předělat logicky
                 text = inquiry.text,
                 time = DateTime.Now
             });

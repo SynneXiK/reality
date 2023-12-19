@@ -1,10 +1,10 @@
 ﻿<div class="profilHdr">
     <a asp-controller="profil" asp-action="index" class="home txtAlign">PROFIL</a>
     <a asp-controller="chat" asp-action="index" class="home txtAlign">CHAT</a>
-    @if (!ViewBag.isUser)
+    @if (ViewBag.role != "user")
     {
         <a asp-controller="profil" asp-action="offers" class="home txtAlign">OFFERS</a>
-        if (ViewBag.isAdmin)
+        if (ViewBag.role == "admin")
         {
             <a asp-controller="profil" asp-action="brokers" class="home txtAlign">BROKERS</a>
             <a asp-controller="profil" asp-action="users" class="home txtAlign">USERS</a>

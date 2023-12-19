@@ -1,4 +1,4 @@
-﻿@model UpdateModel
+﻿@model Admin
 <link rel="stylesheet" href="/css/changeButton.css">
 <link rel="stylesheet" href="/css/forms.css">
 
@@ -12,6 +12,7 @@
 <div>
     <div>
         <form asp-action="Save" method="post">
+            <input asp-for="id" hidden />
             <div>
                 <label asp-for="username">Username</label>
                 <input asp-for="username" value="@ViewBag.User.username"/>
