@@ -20,7 +20,31 @@
     color: black;
     box-shadow: 4px 2px 2px #353935;
 }
-
+.messagesHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    border: 2px solid #252525;
+    box-shadow: 4px 2px 2px #353935;
+}
+    .messagesHeader > img {
+        flex: 1;
+        height: 80px;
+        width: 100%;
+        border-radius: 50%;
+        border: 3px solid #252525;
+        padding: 5px;
+        margin: 5px 5px 5px 50px;
+    }
+.messagesHeader > div {
+    flex: 9;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
+}
 .pfpAname {
     flex: 1;
     display: flex;

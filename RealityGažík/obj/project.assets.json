@@ -2572,24 +2572,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\uzivatel\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\gazikmarcel\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\RealityGažík.csproj",
+      "projectUniqueName": "C:\\Users\\gazikmarcel\\Desktop\\reality\\RealityGažík\\RealityGažík.csproj",
       "projectName": "RealityGažík",
-      "projectPath": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\RealityGažík.csproj",
-      "packagesPath": "C:\\Users\\uzivatel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\obj\\",
+      "projectPath": "C:\\Users\\gazikmarcel\\Desktop\\reality\\RealityGažík\\RealityGažík.csproj",
+      "packagesPath": "C:\\Users\\gazikmarcel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\gazikmarcel\\Desktop\\reality\\RealityGažík\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\uzivatel\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\gazikmarcel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2597,6 +2596,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.304\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2647,7 +2647,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
       }
     }
   }
