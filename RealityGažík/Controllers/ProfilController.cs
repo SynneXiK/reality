@@ -15,33 +15,35 @@ namespace RealityGažík.Controllers
         [UserSecured]
         public IActionResult Index()
         {
-            LoginModel user;
+            //LoginModel user;
 
-            if(isUser != true)
-                user = MyContext.Admins.Find(id)!;
-            else
-                user = MyContext.Users.Find(id)!;
+            //if(isUser != true)
+            //    user = MyContext.Admins.Find(id)!;
+            //else
+            //    user = MyContext.Users.Find(id)!;
 
-            this.ViewBag.User = user;
+            Admin admin = MyContext.Admins.Find(id)!;
+
+            this.ViewBag.User = admin;
 
             return View();
         }
         [BrokerSecured]
         public IActionResult Offers()
         {
-            this.ViewBag.Offers = MyContext.Offers.Where(x => x.idBroker == this.id || this.isAdmin == true);
+            this.ViewBag.Offers = MyContext.Offers.Where(x => x.idBroker == this.id || this.role == Roles.admin.ToString());
             return View();
         }
         [AdminSecured]
         public IActionResult Brokers()
         {
-            this.ViewBag.Brokers = MyContext.Admins.Where(x => x.isAdmin != true);
+            this.ViewBag.Brokers = MyContext.Admins.Where(x => x.role == Roles.broker);
             return View();
         }
         [AdminSecured]
         public IActionResult Users()
         {
-            this.ViewBag.Users = MyContext.Users.ToList();
+            this.ViewBag.Users = MyContext.Admins.Where(x => x.role == Roles.user).ToList();
             return View();
         }
         [AdminSecured]
@@ -114,7 +116,7 @@ namespace RealityGažík.Controllers
         public IActionResult BrokerPromote(int idBroker)
         {
             Admin broker = MyContext.Admins.Find(idBroker)!;
-            broker.isAdmin = true;
+            broker.role = Roles.admin;
 
             MyContext.SaveChanges();
             this.TempData["Message"] = "Changes Saved";
@@ -141,7 +143,7 @@ namespace RealityGažík.Controllers
                 email = user.email,
                 tel = user.tel,
                 pfp = user.pfp,
-                isAdmin = isAdmin
+                role = Roles.broker
             };
             MyContext.Admins.Add(admin);
             MyContext.Users.Remove(user);

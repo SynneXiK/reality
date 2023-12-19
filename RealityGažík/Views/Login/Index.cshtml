@@ -1,4 +1,4 @@
-﻿@model LoginModel
+﻿@model Admin
 <link rel="stylesheet" href="/css/loginStyles.css">
 
 @if (TempData["Message"] != null)
@@ -23,7 +23,7 @@
                 <button type="submit">Log In</button>
             </div>
         </form>
-        <a asp-action="Register" class="txtAlign registerLink">REGISTER NOW</a>
+        <a asp-action="register" class="txtAlign registerLink">REGISTER NOW</a>
     </div>
 </div>
 

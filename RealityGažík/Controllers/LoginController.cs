@@ -13,21 +13,21 @@ namespace RealityGažík.Controllers
         [LoginSecured]
         public IActionResult Index()
         {
-            return View(new LoginModel());
+            return View(new Admin());
         }
 
         [HttpPost]
         [LoginSecured]
-        public IActionResult Index(LoginModel model)
+        public IActionResult Index(Admin model)
         {
-            var user = MyContext.Users.Where(u => u.username == model.username).FirstOrDefault();
+            //var user = MyContext.Users.Where(u => u.username == model.username).FirstOrDefault();
 
-            if(user != null && BCrypt.Net.BCrypt.Verify(model.password, user.password))
-            {
-                this.HttpContext.Session.SetInt32("login", user.id);
-                this.HttpContext.Session.SetString("isuser", "true");
-                return RedirectToAction("Index", "Home");
-            }
+            //if(user != null && BCrypt.Net.BCrypt.Verify(model.password, user.password))
+            //{
+            //    this.HttpContext.Session.SetInt32("login", user.id);
+            //    this.HttpContext.Session.SetString("isuser", "true");
+            //    return RedirectToAction("Index", "Home");
+            //}
 
             //if (user != null)
             //{
@@ -36,12 +36,12 @@ namespace RealityGažík.Controllers
             //    return RedirectToAction("Index", "Home");
             //}
 
-            var admin = MyContext.Admins.Where(a => a.username == model.username).FirstOrDefault();
+            Admin admin = MyContext.Admins.Where(a => a.username == model.username).FirstOrDefault();
 
             if (admin != null && BCrypt.Net.BCrypt.Verify(model.password, admin.password))
             {
                 this.HttpContext.Session.SetInt32("login", admin.id);
-                this.HttpContext.Session.SetString("isadmin", Convert.ToString(admin.isAdmin));
+                this.HttpContext.Session.SetString("role", Convert.ToString(admin.role)!);
                 return RedirectToAction("Index", "Home");
             }
 
@@ -54,10 +54,10 @@ namespace RealityGažík.Controllers
 
             return View();
         }
-        public IActionResult UploadRegister(User user)
+        public IActionResult UploadRegister(Admin user)
         {
             user.password = BCrypt.Net.BCrypt.HashPassword(user.password);
-            MyContext.Users.Add(user);
+            MyContext.Admins.Add(user);
 
             MyContext.SaveChanges();
             this.TempData["Message"] = "Account created";
