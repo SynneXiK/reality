@@ -262,6 +262,9 @@ li > a {
     row-gap: 56px;
     margin: 50px 10%;
 }
+.nabidka {
+    position: relative;
+}
 
 .nabidka > a {
     display: flex;
@@ -403,14 +406,17 @@ li > a {
     flex-direction: row;
 }
 .favorite {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index:1;
+    color: yellow;
+    transition: transform 1s;
 }
-    .favorite > * {
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        text-align: right;
-    }
+.favorite:hover{
+    transform: rotate(560deg);
+}
+
+
+

@@ -90,6 +90,9 @@
     <div class="nabidkaMenu">
         @foreach (Offer item in ViewBag.Offers)
         {
+@*         var favoriteOffers = this.ViewBag.favorites;
+        var isFavorite = favoriteOffers.Contains(item.id); *@
+
             <div class="nabidka">
                 <a asp-controller="nabidka" asp-action="index" asp-route-id="@item.id">
                 <img src="Images/podklady/offers/@{@item.id@item.name}.jpg" alt="@item.name picture" />
@@ -100,10 +103,19 @@
                     @Html.Raw(item.description.Substring(0, Math.Min(300, item.description.Length)))
                     
                     </div>
-                <div class="favorite">
-                    <i class="bi bi-star-fill"></i>
-                </div>
+                
                 </a>
+            <a asp-action="favorite" class="favorite">
+@*                 @if (isFavorite)
+                { *@
+                    <i class="bi bi-star-fill"></i>
+ @*                }
+                else
+                {
+                    <i class="bi bi-star"></i>
+                } *@
+
+            </a>
                 
             </div>
         }

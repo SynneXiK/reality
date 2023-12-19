@@ -45,6 +45,7 @@ namespace RealityGažík.Controllers
             Admin user = MyContext.Admins.Find(ofr.idBroker)!;
 
             this.ViewBag.name = user.name;
+            this.ViewBag.offername = ofr.name;
 
             return View();
         }

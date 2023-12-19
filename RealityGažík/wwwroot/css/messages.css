@@ -15,7 +15,7 @@
     border: 1px solid #252525;
     padding: 2px;
     border-radius: 10px;
-    background: lightgray;
+    background: #f0f0f0;
     text-decoration: none;
     color: black;
     box-shadow: 4px 2px 2px #353935;
@@ -74,9 +74,10 @@
 
 .textVal {
     flex: 4;
-    min-height: 100px;
+    overflow-wrap: break-word;
 }
-.textVal img {
+.textValImg {
+    height: 120px;
     width: 100%;
 }
 
@@ -84,15 +85,21 @@
     flex: 1;
     width: 100%;
     text-align: right;
+    transition: max-height .5s;
+    max-height: 0px;
+    overflow: clip;
+}
+.textTimeOnHover {
+    max-height: 50px;
 }
 
 .messagesChat {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20px;
     border: 2px solid #252525;
     box-shadow: 4px 2px 2px #353935;
+    background-color: #f0f0f0;
 }
 
 .singleMessage {
@@ -122,3 +129,43 @@
     justify-content: flex-end;
     width: 100%;
 }
+
+.messageForm {
+    display: flex;
+    flex-direction: row;
+
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.formMsg {
+    display: flex;
+    gap: 15px;
+    margin: 10px 10%;
+}
+
+.msgInput {
+    flex: 9;
+    display: flex;
+    align-items: center;
+    height: 40px;
+}
+
+.msgSend {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    height: 40px;
+}
+        .msgSend:hover {
+            background-color: #0056b3;
+        }

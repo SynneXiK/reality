@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ibgzyT9jrufxVirhLU+WnksKcdToAn1f0ZizreuR+5k=",
+  "Hash": "ZTZovTVA4y7ysikPz5rB0+FzP8vqTlwQGweTXnjIL30=",
   "Source": "RealityGažík",
   "BasePath": "_content/RealityGažík",
   "Mode": "Default",
@@ -1307,6 +1307,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\indexSlider.js"
+    },
+    {
+      "Identity": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\js\\messageHover.js",
+      "SourceId": "RealityGažík",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\",
+      "BasePath": "_content/RealityGažík",
+      "RelativePath": "js/messageHover.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\messageHover.js"
     },
     {
       "Identity": "C:\\Users\\uzivatel\\Desktop\\reality\\RealityGažík\\wwwroot\\js\\site.js",

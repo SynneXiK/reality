@@ -4,7 +4,7 @@
 
 <div class="messagesHeader">
         <img src="/Images/podklady/admins/jirkakral.jpg" alt="pfp">
-        <div class="usernameDiv">@ViewBag.name</div>
+        <div class="usernameDiv">@ViewBag.offername - @ViewBag.name</div>
 </div>
 
 <div class="messagesChat">
@@ -15,7 +15,7 @@
                 <div class="msgADate">
                     @if (item.text.EndsWith(".gif"))
                     {
-                        <img class="textVal" src="@item.text" alt="gif">
+                        <img class="textVal textValImg" src="@item.text" alt="gif">
                     }
                     else{
                         <div class="textVal">
@@ -29,17 +29,20 @@
         </div>
     }
 </div>
-<div class="messageForm">
-    @model Message
-    <form asp-action="newMessage" method="post">
-            <input asp-for="idInquiry" hidden />
-            <div>
-                <input asp-for="text" />
-            </div>
 
-            <div>
-                <button type="submit">Send</button>
-            </div>
+    @model Message
+    <form asp-action="newMessage" method="post" class="formMsg">
+
+            <input asp-for="idInquiry" type="hidden" />
+
+            <input asp-for="text" class="msgInput" />
+
+
+            <button type="submit" class="msgSend">
+                <i class="bi bi-send"></i>
+            </button>
+                
     </form>
-</div>
+
+<script src="~/js/messageHover.js"></script>
 
