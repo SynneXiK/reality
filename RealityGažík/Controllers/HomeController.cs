@@ -44,11 +44,10 @@ namespace RealityGažík.Controllers
             this.ViewBag.Offers = offers.Take(Math.Max(6, _filter.count)).ToList();
             this.ViewBag.HighestPrice = offers.Max(x => x.price);
 
-            List<bool> favorites = MyContext.Favorites
+            List<Favorite> favorites = MyContext.Favorites
             .Where(x => x.idUser == this.id)
-            .Select(x => x.idUser == this.id)
             .ToList();
-            this.ViewBag.favorite = favorites.Take(Math.Max(6, _filter.count));
+            this.ViewBag.favorites = favorites.Take(Math.Max(6, _filter.count)).ToList();
 
             //var labelArea = this.MyContext.Labels.Where(x => x.label.Contains("plocha")).FirstOrDefault();
             //List<Value> valuesArea = this.MyContext.Values.Where(x => x.idLabel == labelArea!.id).ToList();
