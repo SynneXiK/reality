@@ -1,0 +1,11 @@
+﻿@{
+    Layout = "_LayoutAjax";
+}
+<table>
+@foreach (var item in ViewBag.Messages) {
+       <tr>
+           <td>@item.text</td>
+           <td>@item.id</td>
+       </tr>
+}
+</table>

@@ -21,6 +21,7 @@ namespace RealityGažík.Controllers
         {
 
             this.ViewBag.OffersCount = GetCategories();
+            this.ViewBag.idUser = this.id;
             var offers = this.MyContext.Offers.ToList();
             Filter _filter = new Filter();
             _filter.count = 6;
@@ -67,6 +68,10 @@ namespace RealityGažík.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        public void favorite()
+        {
+
         }
         public IActionResult SendFilter(Filter filter)
         {

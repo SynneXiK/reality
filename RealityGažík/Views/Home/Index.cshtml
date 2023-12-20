@@ -1,4 +1,5 @@
-﻿    <div class="Search">
+﻿<input type="hidden" id="idUser" value="@ViewBag.idUser">
+<div class="Search">
         <img src="Images/podklady/slide-01-1920x640.jpg" alt="Slide" width="1920" height="640">
         <div>
             <h1>Vyberte si svůj nový byt</h1>
@@ -105,17 +106,22 @@
                     </div>
                 
                 </a>
-            <a asp-action="favorite" class="favorite">
-@*                 @if (isFavorite)
+            @if (this.ViewBag.Authenticated)
+            {
+                <a class="favorite" id="favoriteSubmit">
+                    <input type="hidden" id="idOffer" value="@item.id">
+                    @*                 @if (isFavorite)
                 { *@
-                    <i class="bi bi-star-fill"></i>
- @*                }
+                        <i class="bi bi-star-fill"></i>
+                        @*                }
                 else
                 {
-                    <i class="bi bi-star"></i>
-                } *@
+                <i class="bi bi-star"></i>
+            } *@
 
-            </a>
+                </a>
+            }
+
                 
             </div>
         }
@@ -126,6 +132,8 @@
         <a asp-action="index" asp-route-count="@(ViewBag.count + 6)" asp-route-filter="@ViewBag.filter" class="zobrazitvse searchbutton txtAlign">ZOBRAZIT DALŠÍ</a>
     }
 
+    <button type="button" id="test">test</button>
+    <div id="target"></div>
     <h2 class="txtAlign zkZakazniku">Zkušenosti zákazníků</h2>
     <hr>
 
@@ -150,3 +158,50 @@
 
 
 <script src="js/indexSlider.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+     /*$("#test").on('click', function(e) {
+         e.preventDefault();
+         $.ajax({
+             url: '/api/test'
+         }).then(function(data) {
+            console.log(data);
+         });
+     })*/
+
+    $("#test").on('click', function (e) {
+        e.preventDefault();
+        $.ajax({
+            url: '/api/html'
+        }).then(function (data) {
+            $("#target").html(data);
+        });
+    })
+
+
+
+    const favorites = document.querySelectorAll('#favoriteSubmit');
+    favorites.forEach((input) => {
+        input.addEventListener('click', function (e) {
+            e.preventDefault();
+            let offer = input.childNodes[1];
+
+
+            var formData = {
+                id: "0",
+                idOffer: $(offer).val(),
+                idUser: $("#idUser").val(),
+            };
+            $.ajax({
+                type: "POST",
+                url: "/api/favorite",
+                data: formData,
+            }).done(function (data) {
+                console.log(data);
+            });
+
+            input.childNodes[2]; // tady vybrat tu classu a přidat mu vybarvenou hvězdičku! popř. eště dodělat jakou podle toho jestli už tam je nebo ne
+        })
+    })
+
+</script>
