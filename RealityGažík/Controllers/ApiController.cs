@@ -22,13 +22,11 @@ namespace RealityGažík.Controllers
             if (filter != null)
             {
                 _filter = filter;
-                _filter.highestPrice = 12966699;
-                _filter.lowestPrice = 0;
                 _filter.count += 6;
                 //offers = this.context.Offers.Where(x => x.category == _filter.generalType).ToList();
                 offers = this.context.Offers
                     .Where(x => _filter.lowestPrice <= x.price && x.price <= _filter.highestPrice)
-                    .Where(x => x.category == _filter.generalType)
+                    .Where(x => _filter.generalType == '\0' || x.category == _filter.generalType)
                     .ToList();
             }
 

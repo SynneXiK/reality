@@ -95,10 +95,10 @@ namespace RealityGažík.Controllers
             var offers = this.MyContext?.Offers.ToList();
             List<int> categoriesNum = new List<int>
             {
-                offers.Where(x => x.category == 'b').Count(),
-                offers.Where(x => x.category == 'l').Count(),
-                offers.Where(x => x.category == 'd').Count(),
-                offers.Where(x => x.category == 'c').Count()
+                offers!.Where(x => x.category == 'b').Count(),
+                offers!.Where(x => x.category == 'l').Count(),
+                offers!.Where(x => x.category == 'd').Count(),
+                offers!.Where(x => x.category == 'c').Count()
             };
             return categoriesNum;
         }

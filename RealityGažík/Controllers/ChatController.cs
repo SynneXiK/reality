@@ -55,9 +55,13 @@ namespace RealityGažík.Controllers
             msg.idUser = this.id;
             msg.time = DateTime.Now;
 
-            this.MyContext.Messages.Add(msg);
+            if(msg.text != null)
+            {
+                this.MyContext.Messages.Add(msg);
 
-            this.MyContext.SaveChanges();
+                this.MyContext.SaveChanges();
+            }
+
 
             return RedirectToAction("chat", new { idInquiry = msg.idInquiry});
         }

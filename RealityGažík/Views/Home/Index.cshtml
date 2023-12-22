@@ -52,7 +52,7 @@
             <input type="number" name="max" value="@this.ViewBag.HighestPrice" id="highestPrice">
         </div>
     </div>
-    <div class="range">
+@*     <div class="range">
         <div class="range-slider">
             <span class="range-selected"></span>
         </div>
@@ -66,20 +66,20 @@
             <label for="max">Max</label>
             <input type="number" name="max" value="@this.ViewBag.Highest" asp-for="highestPrice">
         </div>
-    </div>
+    </div> *@
     <div class="dropdown">
         <label for="aspect">Select a region:</label>
         <select id="aspect" name="aspect">
-            <option value="aspect1">Georgia</option>
-            <option value="aspect2">Czechia</option>
-            <option value="aspect3">Brazil</option>
-            <option value="aspect4">Turkey</option>
-            <option value="aspect5">Slovakia</option>
-            <option value="aspect6">Greece</option>
-            <option value="aspect7">Afghanistan</option>
-            <option value="aspect8">Tuvalu</option>
-            <option value="aspect9">São Tomé and Príncipe</option>
-            <option value="aspect10">Cat Land</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Czechia">Czechia</option>
+            <option value="Brazil">Brazil</option>
+            <option value="Turkey">Turkey</option>
+            <option value="Slovakia">Slovakia</option>
+            <option value="Greece">Greece</option>
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="Tuvalu">Tuvalu</option>
+            <option value="São Tomé and Príncipe">São Tomé and Príncipe</option>
+            <option value="Cat Land">Cat Land</option>
         </select>
     </div>
 </form>

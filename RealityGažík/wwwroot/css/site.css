@@ -412,10 +412,17 @@ li > a {
     cursor: pointer;
     z-index:1;
     color: yellow;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    border-radius: 15%;
+    background-color: #B6B6B6;
+    border: 1px solid #252525;
     transition: transform 1s;
 }
 .favorite:hover{
-    transform: rotate(560deg);
+    transform: rotate(720deg);
 }
 
 

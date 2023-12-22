@@ -100,6 +100,8 @@
     border: 2px solid #252525;
     box-shadow: 4px 2px 2px #353935;
     background-color: #f0f0f0;
+    max-height: 600px;
+    overflow-y: auto;
 }
 
 .singleMessage {
