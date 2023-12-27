@@ -4,6 +4,7 @@ using BCrypt.Net;
 using RealityGažík.Attributes;
 using RealityGažík.Models;
 using RealityGažík.Models.Database;
+using Org.BouncyCastle.Asn1.X509;
 
 namespace RealityGažík.Controllers
 {
@@ -20,7 +21,7 @@ namespace RealityGažík.Controllers
         [LoginSecured]
         public IActionResult Index(Admin model)
         {
-            Admin admin = MyContext.Admins.Where(a => a.username == model.username).FirstOrDefault()!;
+            Admin? admin = MyContext.Admins.Where(a => a.username == model.username).FirstOrDefault();
 
             if (admin != null && BCrypt.Net.BCrypt.Verify(model.password, admin.password))
             {
@@ -46,6 +47,8 @@ namespace RealityGažík.Controllers
             }
 
             user.password = BCrypt.Net.BCrypt.HashPassword(user.password);
+            user.role = Roles.user;
+            user.pfp = "jirkakral.jpg";
             MyContext.Admins.Add(user);
 
             MyContext.SaveChanges();
