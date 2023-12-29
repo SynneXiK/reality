@@ -1,4 +1,7 @@
-﻿namespace RealityGažík.Models
+﻿using System.Text;
+using System.Text.Json;
+
+namespace RealityGažík.Models
 {
     public class Filter
     {
@@ -9,5 +12,11 @@
         public int area { get; set; }
         public int count { get; set; }
         public char generalType { get; set; }
-    }
+
+		public string ToJsonString()
+		{
+			return JsonSerializer.Serialize(this);
+		}
+	}
+
 }

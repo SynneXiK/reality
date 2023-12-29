@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RealityGažík")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5e2f2d397b095a648ebdd70b49699f449a967bb3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("RealityGažík")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RealityGažík")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

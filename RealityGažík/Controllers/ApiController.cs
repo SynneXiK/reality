@@ -29,6 +29,7 @@ namespace RealityGažík.Controllers
                     .Where(x => _filter.generalType == '\0' || x.category == _filter.generalType)
                     .ToList();
             }
+            HttpContext.Session.SetString("filter", _filter.ToJsonString()); //tojsonstring vlastni metoda
 
             return Json(offers);
             //return Json(this.context.Messages.ToList());
