@@ -12,7 +12,7 @@ namespace RealityGažík.Models.Database
         public int price { get; set; }
         public string location {  get; set; }
         public string description { get; set; }
-        public char category { get; set; }
+        public int idCategory { get; set; }
         
     }
 }

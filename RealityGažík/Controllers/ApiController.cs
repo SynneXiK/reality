@@ -26,10 +26,10 @@ namespace RealityGažík.Controllers
                 //offers = this.context.Offers.Where(x => x.category == _filter.generalType).ToList();
                 offers = this.context.Offers
                     .Where(x => _filter.lowestPrice <= x.price && x.price <= _filter.highestPrice)
-                    .Where(x => _filter.generalType == '\0' || x.category == _filter.generalType)
+                    .Where(x => _filter.categoryId == 0 || x.idCategory == _filter.categoryId)
                     .ToList();
             }
-            HttpContext.Session.SetString("filter", _filter.ToJsonString()); //tojsonstring vlastni metoda
+            HttpContext.Session.SetString("filter", JsonSerializer.Serialize(_filter)); //tojsonstring vlastni metoda
 
             return Json(offers);
             //return Json(this.context.Messages.ToList());

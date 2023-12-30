@@ -11,28 +11,16 @@
     </div>
 
     <div class="typy">
-    <a asp-action="simplefilter" asp-route-filter="b" asp-route-filterGl="@this.ViewBag.filterGl">
-            <img src="Images/podklady/home-img-03-442-280.jpg" alt="Byty" width="442" height="280">
-            <label>Byty</label>
-            <div>
-                @ViewBag.OffersCount[0] nabídek
-            </div>
-        </a>
-    <a asp-action="simplefilter" asp-route-filter="l" asp-route-filterGl="@this.ViewBag.filterGl">
-            <img src="Images/podklady/home-img-04-442-280.jpg" alt="Luxusni" width="442" height="280">
-            <label>Luxusni</label>
-            <div>@ViewBag.OffersCount[1] nabídek</div>
-        </a>
-    <a asp-action="simplefilter" asp-route-filter="d" asp-route-filterGl="@this.ViewBag.filterGl">
-            <img src="Images/podklady/home-img-01-442-280.jpg" alt="Domy" width="442" height="280">
-            <label>Domy</label>
-            <div>@ViewBag.OffersCount[2] nabídek</div>
-        </a>
-    <a asp-action="simplefilter" asp-route-filter="c" asp-route-filterGl="@this.ViewBag.filterGl">
-            <img src="Images/podklady/home-img-02-442-280.jpg" alt="Chaty" width="442" height="280">
-            <label>Chaty</label>
-            <div>@ViewBag.OffersCount[3] nabídek</div>
-        </a>
+        @foreach (Category item in this.ViewBag.Categories)
+        {
+            <a asp-action="simplefilter" asp-route-filter="@item.id" asp-route-filterGl="@this.ViewBag.filterGl">
+                <img src="@item.imgRoute" alt="@item.name" width="442" height="280">
+                <label>@item.name</label>
+                <div>
+                    @item.count nabídek
+                </div>
+            </a>
+        }
     </div>
 
 @model Filter
@@ -46,13 +34,13 @@
             <input type="range" class="max" min="0" max="@this.ViewBag.HighestPrice" value="@this.ViewBag.Highest" step="100">
         </div>
         <div class="range-price">
-            <label for="min">Min</label>
-            <input type="number" name="min" value="0" id="lowestPrice">
-            <label for="max">Max</label>
-            <input type="number" name="max" value="@this.ViewBag.HighestPrice" id="highestPrice">
+            <label for="min1">Min</label>
+            <input type="number" name="min1" value="0" id="lowestPrice">
+            <label for="max1">Max</label>
+            <input type="number" name="max1" value="@this.ViewBag.HighestPrice" id="highestPrice">
         </div>
     </div>
-@*     <div class="range">
+    <div class="range">
         <div class="range-slider">
             <span class="range-selected"></span>
         </div>
@@ -62,26 +50,21 @@
         </div>
         <div class="range-price">
             <label for="min">Min</label>
-            <input type="number" name="min" value="0" asp-for="lowestPrice">
+            <input type="number" name="min" value="0" id="areaMin">
             <label for="max">Max</label>
-            <input type="number" name="max" value="@this.ViewBag.Highest" asp-for="highestPrice">
+            <input type="number" name="max" value="@this.ViewBag.Highest" id="areaMax">
         </div>
-    </div> *@
+    </div>
     <div class="dropdown">
         <label for="aspect">Select a region:</label>
         <select id="aspect" name="aspect">
-            <option value="Georgia">Georgia</option>
-            <option value="Czechia">Czechia</option>
-            <option value="Brazil">Brazil</option>
-            <option value="Turkey">Turkey</option>
-            <option value="Slovakia">Slovakia</option>
-            <option value="Greece">Greece</option>
-            <option value="Afghanistan">Afghanistan</option>
-            <option value="Tuvalu">Tuvalu</option>
-            <option value="São Tomé and Príncipe">São Tomé and Príncipe</option>
-            <option value="Cat Land">Cat Land</option>
+            @foreach (string item in this.ViewBag.Regions)
+            {
+                <option value="@item">@item</option>
+            }
         </select>
     </div>
+    <button type="submit" id="submitFilter">POUŽÍT</button>
 </form>
     
 
@@ -180,16 +163,38 @@
         });
     })
 
-    $("#showmore").on('click', function (e) {
+    // $("#showmore").on('click', function (e) {
+    //     e.preventDefault();
+    //     var filter = {
+    //         lowestPrice: $("#lowestPrice").val(),
+    //         highestPrice: $("#highestPrice").val(),
+    //         region: $("#aspect").val(),
+    //         apType: "",
+    //         areaMin: $("#areaMin").val(),
+    //         areaMax: $("#areaMax").val(),
+    //         count: "",
+    //         categoryId: "",
+    //     }
+    //     console.log(filter);
+    //     $.ajax({
+    //         type: "POST",
+    //         url: '/api/offers',
+    //         data: filter,
+    //     }).then(function (data) {
+    //         $("#target").html(data);
+    //     });
+    // })
+    $("#submitFilter").on('click', function (e) {
         e.preventDefault();
         var filter = {
             lowestPrice: $("#lowestPrice").val(),
             highestPrice: $("#highestPrice").val(),
             region: $("#aspect").val(),
             apType: "",
-            area: "",
+            areaMin: $("#areaMin").val(),
+            areaMax: $("#areaMax").val(),
             count: "",
-            generalType: "",
+            categoryId: "",
         }
         console.log(filter);
         $.ajax({

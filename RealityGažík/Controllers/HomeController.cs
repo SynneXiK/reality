@@ -19,13 +19,32 @@ namespace RealityGažík.Controllers
 
         public IActionResult Index(string? filter = null)
         {
+            List<Offer> offers = this.MyContext.Offers.ToList();
+            List<Category> categories = this.MyContext.Categories.ToList();
 
-            this.ViewBag.OffersCount = GetCategories();
+            List<int> categoriesCount = this.GetCategories(offers, categories);
+            for (int i = 0; i < categories.Count; i++)
+            {
+                categories[i].count = categoriesCount[i];
+            }
+
+            
+
+            this.ViewBag.Categories = categories;
+
             this.ViewBag.idUser = this.id;
-            var offers = this.MyContext.Offers.ToList();
             Filter _filter = new Filter();
             _filter.count = 6;
-           
+
+            List<string> regions = new List<string>();
+
+            offers.ForEach(x =>
+            {
+                if(!regions.Contains(x.location))
+                    regions.Add(x.location);
+            });
+            this.ViewBag.Regions = regions;
+
             if (filter != null)
             {
                 byte[] decodedJson = Convert.FromBase64String(filter);
@@ -36,13 +55,14 @@ namespace RealityGažík.Controllers
                 //offers = this.MyContext.Offers.Where(x => x.category == _filter.generalType).ToList();
                 offers = this.MyContext.Offers
                     .Where(x => _filter.lowestPrice <= x.price && x.price <= _filter.highestPrice)
-                    .Where(x => x.category == _filter.generalType)
+                    .Where(x => x.idCategory == _filter.categoryId)
                     .ToList();
             }
 
 
             this.ViewBag.Offers = offers.Take(Math.Max(6, _filter.count)).ToList();
             this.ViewBag.HighestPrice = offers.Max(x => x.price);
+            
 
             List<Favorite> favorites = MyContext.Favorites
             .Where(x => x.idUser == this.id)
@@ -80,9 +100,9 @@ namespace RealityGažík.Controllers
 
             return RedirectToAction("Index", new { filter = filterBase64 });
         }
-        public IActionResult SimpleFilter(char filter, Filter filterGl)
+        public IActionResult SimpleFilter(int filter, Filter filterGl)
         {
-            filterGl.generalType = filter;
+            filterGl.categoryId = filter;
 
             string filterString = JsonSerializer.Serialize(filterGl);
             byte[] jsonData = Encoding.UTF8.GetBytes(filterString);
@@ -90,16 +110,13 @@ namespace RealityGažík.Controllers
 
             return RedirectToAction("Index", new { filter = filterBase64 });
         }
-        public List<int> GetCategories()
+        public List<int> GetCategories(List<Offer> offers, List<Category> categories)
         {
-            var offers = this.MyContext?.Offers.ToList();
-            List<int> categoriesNum = new List<int>
+            List<int> categoriesNum = new List<int>();
+            foreach (Category item in categories)
             {
-                offers!.Where(x => x.category == 'b').Count(),
-                offers!.Where(x => x.category == 'l').Count(),
-                offers!.Where(x => x.category == 'd').Count(),
-                offers!.Where(x => x.category == 'c').Count()
-            };
+                categoriesNum.Add(offers!.Where(x => x.idCategory == item.id).Count());
+            }
             return categoriesNum;
         }
     }

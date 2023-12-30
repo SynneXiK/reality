@@ -105,7 +105,7 @@ namespace RealityGažík.Controllers
             offer.price = model.price;
             offer.location = model.location;
             offer.description = model.description;
-            offer.category = model.category;
+            offer.idCategory = model.idCategory;
 
             MyContext.SaveChanges();
             this.TempData["Message"] = "Changes Saved";

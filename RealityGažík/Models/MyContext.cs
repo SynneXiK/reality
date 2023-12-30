@@ -13,6 +13,7 @@ namespace RealityGažík.Models
         public DbSet<Offer> Offers { get; set; }
         public DbSet<Value> Values { get; set; }
         public DbSet<Message> Messages { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

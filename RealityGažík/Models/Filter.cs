@@ -9,14 +9,11 @@ namespace RealityGažík.Models
         public int highestPrice { get; set; }
         public string region { get; set; }
         public string apType {  get; set; }
-        public int area { get; set; }
+        public int areaMin { get; set; }
+        public int areaMax { get; set; }
         public int count { get; set; }
-        public char generalType { get; set; }
+        public int categoryId { get; set; }
 
-		public string ToJsonString()
-		{
-			return JsonSerializer.Serialize(this);
-		}
 	}
 
 }
