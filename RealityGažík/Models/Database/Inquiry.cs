@@ -8,6 +8,7 @@ namespace RealityGažík.Models.Database
     {
         public int id { get; set; }
         public int idOwner { get; set; }
+        public int idSender { get; set; }
         public int idOffer { get; set; }
         public bool isActive { get; set; }
         public string name { get; set; }

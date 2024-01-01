@@ -62,6 +62,7 @@ namespace RealityGažík.Controllers
 
             this.ViewBag.Offers = offers.Take(Math.Max(6, _filter.count)).ToList();
             this.ViewBag.HighestPrice = offers.Max(x => x.price);
+            this.ViewBag.HighestArea = offers.Max(x => x.area);
             
 
             List<Favorite> favorites = MyContext.Favorites
@@ -75,7 +76,6 @@ namespace RealityGažík.Controllers
 
 
             //var pictureRoutes = this.MyContext.Images.Where(x => x.idOffer == offers.Take(Math.Max(6, count)));
-
             this.ViewBag.filter = filter;
             this.ViewBag.FilterGl = _filter;
             this.ViewBag.count = _filter.count;
@@ -88,10 +88,7 @@ namespace RealityGažík.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        public void favorite()
-        {
 
-        }
         public IActionResult SendFilter(Filter filter)
         {
             string filterString = JsonSerializer.Serialize(filter);

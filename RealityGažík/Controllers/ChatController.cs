@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using RealityGažík.Attributes;
 using RealityGažík.Models;
 using RealityGažík.Models.Database;
 
 namespace RealityGažík.Controllers
 {
+    [UserSecured]
     public class ChatController : ProfilBaseController
     {
         public IActionResult Index()
@@ -17,14 +19,14 @@ namespace RealityGažík.Controllers
                     return true;
                 }
 
-                return x.idOwner == this.id;
+                return x.idOwner == this.id || x.idSender == this.id;
             }).ToList();
 
             this.ViewBag.Inquiries = inquiries;
             List<Message> lastMsg = new List<Message>();
             foreach (Inquiry item in inquiries)
             {
-                lastMsg.Add(MyContext.Messages.Where(x => x.idInquiry == item.id).OrderBy(x => x.time).FirstOrDefault()!);
+                lastMsg.Add(MyContext.Messages.Where(x => x.idInquiry == item.id).OrderByDescending(x => x.time).FirstOrDefault()!);
             }
             this.ViewBag.LastMsg = lastMsg;
 
@@ -37,6 +39,7 @@ namespace RealityGažík.Controllers
 
             List<Message> messages = MyContext.Messages
             .Where(x => x.idInquiry == idInquiry)
+            .OrderBy(x => x.time)
             .ToList();
 
             this.ViewBag.Messages = messages;

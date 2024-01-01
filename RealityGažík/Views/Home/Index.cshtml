@@ -25,6 +25,7 @@
 
 @model Filter
 <form asp-action="SendFilter">
+
     <div class="range">
         <div class="range-slider">
             <span class="range-selected"></span>
@@ -40,6 +41,7 @@
             <input type="number" name="max1" value="@this.ViewBag.HighestPrice" id="highestPrice">
         </div>
     </div>
+
     <div class="range">
         <div class="range-slider">
             <span class="range-selected"></span>
@@ -58,6 +60,7 @@
     <div class="dropdown">
         <label for="aspect">Select a region:</label>
         <select id="aspect" name="aspect">
+            <option value="" selected>All</option>
             @foreach (string item in this.ViewBag.Regions)
             {
                 <option value="@item">@item</option>
@@ -81,7 +84,10 @@
                 <a asp-controller="nabidka" asp-action="index" asp-route-id="@item.id">
                 <img src="Images/podklady/offers/@{@item.id@item.name}.jpg" alt="@item.name picture" />
                     <div class="headline">@item.name</div>
-                    <div class="rent">@item.price,-</div>
+                    <div class="rent">
+                        <div>@item.price,-</div>
+                        <div>@item.area m&sup2;</div>
+                    </div>
                     <div class="subtext">
 
                     @Html.Raw(item.description.Substring(0, Math.Min(300, item.description.Length)))

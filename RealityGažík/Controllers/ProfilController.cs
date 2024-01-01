@@ -5,6 +5,7 @@ using RealityGažík.Models.Database;
 
 namespace RealityGažík.Controllers
 {
+    [UserSecured]
     public class ProfilController : ProfilBaseController
     {
         private readonly ILogger<ProfilController> _logger;
@@ -12,7 +13,6 @@ namespace RealityGažík.Controllers
         {
             _logger = logger;
         }
-        [UserSecured]
         public IActionResult Index()
         {
             Admin admin = MyContext.Admins.Find(id)!;
@@ -21,24 +21,36 @@ namespace RealityGažík.Controllers
 
             return View();
         }
+        public IActionResult Favorite()
+        {
+            List<Favorite> favorites = MyContext.Favorites.Where(x => x.idUser == this.id).ToList();
+            this.ViewBag.Favorites = favorites;
+
+            List<int> offerIds = favorites.Select(x => x.idOffer).ToList();
+            this.ViewBag.Offers = MyContext.Offers.Where(x => offerIds.Contains(x.id)).ToList();
+
+            this.ViewBag.idUser = this.id;
+            return View();
+        }
         [BrokerSecured]
         public IActionResult Offers()
         {
-            this.ViewBag.Offers = MyContext.Offers.Where(x => x.idBroker == this.id || this.role == Roles.admin.ToString());
+            this.ViewBag.Offers = MyContext.Offers.Where(x => x.idBroker == this.id || this.role == Roles.admin.ToString()).ToList();
             return View();
         }
         [AdminSecured]
         public IActionResult Brokers()
         {
-            this.ViewBag.Brokers = MyContext.Admins.Where(x => x.role != Roles.user);
+            this.ViewBag.Brokers = MyContext.Admins.Where(x => x.role != Roles.user).ToList();
             return View();
         }
         [AdminSecured]
         public IActionResult Users()
         {
-            this.ViewBag.Users = MyContext.Admins.Where(x => x.role == Roles.user);
+            this.ViewBag.Users = MyContext.Admins.Where(x => x.role == Roles.user).ToList();
             return View();
         }
+
         [AdminSecured]
         public IActionResult Labels(int count = 0)
         {
@@ -59,7 +71,22 @@ namespace RealityGažík.Controllers
         public IActionResult OfferUpdate(int idOffer)
         {
             this.ViewBag.Offer = MyContext.Offers.FirstOrDefault(x => x.id == idOffer);
+            this.ViewBag.Categories = MyContext.Categories.ToList();
             return View();
+        }
+        [BrokerSecured]
+        public IActionResult OfferCreate()
+        {
+            this.ViewBag.Categories = MyContext.Categories.ToList();
+            return View();
+        }
+        [BrokerSecured]
+        public IActionResult NewOffer(Offer offer)
+        {
+            offer.idBroker = this.id;
+            this.MyContext.Offers.Add(offer);
+            MyContext.SaveChanges();
+            return RedirectToAction("offers");
         }
         [BrokerSecured]
         public IActionResult OfferRemove(int idOffer)
@@ -156,8 +183,6 @@ namespace RealityGažík.Controllers
         {
             Admin user = MyContext.Admins.Find(idUser)!;
             user.role = Roles.broker;
-
-            MyContext.Admins.Add(user);
 
             MyContext.SaveChanges();
             this.TempData["Message"] = "Changes Saved";

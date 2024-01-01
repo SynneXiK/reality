@@ -298,10 +298,16 @@ li > a {
 }
 
 .rent {
-    color: gray;
-    font-weight: bold;
-    font-size: 23px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
+    .rent > * {
+        color: gray;
+        font-weight: bold;
+        font-size: 23px;
+    }
 
 .subtext {
     font-size: 18px;
@@ -353,7 +359,7 @@ li > a {
         border: 1px solid gray;
         background: #c0c0c0;
         border-radius: 5px;
-        padding: 20px 80px;
+        padding: 20px 60px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -424,6 +430,33 @@ li > a {
 .favorite:hover{
     transform: rotate(720deg);
 }
+.nothingYet{
+    height: 500px;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+}
+.newOffer {
+    text-align: right;
+}
+
+.btnNewOffer {
+    text-decoration: none;
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+}
+
+    .btnNewOffer:hover {
+        background-color: #45a049;
+    }
 
 
 

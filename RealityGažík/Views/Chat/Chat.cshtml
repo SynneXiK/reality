@@ -13,7 +13,7 @@
         <div class="@((item.idUser == this.ViewBag.id) ? "usersMsg" : "othersMsg")">
             <div class="singleMessage">
                 <div class="msgADate">
-                    @if (item.text.EndsWith(".gif"))
+                    @if (item.text.EndsWith(".gif") || item.text.EndsWith(".jpg") || item.text.EndsWith(".png"))
                     {
                         <img class="textVal textValImg" src="@item.text" alt="gif">
                     }
@@ -44,5 +44,11 @@
     </form>
 
 <script src="~/js/messageHover.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var messagesChat = document.querySelector('.messagesChat');
+        messagesChat.scrollTop = messagesChat.scrollHeight;
+    });
+</script>
 
 

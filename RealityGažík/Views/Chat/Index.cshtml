@@ -1,9 +1,17 @@
 ﻿<link rel="stylesheet" href="/css/messages.css">
 <partial name="_profile"></partial>
-
+@{
+    List<Inquiry> inquiries = this.ViewBag.Inquiries;
+}
+@if (inquiries.Count <= 0)
+{
+    <div class="txtAlign nothingYet">No chats yet!</div>
+}
+else
+{
     <div class="messages">
 
-        @foreach (Inquiry item in this.ViewBag.Inquiries)
+        @foreach (Inquiry item in inquiries)
         {
             <a class="oneMessage" asp-action="chat" asp-route-idInquiry="@item.id">
                 <div class="pfpAname">
@@ -11,11 +19,13 @@
                     <div class="usernameDiv">@item.name</div>
                 </div>
                 <div class="msgADate">
-                    <div class="textVal">@this.ViewBag.LastMsg[this.ViewBag.Inquiries.IndexOf(item)].text</div>
-                    <div class="textTime">@this.ViewBag.LastMsg[this.ViewBag.Inquiries.IndexOf(item)].time</div>
+                    <div class="textVal">@this.ViewBag.LastMsg[inquiries.IndexOf(item)].text</div>
+                    <div class="textTime">@this.ViewBag.LastMsg[inquiries.IndexOf(item)].time</div>
                 </div>
 
             </a>
         }
 
     </div>
+}
+

@@ -21,6 +21,7 @@ namespace RealityGažík.Controllers
             base.OnActionExecuting(context);
 
            this.ViewBag.Authenticated = this.HttpContext.Session.GetString("login") != null;
+
         }
     }
 }

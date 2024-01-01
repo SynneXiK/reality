@@ -1,0 +1,73 @@
+﻿<link rel="stylesheet" href="/css/tables.css">
+<partial name="_profile"></partial>
+@{
+    List<Favorite> favorites = this.ViewBag.Favorites;
+    List<Offer> offers = this.ViewBag.Offers;
+}
+
+@if(favorites.Count <= 0)
+{
+    <div class="txtAlign nothingYet">No favorites yet!</div>
+}
+else{
+
+    <input type="hidden" id="idUser" value="@ViewBag.idUser">
+    <table>
+        <thead>
+            <tr>
+                <th>Offer</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @for (int i = 0; i < favorites.Count; i++)
+            {
+                <tr>
+
+                    <td>
+                        <a asp-controller="nabidka" asp-action="index" asp-route-idOffer="@favorites[i].idOffer">
+                            @offers[i].name
+                        </a>
+                        <input type="hidden" id="idOffer" value="@offers[i].id">
+                    </td>
+                    <td class="brokerIcon">
+                        <a id="favoriteRemove">
+                            <i class="bi bi-trash brokerIcon"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+
+
+
+
+        </tbody>
+
+    </table>
+}
+<script>
+    const favorites = document.querySelectorAll('#favoriteRemove');
+    favorites.forEach((input) => {
+        input.addEventListener('click', function (e) {
+            e.preventDefault();
+            let item = input.parentElement.parentElement;
+            let offer = item.childNodes[1].childNodes[3];
+
+            var formData = {
+                id: "0",
+                idOffer: $(offer).val(),
+                idUser: $("#idUser").val(),
+            };
+            $.ajax({
+                type: "POST",
+                url: "/api/favorite",
+                data: formData,
+            }).done(function (data) {
+                console.log(data);
+            });
+
+            item.style = "display: none";
+        })
+    })
+</script>

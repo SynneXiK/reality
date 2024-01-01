@@ -1,5 +1,8 @@
-﻿<div class="profilHdr">
+﻿<link rel="stylesheet" href="/css/changeButton.css">
+
+<div class="profilHdr">
     <a asp-controller="profil" asp-action="index" class="home txtAlign">PROFIL</a>
+    <a asp-controller="profil" asp-action="favorite" class="home txtAlign">FAVORITE</a>
     <a asp-controller="chat" asp-action="index" class="home txtAlign">CHAT</a>
     @if (ViewBag.role != "user")
     {
@@ -15,3 +18,7 @@
 
 
 </div>
+@if (TempData["Message"] != null)
+{
+    <div class="change">@TempData["Message"]</div>
+}

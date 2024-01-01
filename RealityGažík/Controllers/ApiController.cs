@@ -53,8 +53,8 @@ namespace RealityGažík.Controllers
                 this.context.Favorites.Remove(favRem);
             }
 
-
             this.context.SaveChanges();
+            this.TempData["Message"] = "Changes saved";
             return Json(true);
         }
     }

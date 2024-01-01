@@ -1,50 +1,54 @@
 ﻿<link rel="stylesheet" href="/css/tables.css">
-<link rel="stylesheet" href="/css/changeButton.css">
 <partial name="_profile"></partial>
-
-@if (TempData["Message"] != null)
-{
-    <div class="change">@TempData["Message"]</div>
+@{
+    List<Admin> brokers = ViewBag.Brokers;
 }
+@if (brokers.Count <= 0)
+{
+    <div class="txtAlign nothingYet">No brokers yet!</div>
+}
+else
+{
 
-<table>
-    <thead>
-        <tr>
-            <th>Username</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Tel</th>
-            <th>Remove</th>
-            <th>Promote</th>
-            <th>Demote</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (Admin item in ViewBag.Brokers)
-        {
+    <table>
+        <thead>
             <tr>
-                <td>@item.username</td>
-                <td>@item.name</td>
-                <td>@item.email</td>
-                <td>@item.tel</td>
-                <td class="brokerIcon">
-                     <a asp-controller="profil" asp-action="brokerRemove" asp-route-idBroker="@item.id">
-                        <i class="bi bi-trash brokerIcon"></i>
-                    </a>
-                </td>
-                <td class="brokerIcon">
-                    <a asp-controller="profil" asp-action="brokerPromote" asp-route-idBroker="@item.id">
-                        <i class="bi bi-award brokerIcon"></i>
-                    </a>
-                </td>
-                <td class="brokerIcon">
-                    <a asp-controller="profil" asp-action="brokerDemote" asp-route-idBroker="@item.id">
-                        <i class="bi bi-arrow-down-circle brokerIcon"></i>
-                    </a>
-                </td>
+                <th>Username</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Tel</th>
+                <th>Remove</th>
+                <th>Promote</th>
+                <th>Demote</th>
             </tr>
+        </thead>
+        <tbody>
+            @foreach (Admin item in brokers)
+            {
+                <tr>
+                    <td>@item.username</td>
+                    <td>@item.name</td>
+                    <td>@item.email</td>
+                    <td>@item.tel</td>
+                    <td class="brokerIcon">
+                        <a asp-controller="profil" asp-action="brokerRemove" asp-route-idBroker="@item.id">
+                            <i class="bi bi-trash brokerIcon"></i>
+                        </a>
+                    </td>
+                    <td class="brokerIcon">
+                        <a asp-controller="profil" asp-action="brokerPromote" asp-route-idBroker="@item.id">
+                            <i class="bi bi-award brokerIcon"></i>
+                        </a>
+                    </td>
+                    <td class="brokerIcon">
+                        <a asp-controller="profil" asp-action="brokerDemote" asp-route-idBroker="@item.id">
+                            <i class="bi bi-arrow-down-circle brokerIcon"></i>
+                        </a>
+                    </td>
+                </tr>
 
-        }
-    </tbody>
+            }
+        </tbody>
 
-</table>
+    </table>
+}

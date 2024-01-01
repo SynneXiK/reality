@@ -1,13 +1,7 @@
 ﻿@model Offer
 
-<link rel="stylesheet" href="/css/changeButton.css">
 <link rel="stylesheet" href="/css/forms.css">
 <partial name="_profile"></partial>
-
-@if (TempData["Message"] != null)
-{
-    <div class="change">@TempData["Message"]</div>
-}
 
 <div>
     <div>
@@ -26,12 +20,22 @@
                 <input asp-for="location" value="@ViewBag.Offer.location" />
             </div>
             <div>
+                <label asp-for="area">Area</label>
+                <input asp-for="area" value="@ViewBag.Offer.area" type="number" min="0" class="areaInput" />
+                <span>m&sup2;</span>
+            </div>
+            <div>
                 <label asp-for="description">Description</label>
                 <input asp-for="description" value="@ViewBag.Offer.description" />
             </div>
             <div>
                 <label asp-for="idCategory">Category</label>
-                <input asp-for="idCategory" value="@ViewBag.Offer.idCategory" />
+                <select asp-for="idCategory">
+                    @foreach (Category item in this.ViewBag.Categories)
+                    {
+                        <option value="@item.id" selected="@(item.id == ViewBag.Offer.idCategory)">@item.name</option>
+                    }
+                </select>
             </div>
 
 

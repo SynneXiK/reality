@@ -1,45 +1,61 @@
 ﻿<link rel="stylesheet" href="/css/tables.css">
-<link rel="stylesheet" href="/css/changeButton.css">
 <partial name="_profile"></partial>
-
-@if (TempData["Message"] != null)
-{
-    <div class="change">@TempData["Message"]</div>
+@{
+    List<Offer> offers = ViewBag.Offers;
 }
+@if (offers.Count <= 0)
+{
+    <div class="nothingYet">
+        <div class="txtAlign">No offers yet!</div>
+        <a asp-controller="profil" asp-action="offercreate" class="btnNewOffer">
+            <i class="bi bi-plus-circle"></i> Make One!
+        </a>
+    </div>
 
-<table>
-    <thead>
-        <tr>
-            <th>Username</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Tel</th>
-            <th>Edit</th>
-            <th>Remove</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (Offer item in ViewBag.Offers)
-        {
+}
+else
+{
+    <div class="newOffer">
+        <a asp-controller="profil" asp-action="offercreate" class="btnNewOffer">
+                <i class="bi bi-plus-circle"></i> New Offer
+        </a>
+    </div>
+    <table>
+        <thead>
             <tr>
-                <td>@item.name</td>
-                <td>@item.price</td>
-                <td>@item.location</td>
-                <td>@item.description.Substring(0, Math.Min(20, item.description.Length))</td>
-                <td class="brokerIcon">
-                    <a asp-controller="profil" asp-action="offerUpdate" asp-route-idOffer="@item.id">
-                        <i class="bi bi-pencil-square brokerIcon"></i>
-                    </a>
-                </td>
-                <td class="brokerIcon">
-                    <a asp-controller="profil" asp-action="offerRemove" asp-route-idOffer="@item.id">
-                        <i class="bi bi-trash brokerIcon"></i>
-                    </a>
-                </td>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Location</th>
+                <th>Area</th>
+                <th>Description</th>
+                <th>Edit</th>
+                <th>Remove</th>
             </tr>
+        </thead>
+        <tbody>
+            @foreach (Offer item in offers)
+            {
+                <tr>
+                    <td>@item.name</td>
+                    <td>@item.price</td>
+                    <td>@item.location</td>
+                    <td>@item.area m&sup2;</td>
+                    <td>@item.description.Substring(0, Math.Min(20, item.description.Length))</td>
+                    <td class="brokerIcon">
+                        <a asp-controller="profil" asp-action="offerUpdate" asp-route-idOffer="@item.id">
+                            <i class="bi bi-pencil-square brokerIcon"></i>
+                        </a>
+                    </td>
+                    <td class="brokerIcon">
+                        <a asp-controller="profil" asp-action="offerRemove" asp-route-idOffer="@item.id">
+                            <i class="bi bi-trash brokerIcon"></i>
+                        </a>
+                    </td>
+                </tr>
 
-        }
-    </tbody>
+            }
+        </tbody>
 
-</table>
+    </table>
 
+}

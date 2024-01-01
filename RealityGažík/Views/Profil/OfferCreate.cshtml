@@ -1,0 +1,46 @@
+﻿@model Offer
+
+<link rel="stylesheet" href="/css/forms.css">
+<partial name="_profile"></partial>
+
+<div>
+    <div>
+        <form asp-action="NewOffer" method="post">
+            <div>
+                <label asp-for="name">Name</label>
+                <input asp-for="name" required/>
+            </div>
+            <div>
+                <label asp-for="price">Price</label>
+                <input asp-for="price" required />
+            </div>
+            <div>
+                <label asp-for="location">Location</label>
+                <input asp-for="location" required />
+            </div>
+            <div>
+                <label asp-for="area">Area</label>
+                <input asp-for="area" type="number" min="0" class="areaInput" required />
+                <span>m&sup2;</span>
+            </div>
+            <div>
+                <label asp-for="description">Description</label>
+                <input asp-for="description" required />
+            </div>
+            <div>
+                <label asp-for="idCategory">Category</label>
+                <select asp-for="idCategory" required>
+                    @foreach (Category item in this.ViewBag.Categories)
+                    {
+                        <option value="@item.id" >@item.name</option>
+                    }
+                </select>
+            </div>
+
+
+            <div>
+                <button type="submit" class="btnSave">CREATE</button>
+            </div>
+        </form>
+    </div>
+</div>
