@@ -3,11 +3,6 @@
     flex-direction: column;
 }
 
-.mainImg {
-    width: 100%;
-    height: 700px;
-}
-
 .imageSlider {
     margin-top: 10px;
     display: grid;
@@ -16,16 +11,6 @@
     gap: 10px;
 }
 
-    .imageSlider > a > img, .nextPhotos {
-        width: 100%;
-        height: 100px;
-        transition: 350ms;
-    }
-
-        .imageSlider > a > img:hover {
-            transform: scale(1.01);
-            border: 2px solid orange;
-        }
 
 .nextPhotos {
     position: relative;

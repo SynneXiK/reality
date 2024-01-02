@@ -1,4 +1,6 @@
 ﻿<input type="hidden" id="idUser" value="@ViewBag.idUser">
+<input type="hidden" id="count" value="@ViewBag.count">
+<input type="hidden" id="categoryid" value="@ViewBag.categoryid">
 <div class="Search">
         <img src="Images/podklady/slide-01-1920x640.jpg" alt="Slide" width="1920" height="640">
         <div>
@@ -27,36 +29,38 @@
 <form asp-action="SendFilter">
 
     <div class="range">
-        <div class="range-slider">
-            <span class="range-selected"></span>
-        </div>
-        <div class="range-input">
-            <input type="range" class="min" min="0" max="@this.ViewBag.HighestPrice" value="0" step="100">
-            <input type="range" class="max" min="0" max="@this.ViewBag.HighestPrice" value="@this.ViewBag.Highest" step="100">
-        </div>
-        <div class="range-price">
-            <label for="min1">Min</label>
-            <input type="number" name="min1" value="0" id="lowestPrice">
-            <label for="max1">Max</label>
-            <input type="number" name="max1" value="@this.ViewBag.HighestPrice" id="highestPrice">
-        </div>
+    <div class="range-slider">
+        <span class="range-selected"></span>
     </div>
+    <div class="range-input">
+        <input type="range" class="min" min="0" max="@ViewBag.HighestPrice" value="0" step="100">
+        <input type="range" class="max" min="0" max="@ViewBag.HighestPrice" value="@ViewBag.Highest" step="100">
+    </div>
+    <div class="range-price">
+        <label for="min1">Min</label>
+        <input type="number" name="min1" value="0" id="lowestPrice">
+        <label for="max1">Max</label>
+        <input type="number" name="max1" value="@ViewBag.HighestPrice" id="highestPrice">
+    </div>
+</div>
 
-    <div class="range">
-        <div class="range-slider">
-            <span class="range-selected"></span>
-        </div>
-        <div class="range-input">
-            <input type="range" class="min" min="0" max="@this.ViewBag.Highest" value="0" step="100">
-            <input type="range" class="max" min="0" max="@this.ViewBag.Highest" value="@this.ViewBag.Highest" step="100">
-        </div>
-        <div class="range-price">
-            <label for="min">Min</label>
-            <input type="number" name="min" value="0" id="areaMin">
-            <label for="max">Max</label>
-            <input type="number" name="max" value="@this.ViewBag.Highest" id="areaMax">
-        </div>
+<div class="range">
+    <div class="range-slider">
+        <span class="range-selected"></span>
     </div>
+    <div class="range-input">
+        <input type="range" class="min" min="0" max="@ViewBag.HighestArea" value="0" step="5">
+        <input type="range" class="max" min="0" max="@ViewBag.HighestArea" value="@ViewBag.HighestArea" step="5">
+    </div>
+    <div class="range-price">
+        <label for="min">Min</label>
+        <input type="number" name="min" value="0" id="areaMin">
+        <label for="max">Max</label>
+        <input type="number" name="max" value="@ViewBag.HighestArea" id="areaMax">
+    </div>
+</div>
+
+
     <div class="dropdown">
         <label for="aspect">Select a region:</label>
         <select id="aspect" name="aspect">
@@ -75,14 +79,19 @@
 <h2 class="txtAlign">Naše nabídka</h2>
     <hr>
     <div class="nabidkaMenu">
+        @{
+            List<Favorite> favoriteOffers = this.ViewBag.favorites;
+            List<Image> mainImages = this.ViewBag.mainImages;
+        }
         @foreach (Offer item in ViewBag.Offers)
         {
-            List<Favorite> favoriteOffers = this.ViewBag.favorites;
-            bool isFavorite = favoriteOffers.Where(x => x.idOffer == item.id).FirstOrDefault() != null; 
+            
+            bool isFavorite = favoriteOffers.Where(x => x.idOffer == item.id).FirstOrDefault() != null;
+            Image mainImage = mainImages[ViewBag.Offers.IndexOf(item)];
 
             <div class="nabidka">
                 <a asp-controller="nabidka" asp-action="index" asp-route-id="@item.id">
-                <img src="Images/podklady/offers/@{@item.id@item.name}.jpg" alt="@item.name picture" />
+                <img src="Images/podklady/offers/@item.id/@mainImage.id.@{@mainImage.fileExtension}" alt="@item.name picture" />
                     <div class="headline">@item.name</div>
                     <div class="rent">
                         <div>@item.price,-</div>
@@ -196,11 +205,10 @@
             lowestPrice: $("#lowestPrice").val(),
             highestPrice: $("#highestPrice").val(),
             region: $("#aspect").val(),
-            apType: "",
             areaMin: $("#areaMin").val(),
             areaMax: $("#areaMax").val(),
-            count: "",
-            categoryId: "",
+            count: $("#count").val(),
+            categoryId: $("#categoryid").val(),
         }
         console.log(filter);
         $.ajax({

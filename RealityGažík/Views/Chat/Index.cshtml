@@ -13,9 +13,20 @@ else
 
         @foreach (Inquiry item in inquiries)
         {
+            
+                List<Admin> admins = this.ViewBag.Admins;
+                Admin user = admins.Where(x =>
+                {
+                if (this.ViewBag.Id == item.idOwner)
+                        return x.id == item.idSender;
+                    else
+                        return x.id == item.idOwner;
+                }
+                ).FirstOrDefault()!;
+            
             <a class="oneMessage" asp-action="chat" asp-route-idInquiry="@item.id">
                 <div class="pfpAname">
-                    <img src="/Images/podklady/admins/jirkakral.jpg" alt="pfp">
+                    <img src="/Images/podklady/admins/@user.username.@user.pfp" alt="pfp">
                     <div class="usernameDiv">@item.name</div>
                 </div>
                 <div class="msgADate">

@@ -5,7 +5,7 @@
 
 <div>
     <div>
-        <form asp-action="Save" method="post">
+        <form asp-action="SaveUser" method="post" enctype="multipart/form-data">
             <input asp-for="id" type="hidden" />
             <div>
                 <label asp-for="username">Username</label>
@@ -23,7 +23,10 @@
                 <label asp-for="tel" >Telephone</label>
                 <input asp-for="tel" value="@ViewBag.User.tel" type="tel" />
             </div>
-            
+            <div>
+                <label for="imageFile">Images</label>
+                <input type="file" id="imageFile" name="imageFile" accept=".jpg, .jpeg, .png" />
+            </div>
 
             <div>
                 <button type="submit" class="btnSave">SAVE</button>

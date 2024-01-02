@@ -5,7 +5,7 @@
 
 <div>
     <div>
-        <form asp-action="SaveOffer" method="post">
+        <form asp-action="SaveOffer" method="post" enctype="multipart/form-data">
             <input hidden asp-for="id" value="@ViewBag.Offer.id" />
             <div>
                 <label asp-for="name">Name</label>
@@ -37,7 +37,25 @@
                     }
                 </select>
             </div>
-
+            <div>
+                <label for="imageFiles">Images</label>
+                <input type="file" id="imageFiles" name="imageFiles" accept=".jpg, .jpeg, .png" multiple />
+            </div>
+            <div>
+                <h3>Existing Images</h3>
+                <div class="allexistingImages">
+                    @foreach (Image image in ViewBag.Images)
+                    {
+                        <div class="existingimgBox">
+                            <img src="~/Images/podklady/offers/@ViewBag.Offer.id/@image.id.@{@image.fileExtension}" alt="Offer Image" class="existingImg" />
+                            <input type="checkbox" name="imagesToRemove" value="@image.id" />
+                            <label>Remove</label>
+                            <input type="radio" id="mainImageId" name="mainImageId" value="@image.id" @(image.id == this.ViewBag.MainId ? "checked" : "") />
+                            <label>Set as Main</label>
+                        </div>
+                    }
+                </div>
+            </div>
 
             <div>
                 <button type="submit" class="btnSave">SAVE</button>

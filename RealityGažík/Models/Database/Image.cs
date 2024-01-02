@@ -6,8 +6,9 @@ namespace RealityGažík.Models.Database
 
     public class Image
     {
-        public int id {  get; set; }
+        public string id {  get; set; }
         public int idOffer { get; set; }
-        public string path { get; set; }
+        public string fileExtension { get; set; }
+        public bool main { get; set; }
     }
 }

@@ -38,7 +38,7 @@ namespace RealityGažík.Controllers
         {
             return View();
         }
-        public IActionResult UploadRegister(Admin user)
+        public IActionResult UploadRegister(Admin user, IFormFile imageFile)
         {
             if (MyContext.Admins.Any(a => a.username == user.username))
             {
@@ -48,7 +48,25 @@ namespace RealityGažík.Controllers
 
             user.password = BCrypt.Net.BCrypt.HashPassword(user.password);
             user.role = Roles.user;
-            user.pfp = "jirkakral.jpg";
+
+            if (imageFile != null && imageFile.Length > 0)
+            {
+                string fileExtension = Path.GetExtension(imageFile.FileName);
+                string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Images", "podklady", "admins", user.username + fileExtension);
+                string directoryPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Images", "podklady", "admins", user.username);
+                user.pfp = fileExtension.Substring(1, fileExtension.Count() - 1);
+
+                if (!Directory.Exists(directoryPath))
+                {
+                    Directory.CreateDirectory(directoryPath);
+                }
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    imageFile.CopyTo(stream);
+                }
+            }
+
             MyContext.Admins.Add(user);
 
             MyContext.SaveChanges();

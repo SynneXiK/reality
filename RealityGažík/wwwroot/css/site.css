@@ -457,6 +457,41 @@ li > a {
     .btnNewOffer:hover {
         background-color: #45a049;
     }
+.mainImg {
+    width: 100%;
+    height: 700px;
+}
+.imageSliderImage, .nextPhotos {
+    width: 100%;
+    height: 100px;
+    transition: 350ms;
+}
+
+.imageSliderImage:hover {
+    transform: scale(1.01);
+    border: 2px solid orange;
+}
+.allexistingImages {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.existingimgBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.existingimgBox input{
+    height: 16px;
+    margin-bottom: 2px;
+}
+.existingImg {
+    width: 100%;
+    height: 80px;
+}
 
 
 

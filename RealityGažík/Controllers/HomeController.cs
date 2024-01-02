@@ -60,7 +60,7 @@ namespace RealityGažík.Controllers
             }
 
 
-            this.ViewBag.Offers = offers.Take(Math.Max(6, _filter.count)).ToList();
+            this.ViewBag.Offers = offers/*.OrderByDescending(x => x.id)*/.Take(Math.Max(6, _filter.count)).ToList();
             this.ViewBag.HighestPrice = offers.Max(x => x.price);
             this.ViewBag.HighestArea = offers.Max(x => x.area);
             
@@ -76,9 +76,23 @@ namespace RealityGažík.Controllers
 
 
             //var pictureRoutes = this.MyContext.Images.Where(x => x.idOffer == offers.Take(Math.Max(6, count)));
+            List<int> offerIds = offers.Select(o => o.id).ToList();
+            //this.ViewBag.mainImages = this.MyContext.Images
+            //    .Where(x => offerIds.Contains(x.idOffer) && x.main == true)
+            //    .GroupBy(x => x.idOffer)
+            //    .ToList();
+
+            var mainImagesQuery = this.MyContext.Images
+                .Where(x => offerIds.Contains(x.idOffer) && x.main)
+                .GroupBy(x => x.idOffer)
+                .Select(g => g.FirstOrDefault());
+
+            this.ViewBag.mainImages = mainImagesQuery.ToList();
+
             this.ViewBag.filter = filter;
             this.ViewBag.FilterGl = _filter;
             this.ViewBag.count = _filter.count;
+            this.ViewBag.categoryid = _filter.categoryId;
 
             return View();
         }

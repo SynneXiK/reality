@@ -1,19 +1,33 @@
-﻿<div class="main">
+﻿@{
+    List<Image> Images = this.ViewBag.Images;
+    Image mainImg = Images.Where(x => x.main).FirstOrDefault()!;
+    Images.Remove(mainImg);
+    Offer offer = this.ViewBag.Offer;
+}
+
+<div class="main">
     <a href="gallery">
-        <img src="/Images/podklady/offers/@{@ViewBag.Offer.id@ViewBag.Offer.name}.jpg" class="mainImg" alt="Detailed picture">
+        <img class="mainImg" src="~/Images/podklady/offers/@offer.id/@mainImg.id.@{
+            @mainImg.fileExtension;
+            }" alt="@offer.name picture" />
     </a>
 
     <div class="imageSlider">
         @for (int i = 0; i < Math.Min(ViewBag.Images.Count - 1,5); i++)
         {
             <a href="gallery">
-                <img src="/Images/podklady/detailObrazky/@ViewBag.Images[i].path" alt="Detailed picture">
+                <img class="imageSliderImage" src="~/Images/podklady/offers/@offer.id/@Images[i].id.@{
+                @Images[i].fileExtension
+}" alt="Detailed picture">
             </a>
         }
         @if(ViewBag.Images.Count > 6)
         {
             <a href="gallery" class="nextPhotos">
-                <img src="/Images/podklady\detailObrazky\@ViewBag.Images[ViewBag.Images.Count - 1].path" class="nextPhotos" alt="Detailed picture">
+                @{Image lastImg = Images[Images.Count - 1];}
+                <img class="imageSliderImage" src="~/Images/podklady/offers/@offer.id/@lastImg.id.@{
+                @lastImg.fileExtension
+}" class="nextPhotos" alt="Detailed picture">
                 <div>dalších @(ViewBag.Images.Count - 5) <br> fotek</div>
             </a>
         }
@@ -80,7 +94,7 @@
     <div class="contactSeller">
         <div class="contactSellerHeader txtAlign">Kontaktujte prodejce</div>
         <div class="person">
-            <img src="~/Images/podklady/admins/@ViewBag.Seller.pfp" height="88px" width="88px">
+            <img src="~/Images/podklady/admins/@ViewBag.Seller.username@ViewBag.Seller.pfp" height="88px" width="88px">
             <div class="personinfo">
                 <div class="personName">@ViewBag.Seller.name</div>
                 <a class="email" href="mailto:@ViewBag.Seller.email">

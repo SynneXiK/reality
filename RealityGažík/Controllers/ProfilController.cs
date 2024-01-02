@@ -2,6 +2,7 @@
 using RealityGažík.Attributes;
 using RealityGažík.Models;
 using RealityGažík.Models.Database;
+using System;
 
 namespace RealityGažík.Controllers
 {
@@ -72,6 +73,9 @@ namespace RealityGažík.Controllers
         {
             this.ViewBag.Offer = MyContext.Offers.FirstOrDefault(x => x.id == idOffer);
             this.ViewBag.Categories = MyContext.Categories.ToList();
+            List<Image> images = MyContext.Images.Where(x => x.idOffer == idOffer).ToList();
+            this.ViewBag.Images = images;
+            this.ViewBag.MainId = images.Where(x => x.main).FirstOrDefault()!.id;
             return View();
         }
         [BrokerSecured]
@@ -81,10 +85,42 @@ namespace RealityGažík.Controllers
             return View();
         }
         [BrokerSecured]
-        public IActionResult NewOffer(Offer offer)
+        public IActionResult NewOffer(Offer offer, List<IFormFile> imageFiles)
         {
             offer.idBroker = this.id;
             this.MyContext.Offers.Add(offer);
+            MyContext.SaveChanges();
+
+            foreach (var file in imageFiles)
+            {
+                if (file != null && file.Length > 0)
+                {
+                    string uniqueFileName = Guid.NewGuid().ToString();
+                    string fileExtension = Path.GetExtension(file.FileName);
+                    string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Images", "podklady", "offers", offer.id.ToString(), uniqueFileName + fileExtension);
+
+                    string directoryPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Images", "podklady", "offers", offer.id.ToString());
+                    if (!Directory.Exists(directoryPath))
+                    {
+                        Directory.CreateDirectory(directoryPath);
+                    }
+
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        file.CopyTo(stream);
+                    }
+
+                    MyContext.Images.Add(new Image
+                    {
+                        id = uniqueFileName,
+                        idOffer = offer.id,
+                        fileExtension = fileExtension.Substring(1, fileExtension.Count() - 1)
+                    });
+                }
+            }
+            
+            MyContext.SaveChanges();
+            MyContext.Images.Where(x => x.idOffer == offer.id).FirstOrDefault()!.main = true;
             MyContext.SaveChanges();
             return RedirectToAction("offers");
         }
@@ -106,9 +142,34 @@ namespace RealityGažík.Controllers
         }
         [HttpPost]
         [BrokerSecured]
-        public IActionResult Save(Admin model)
+        public IActionResult SaveUser(Admin model, IFormFile imageFile)
         {
             Admin userToUpdate = MyContext.Admins.Find(id)!;
+
+            if (imageFile != null && imageFile.Length > 0)
+            {
+                string fileExtension = Path.GetExtension(imageFile.FileName);
+                string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Images", "podklady", "admins", model.username + fileExtension);
+                model.pfp = fileExtension.Substring(1, fileExtension.Count() - 1);
+
+                if(userToUpdate.name != model.name)
+                {
+                    string OlddirectoryPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Images", "podklady", "admins", userToUpdate.username + "." + userToUpdate.pfp);
+                    System.IO.File.Delete(OlddirectoryPath);
+                }
+
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    imageFile.CopyTo(stream);
+                }
+            }
+            else if(userToUpdate.username != model.username && imageFile == null)
+            {
+                model.pfp = userToUpdate.pfp;
+                string OlddirectoryPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Images", "podklady", "admins", userToUpdate.username + "." + userToUpdate.pfp);
+                string newdirectoryPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Images", "podklady", "admins", model.username + "." + model.pfp);
+                System.IO.File.Move(OlddirectoryPath, newdirectoryPath);
+            }
 
             if (userToUpdate != null)
             {
@@ -116,6 +177,7 @@ namespace RealityGažík.Controllers
                 userToUpdate.name = model.name;
                 userToUpdate.tel = model.tel;
                 userToUpdate.username = model.username;
+                userToUpdate.pfp = model.pfp;
             }
 
             MyContext.SaveChanges();
@@ -124,7 +186,7 @@ namespace RealityGažík.Controllers
         }
         [HttpPost]
         [BrokerSecured]
-        public IActionResult SaveOffer(Offer model)
+        public IActionResult SaveOffer(Offer model, List<IFormFile> imageFiles, List<string> imagesToRemove, string mainImageId)
         {
             Offer offer = MyContext.Offers.Find(model.id)!;
 
@@ -133,6 +195,54 @@ namespace RealityGažík.Controllers
             offer.location = model.location;
             offer.description = model.description;
             offer.idCategory = model.idCategory;
+
+            foreach (var file in imageFiles)
+            {
+                if (file != null && file.Length > 0)
+                {
+                    string uniqueFileName = Guid.NewGuid().ToString();
+                    string fileExtension = Path.GetExtension(file.FileName);
+                    string filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Images", "podklady", "offers", offer.id.ToString(), uniqueFileName + fileExtension);
+
+                    string directoryPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Images", "podklady", "offers", offer.id.ToString());
+                    if (!Directory.Exists(directoryPath))
+                    {
+                        Directory.CreateDirectory(directoryPath);
+                    }
+
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        file.CopyTo(stream);
+                    }
+
+                    MyContext.Images.Add(new Image
+                    {
+                        id = uniqueFileName,
+                        idOffer = offer.id,
+                        fileExtension = fileExtension.Substring(1, fileExtension.Count() - 1),
+                        main = false
+                    });
+                }
+            }
+
+            foreach (var imageId in imagesToRemove)
+            {
+                var imageToRemove = MyContext.Images.Find(imageId);
+                if (imageToRemove != null)
+                {
+                    MyContext.Images.Remove(imageToRemove);
+
+                    System.IO.File.Delete(Path.Combine("wwwroot", "Images","podklady", "offers", offer.id.ToString(), imageToRemove.id + "." + imageToRemove.fileExtension));
+                }
+            }
+
+
+            MyContext.SaveChanges();
+
+            List <Image> imagesToRemake = MyContext.Images.Where(x => x.idOffer == model.id).ToList();
+            Image mainImg = MyContext.Images.Find(mainImageId)!;
+            imagesToRemake.ForEach(x => x.main = false);
+            mainImg.main = true;
 
             MyContext.SaveChanges();
             this.TempData["Message"] = "Changes Saved";

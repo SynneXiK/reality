@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 
 namespace RealityGažík.Models.Database
 {
@@ -8,8 +9,11 @@ namespace RealityGažík.Models.Database
     {
         public int id { get; set; }
         public string role { get; set; }
+        [Required(ErrorMessage = "Username is required.")]
         public string username { get; set; }
+        [Required(ErrorMessage = "Password is required.")]
         public string password { get; set; }
+        [Required(ErrorMessage = "Name is required.")]
         public string name { get; set; }
         public string email { get; set; }
         public string tel { get; set; }

@@ -201,11 +201,6 @@ hr[b-oif3aw3v30] {
     flex-direction: column;
 }
 
-.mainImg[b-3l2k8m8utp] {
-    width: 100%;
-    height: 700px;
-}
-
 .imageSlider[b-3l2k8m8utp] {
     margin-top: 10px;
     display: grid;
@@ -214,16 +209,6 @@ hr[b-oif3aw3v30] {
     gap: 10px;
 }
 
-    .imageSlider > a > img[b-3l2k8m8utp], .nextPhotos[b-3l2k8m8utp] {
-        width: 100%;
-        height: 100px;
-        transition: 350ms;
-    }
-
-        .imageSlider > a > img:hover[b-3l2k8m8utp] {
-            transform: scale(1.01);
-            border: 2px solid orange;
-        }
 
 .nextPhotos[b-3l2k8m8utp] {
     position: relative;

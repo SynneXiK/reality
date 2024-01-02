@@ -23,6 +23,10 @@ namespace RealityGažík.Controllers
             }).ToList();
 
             this.ViewBag.Inquiries = inquiries;
+            List<Admin> admins = MyContext.Admins.ToList();
+            //.Where(x => inquiries.Any(inquiry => inquiry.idSender == x.id || inquiry.idOwner == x.id))
+            this.ViewBag.Admins = admins;
+            this.ViewBag.Id = this.id;
             List<Message> lastMsg = new List<Message>();
             foreach (Inquiry item in inquiries)
             {
@@ -41,13 +45,16 @@ namespace RealityGažík.Controllers
             .Where(x => x.idInquiry == idInquiry)
             .OrderBy(x => x.time)
             .ToList();
+            
 
             this.ViewBag.Messages = messages;
             this.ViewBag.id = this.id;
 
-            Admin user = MyContext.Admins.Find(ofr.idBroker)!;
+            int searchId = (this.id == ofr.idBroker) ? inq.idSender : inq.idOwner;
 
-            this.ViewBag.name = user.name;
+            Admin user = MyContext.Admins.Find(searchId)!;
+
+            this.ViewBag.user = user;
             this.ViewBag.offername = ofr.name;
 
             return View();

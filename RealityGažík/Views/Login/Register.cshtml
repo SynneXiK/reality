@@ -9,7 +9,7 @@
 
 <div class="logincontainer">
     <div>
-        <form asp-action="UploadRegister">
+        <form asp-action="UploadRegister" enctype="multipart/form-data">
             <div>
                 <label asp-for="username">Username</label>
                 <input asp-for="username" />
@@ -35,11 +35,11 @@
                 <input asp-for="tel" type="tel" />
             </div>
 
- @*           <div>
-                <label asp-for="pfp">pfp</label>
-                <input asp-for="pfp" />
+            <div>
+                <label for="imageFile">Images</label>
+                <input type="file" id="imageFile" name="imageFile" accept=".jpg, .jpeg, .png" />
             </div>
-*@
+
             <div>
                 <button type="submit">Register</button>
             </div>

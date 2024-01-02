@@ -5,7 +5,7 @@
 
 <div>
     <div>
-        <form asp-action="NewOffer" method="post">
+        <form asp-action="NewOffer" method="post" enctype="multipart/form-data">
             <div>
                 <label asp-for="name">Name</label>
                 <input asp-for="name" required/>
@@ -35,6 +35,10 @@
                         <option value="@item.id" >@item.name</option>
                     }
                 </select>
+            </div>
+            <div>
+                <label for="imageFiles">Images</label>
+                <input type="file" id="imageFiles" name="imageFiles" accept=".jpg, .jpeg, .png" multiple />
             </div>
 
 
