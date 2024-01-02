@@ -6,7 +6,7 @@ using System.Text.Json;
 
 namespace RealityGažík.Controllers
 {
-    public class ApiController : Controller
+    public class ApiController : BaseController
     {
         MyContext context = new MyContext();
         public IActionResult Test()
@@ -17,21 +17,71 @@ namespace RealityGažík.Controllers
         {
             var offers = this.context.Offers.ToList();
 
+            List<string> regions = new List<string>();
+
+            offers.ForEach(x =>
+            {
+                if (!regions.Contains(x.location))
+                    regions.Add(x.location);
+            });
+            this.ViewBag.Regions = regions;
+
             Filter _filter = new Filter();
 
-            if (filter != null)
-            {
                 _filter = filter;
-                _filter.count += 6;
-                //offers = this.context.Offers.Where(x => x.category == _filter.generalType).ToList();
-                offers = this.context.Offers
-                    .Where(x => _filter.lowestPrice <= x.price && x.price <= _filter.highestPrice)
-                    .Where(x => _filter.categoryId == 0 || x.idCategory == _filter.categoryId)
+               // _filter.count += 6;
+
+            offers = offers
+                .Where(x => _filter.lowestPrice <= x.price && x.price <= _filter.highestPrice)
+                .Where(x => _filter.areaMin <= x.area && x.area <= _filter.areaMax)
+                .ToList();
+            if(_filter.region != "All")
+            {
+                offers = offers
+                         .Where(x => x.location == _filter.region)
+                         .ToList();
+            }
+            if(_filter.categoryId != 0)
+            {
+                offers = offers
+                    .Where(x => x.idCategory == _filter.categoryId)
                     .ToList();
             }
+            this.ViewBag.idUser = this.id;
+
+            if(offers.Count  > 0)
+            {
+                this.ViewBag.Offers = offers.Take(Math.Max(6, _filter.count)).ToList();
+                this.ViewBag.HighestPrice = offers.Max(x => x.price);
+                this.ViewBag.HighestArea = offers.Max(x => x.area);
+
+                List<int> offerIds = offers.Select(o => o.id).ToList();
+
+                var mainImagesQuery = this.MyContext.Images
+                    .Where(x => offerIds.Contains(x.idOffer) && x.main)
+                    .GroupBy(x => x.idOffer)
+                    .Select(g => g.FirstOrDefault());
+
+                this.ViewBag.mainImages = mainImagesQuery.ToList();
+            }
+
+
+
+            List<Favorite> favorites = MyContext.Favorites
+            .Where(x => x.idUser == this.id)
+            .ToList();
+            this.ViewBag.favorites = favorites.Take(Math.Max(6, _filter.count)).ToList();
+
+            this.ViewBag.filter = filter;
+            this.ViewBag.FilterGl = _filter;
+            this.ViewBag.count = _filter.count;
+            this.ViewBag.categoryid = _filter.categoryId;
+
+
+
             HttpContext.Session.SetString("filter", JsonSerializer.Serialize(_filter)); //tojsonstring vlastni metoda
 
-            return Json(offers);
+            return PartialView("_Offers");
             //return Json(this.context.Messages.ToList());
         }
 

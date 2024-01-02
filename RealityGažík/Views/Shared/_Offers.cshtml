@@ -1,0 +1,48 @@
+﻿@{
+    Layout = "_LayoutAjax";
+    List<Favorite> favoriteOffers = this.ViewBag.favorites;
+    List<Image> mainImages = this.ViewBag.mainImages;
+}
+@foreach (Offer item in ViewBag.Offers)
+{
+
+    bool isFavorite = favoriteOffers.Where(x => x.idOffer == item.id).FirstOrDefault() != null;
+    Image mainImage = mainImages[ViewBag.Offers.IndexOf(item)];
+
+    <div class="nabidka">
+        <a asp-controller="nabidka" asp-action="index" asp-route-id="@item.id">
+            <img src="Images/podklady/offers/@item.id/@mainImage.id.@{
+            @mainImage.fileExtension
+}" alt="@item.name picture" />
+            <div class="headline">@item.name</div>
+            <div class="rent">
+                <div>@item.price,-</div>
+                <div>@item.area m&sup2;</div>
+            </div>
+            <div class="subtext">
+
+                @Html.Raw(item.description.Substring(0, Math.Min(300, item.description.Length)))
+
+            </div>
+
+        </a>
+        @if (this.ViewBag.Authenticated)
+        {
+            <a class="favorite" id="favoriteSubmit">
+                <input type="hidden" id="idOffer" value="@item.id">
+                @if (!isFavorite)
+                {
+                    <i class="bi bi-star"></i>
+                }
+                else
+                {
+                    <i class="bi bi-star-fill"></i>
+                }
+
+            </a>
+        }
+
+
+    </div>
+}
+

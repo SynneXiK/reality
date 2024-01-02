@@ -25,8 +25,6 @@
         }
     </div>
 
-@model Filter
-<form asp-action="SendFilter">
 
     <div class="range">
     <div class="range-slider">
@@ -64,7 +62,7 @@
     <div class="dropdown">
         <label for="aspect">Select a region:</label>
         <select id="aspect" name="aspect">
-            <option value="" selected>All</option>
+            <option value="All" selected>All</option>
             @foreach (string item in this.ViewBag.Regions)
             {
                 <option value="@item">@item</option>
@@ -72,7 +70,7 @@
         </select>
     </div>
     <button type="submit" id="submitFilter">POUŽÍT</button>
-</form>
+
     
 
 
@@ -131,7 +129,7 @@
 *@        <button type="button" class="zobrazitvse searchbutton txtAlign" id="showmore">ZOBRAZIT DALŠÍ</button>
     }
 
-    <button type="button" id="test">test</button>
+@*     <button type="button" id="test">test</button> *@
     <div id="target"></div>
     <h2 class="txtAlign zkZakazniku">Zkušenosti zákazníků</h2>
     <hr>
@@ -168,15 +166,15 @@
          });
      })*/
 
-    $("#test").on('click', function (e) {
-        console.log("test works");
-        e.preventDefault();
-        $.ajax({
-            url: '/api/html'
-        }).then(function (data) {
-            $("#target").html(data);
-        });
-    })
+    // $("#test").on('click', function (e) {
+    //     console.log("test works");
+    //     e.preventDefault();
+    //     $.ajax({
+    //         url: '/api/html'
+    //     }).success(function (data) {
+    //         $(".nabidkaMenu").html(data);
+    //     });
+    // })
 
     // $("#showmore").on('click', function (e) {
     //     e.preventDefault();
@@ -210,13 +208,43 @@
             count: $("#count").val(),
             categoryId: $("#categoryid").val(),
         }
+
+            const base64 = btoa(new URLSearchParams(filter).toString());
+            window.history.pushState(null, null, '?filter=' + base64);
+
         console.log(filter);
         $.ajax({
             type: "POST",
             url: '/api/offers',
             data: filter,
         }).then(function (data) {
-            $("#target").html(data);
+            console.log(data);
+            $(".nabidkaMenu").html(data);
+        });
+    })
+    $("#showmore").on('click', function (e) {
+        e.preventDefault();
+        var filter = {
+            lowestPrice: $("#lowestPrice").val(),
+            highestPrice: $("#highestPrice").val(),
+            region: $("#aspect").val(),
+            areaMin: $("#areaMin").val(),
+            areaMax: $("#areaMax").val(),
+            count: $("#count").val() + 6,
+            categoryId: $("#categoryid").val(),
+        }
+
+        const base64 = btoa(new URLSearchParams(filter).toString());
+        window.history.pushState(null, null, '?filter=' + base64);
+
+        console.log(filter);
+        $.ajax({
+            type: "POST",
+            url: '/api/offers',
+            data: filter,
+        }).then(function (data) {
+            console.log(data);
+            $(".nabidkaMenu").html(data);
         });
     })
 

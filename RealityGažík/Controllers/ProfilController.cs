@@ -318,5 +318,20 @@ namespace RealityGažík.Controllers
             this.TempData["Message"] = "Changes Saved";
             return RedirectToAction("labels");
         }
+        [AdminSecured]
+        public IActionResult LabelsDelete(List<Label> models)
+        {
+            foreach (var label in models)
+            {
+                Label existingLabel = MyContext.Labels.Find(label.id)!;
+
+                MyContext.Labels.Remove(existingLabel);
+
+            }
+
+            MyContext.SaveChanges();
+            this.TempData["Message"] = "Changes Saved";
+            return RedirectToAction("labels");
+        }
     }
 }

@@ -24,13 +24,17 @@ namespace RealityGažík.Controllers
             var offer = this.MyContext.Offers.Find(id);
             this.ViewBag.Offer = offer;
 
-            var values = this.MyContext.Values.Where(x => x.idOffer == id).ToList();
+            var values = this.MyContext.Values
+                .Where(x => x.idOffer == id)
+                .OrderBy(x => x.idLabel)
+                .ToList();
             this.ViewBag.Values = values;
 
             var labelIds = values.Select(y => y.idLabel).ToList();
 
             var Labels = this.MyContext.Labels
                 .Where(x => labelIds.Contains(x.id))
+                .OrderBy(x => x.id)
                 .ToList();
             this.ViewBag.Labels = Labels;
 
