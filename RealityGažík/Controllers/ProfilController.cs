@@ -114,7 +114,8 @@ namespace RealityGažík.Controllers
                     {
                         id = uniqueFileName,
                         idOffer = offer.id,
-                        fileExtension = fileExtension.Substring(1, fileExtension.Count() - 1)
+                        fileExtension = fileExtension.Substring(1, fileExtension.Count() - 1),
+                        main = false
                     });
                 }
             }

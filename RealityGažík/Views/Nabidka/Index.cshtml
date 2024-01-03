@@ -13,15 +13,13 @@
     </a>
 
     <div class="imageSlider">
-        @for (int i = 0; i < Math.Min(ViewBag.Images.Count - 1,5); i++)
+        @for (int i = 0; i < Math.Min(ViewBag.Images.Count,5); i++)
         {
             <a href="gallery">
-                <img class="imageSliderImage" src="~/Images/podklady/offers/@offer.id/@Images[i].id.@{
-                @Images[i].fileExtension
-}" alt="Detailed picture">
+                <img class="imageSliderImage" src="~/Images/podklady/offers/@offer.id/@Images[i].id.@{@Images[i].fileExtension}" alt="Detailed picture">
             </a>
         }
-        @if(ViewBag.Images.Count > 6)
+        @if(ViewBag.Images.Count > 5)
         {
             <a href="gallery" class="nextPhotos">
                 @{Image lastImg = Images[Images.Count - 1];}
@@ -94,7 +92,7 @@
     <div class="contactSeller">
         <div class="contactSellerHeader txtAlign">Kontaktujte prodejce</div>
         <div class="person">
-            <img src="~/Images/podklady/admins/@ViewBag.Seller.username@ViewBag.Seller.pfp" height="88px" width="88px">
+            <img src="~/Images/podklady/admins/@ViewBag.Seller.username.@ViewBag.Seller.pfp" height="88px" width="88px">
             <div class="personinfo">
                 <div class="personName">@ViewBag.Seller.name</div>
                 <a class="email" href="mailto:@ViewBag.Seller.email">

@@ -38,7 +38,7 @@ namespace RealityGažík.Controllers
                 .ToList();
             this.ViewBag.Labels = Labels;
 
-            this.ViewBag.Seller = this.MyContext.Admins.FirstOrDefault(x => x.id == offer.idBroker);
+            this.ViewBag.Seller = this.MyContext.Admins.FirstOrDefault(x => x.id == offer!.idBroker);
 
             this.ViewBag.Images = this.MyContext.Images.Where(x => x.idOffer == id).ToList();
 

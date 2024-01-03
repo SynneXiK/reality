@@ -1144,3 +1144,9 @@ C:\Users\uzivatel\Desktop\reality\RealityGažík\bin\Debug\net6.0\Microsoft.Owin
 C:\Users\uzivatel\Desktop\reality\RealityGažík\bin\Debug\net6.0\Microsoft.Owin.Host.SystemWeb.dll
 C:\Users\uzivatel\Desktop\reality\RealityGažík\bin\Debug\net6.0\Microsoft.Owin.Security.dll
 C:\Users\uzivatel\Desktop\reality\RealityGažík\bin\Debug\net6.0\Owin.dll
+C:\Users\gazikmarcel\Desktop\reality\RealityGažík\bin\Debug\net6.0\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\gazikmarcel\Desktop\reality\RealityGažík\bin\Debug\net6.0\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\gazikmarcel\Desktop\reality\RealityGažík\bin\Debug\net6.0\Microsoft.Owin.dll
+C:\Users\gazikmarcel\Desktop\reality\RealityGažík\bin\Debug\net6.0\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\gazikmarcel\Desktop\reality\RealityGažík\bin\Debug\net6.0\Microsoft.Owin.Security.dll
+C:\Users\gazikmarcel\Desktop\reality\RealityGažík\bin\Debug\net6.0\Owin.dll

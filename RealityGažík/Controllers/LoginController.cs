@@ -56,11 +56,6 @@ namespace RealityGažík.Controllers
                 string directoryPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "Images", "podklady", "admins", user.username);
                 user.pfp = fileExtension.Substring(1, fileExtension.Count() - 1);
 
-                if (!Directory.Exists(directoryPath))
-                {
-                    Directory.CreateDirectory(directoryPath);
-                }
-
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
                     imageFile.CopyTo(stream);
