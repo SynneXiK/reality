@@ -56,6 +56,16 @@
                     }
                 </div>
             </div>
+            <div>
+                <h4>Labels</h4>
+                <select id="labelSelect">
+                    @foreach (Label item in this.ViewBag.Labels)
+                    {
+                        <option value="@item.id">@item.label</option>
+                    }
+                </select>
+                
+            </div>
 
             <div>
                 <button type="submit" class="btnSave">SAVE</button>
@@ -63,3 +73,6 @@
         </form>
     </div>
 </div>
+<script>
+    const labelSelect = document.querySelector('#labelSelect');
+</script>

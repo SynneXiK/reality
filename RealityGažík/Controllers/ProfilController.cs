@@ -76,12 +76,17 @@ namespace RealityGažík.Controllers
             List<Image> images = MyContext.Images.Where(x => x.idOffer == idOffer).ToList();
             this.ViewBag.Images = images;
             this.ViewBag.MainId = images.Where(x => x.main).FirstOrDefault()!.id;
+            this.ViewBag.Labels = MyContext.Labels.ToList();
+            this.ViewBag.Values = MyContext.Values.Where(x => x.idOffer == idOffer).ToList();
+
             return View();
         }
         [BrokerSecured]
         public IActionResult OfferCreate()
         {
             this.ViewBag.Categories = MyContext.Categories.ToList();
+            this.ViewBag.Labels = MyContext.Labels.ToList();
+
             return View();
         }
         [BrokerSecured]
@@ -187,7 +192,7 @@ namespace RealityGažík.Controllers
         }
         [HttpPost]
         [BrokerSecured]
-        public IActionResult SaveOffer(Offer model, List<IFormFile> imageFiles, List<string> imagesToRemove, string mainImageId)
+        public IActionResult SaveOffer(Offer model, List<IFormFile> imageFiles, List<string> imagesToRemove, string mainImageId, List<Value> values)
         {
             Offer offer = MyContext.Offers.Find(model.id)!;
 
