@@ -84,14 +84,14 @@ hr {
     text-align: right;
     font-size: 20px;
 }
-.range-slider {
+.range-slider, .range-sliderArea {
     height: 5px;
     position: relative;
     background-color: #e1e9f6;
     border-radius: 2px;
 }
 
-.range-selected {
+.range-selected, .range-selectedArea {
     height: 100%;
     left: 0;
     right: 0;
@@ -99,11 +99,11 @@ hr {
     border-radius: 5px;
     background-color: #1b53c0;
 }
-.range-input {
+.range-input, .range-inputArea {
     position: relative;
 }
 
-    .range-input input {
+    .range-input input, .range-inputArea input {
         position: absolute;
         width: 100%;
         height: 5px;
@@ -114,7 +114,8 @@ hr {
         -moz-appearance: none;
     }
 
-        .range-input input::-webkit-slider-thumb {
+        .range-input input::-webkit-slider-thumb,
+        .range-inputArea input::-webkit-slider-thumb {
             height: 20px;
             width: 20px;
             border-radius: 50%;
@@ -125,7 +126,9 @@ hr {
         }
 
         .range-input input::-webkit-slider-thumb,
-        .range-input input::-moz-range-thumb {
+        .range-input input::-moz-range-thumb,
+        .range-inputArea input::-webkit-slider-thumb,
+        .range-inputArea input::-moz-range-thumb {
             height: 15px;
             width: 15px;
             border-radius: 50%;
@@ -135,7 +138,7 @@ hr {
             -moz-appearance: none;
             -webkit-appearance: none;
         }
-.range-price {
+.range-price, .range-area {
     margin: 30px 0;
     width: 100%;
     display: flex;
@@ -143,20 +146,20 @@ hr {
     align-items: center;
 }
 
-.range-price label {
-    margin-right: 5px;
-}
-
-.range-price input {
-    width: 40px;
-    padding: 5px;
-}
-
-    .range-price input:first-of-type {
-        margin-right: 15px;
+    .range-price label, .range-area label {
+        margin-right: 5px;
     }
+
+    .range-price input, .range-area input {
+        width: 40px;
+        padding: 5px;
+    }
+
+        .range-price input:first-of-type, .range-area input:first-of-type {
+            margin-right: 15px;
+        }
 .dropdown {
-    position: relative;
+    display: flex;
     display: inline-block;
 }
 
@@ -165,7 +168,7 @@ hr {
     border: 1px solid #ccc;
     border-radius: 4px;
     cursor: pointer;
-    width: 200px; /* Adjust the width as needed */
+    width: 200px; 
 }
 
 .dropdown-options {
@@ -192,4 +195,26 @@ hr {
 
     .dropdown-option:hover {
         background-color: #f0f0f0;
+    }
+.filterArea {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    border: 1px solid #252525;
+    border-radius: 10px;
+}
+.range-price > input, .range-area > input{
+    width: 50%;
+}
+.buttonsBox {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+    .buttonsBox button {
+        flex: 7;
+        font-weight: bold;
+        border: 1px solid black;
     }

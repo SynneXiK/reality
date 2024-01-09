@@ -6,7 +6,7 @@
 }
 
 <div class="main">
-    <a href="gallery">
+    <a>
         <img class="mainImg" src="~/Images/podklady/offers/@offer.id/@mainImg.id.@{
             @mainImg.fileExtension;
             }" alt="@offer.name picture" />
@@ -15,13 +15,13 @@
     <div class="imageSlider">
         @for (int i = 0; i < Math.Min(ViewBag.Images.Count,5); i++)
         {
-            <a href="gallery">
+            <a>
                 <img class="imageSliderImage" src="~/Images/podklady/offers/@offer.id/@Images[i].id.@{@Images[i].fileExtension}" alt="Detailed picture">
             </a>
         }
         @if(ViewBag.Images.Count > 5)
         {
-            <a href="gallery" class="nextPhotos">
+            <a class="nextPhotos">
                 @{Image lastImg = Images[Images.Count - 1];}
                 <img class="imageSliderImage" src="~/Images/podklady/offers/@offer.id/@lastImg.id.@{
                 @lastImg.fileExtension
@@ -145,3 +145,4 @@
     </div>
 </div>
 <iframe src="https://frame.mapy.cz/s/lotopofuvu" width="400" height="280" frameborder="0" class="map"></iframe>
+<script src="/js/gallery.js"></script>

@@ -24,11 +24,11 @@ namespace RealityGažík.Controllers
         }
         public IActionResult Favorite()
         {
-            List<Favorite> favorites = MyContext.Favorites.Where(x => x.idUser == this.id).ToList();
+            List<Favorite> favorites = MyContext.Favorites.Where(x => x.idUser == this.id).OrderBy(x => x.idOffer).ToList();
             this.ViewBag.Favorites = favorites;
 
             List<int> offerIds = favorites.Select(x => x.idOffer).ToList();
-            this.ViewBag.Offers = MyContext.Offers.Where(x => offerIds.Contains(x.id)).ToList();
+            this.ViewBag.Offers = MyContext.Offers.Where(x => offerIds.Contains(x.id)).OrderBy(x => x.id).ToList();
 
             this.ViewBag.idUser = this.id;
             return View();
@@ -76,8 +76,11 @@ namespace RealityGažík.Controllers
             List<Image> images = MyContext.Images.Where(x => x.idOffer == idOffer).ToList();
             this.ViewBag.Images = images;
             this.ViewBag.MainId = images.Where(x => x.main).FirstOrDefault()!.id;
-            this.ViewBag.Labels = MyContext.Labels.ToList();
-            this.ViewBag.Values = MyContext.Values.Where(x => x.idOffer == idOffer).ToList();
+            this.ViewBag.Labels = MyContext.Labels.OrderBy(x => x.id).ToList();
+            this.ViewBag.Values = MyContext.Values
+                .Where(x => x.idOffer == idOffer)
+                .OrderBy(x => x.idLabel)
+                .ToList();
 
             return View();
         }
@@ -199,6 +202,7 @@ namespace RealityGažík.Controllers
             offer.name = model.name;
             offer.price = model.price;
             offer.location = model.location;
+            offer.area = model.area;
             offer.description = model.description;
             offer.idCategory = model.idCategory;
 

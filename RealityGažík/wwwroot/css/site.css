@@ -262,6 +262,21 @@ li > a {
     row-gap: 56px;
     margin: 50px 10%;
 }
+    .nabidkaMenu > h1 {
+        text-align: center;
+        grid-column: 1 / 4;
+    }
+.buttonsBox a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    background: buttonface;
+    border: 1px solid black;
+    flex: 3;
+}
 .nabidka {
     position: relative;
 }
@@ -492,6 +507,25 @@ li > a {
     width: 100%;
     height: 80px;
 }
+
+.formOffer {
+    display: flex;
+    flex-direction: row;
+}
+.leftSide {
+    flex: 6;
+}
+.labelsInputs > div{
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+}
+.labelsInputs > div > span {
+    flex: 3;
+}
+    .labelsInputs > div > input {
+        flex: 7;
+    }
 
 
 

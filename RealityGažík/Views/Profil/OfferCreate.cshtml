@@ -5,46 +5,69 @@
 
 <div>
     <div>
-        <form asp-action="NewOffer" method="post" enctype="multipart/form-data">
-            <div>
-                <label asp-for="name">Name</label>
-                <input asp-for="name" required/>
+        <form asp-action="NewOffer" method="post" enctype="multipart/form-data" class="formOffer">
+            <div class="leftSide">
+                <div>
+                    <label asp-for="name">Name</label>
+                    <input asp-for="name" required />
+                </div>
+                <div>
+                    <label asp-for="price">Price</label>
+                    <input asp-for="price" required />
+                </div>
+                <div>
+                    <label asp-for="location">Location</label>
+                    <input asp-for="location" required />
+                </div>
+                <div>
+                    <label asp-for="area">Area</label>
+                    <input asp-for="area" type="number" min="0" class="areaInput" required />
+                    <span>m&sup2;</span>
+                </div>
+                <div>
+                    <label asp-for="description">Description</label>
+                    <input asp-for="description" required />
+                </div>
+                <div>
+                    <label asp-for="idCategory">Category</label>
+                    <select asp-for="idCategory" required>
+                        @foreach (Category item in this.ViewBag.Categories)
+                        {
+                            <option value="@item.id">@item.name</option>
+                        }
+                    </select>
+                </div>
             </div>
-            <div>
-                <label asp-for="price">Price</label>
-                <input asp-for="price" required />
+            <div class="rightSide">
+                <div>
+                    <label for="imageFiles">Images</label>
+                    <input type="file" id="imageFiles" name="imageFiles" accept=".jpg, .jpeg, .png" multiple />
+                </div>
+
+                <div>
+                    <h4>Labels</h4>
+                    <select id="labelSelect">
+                        @foreach (Label item in this.ViewBag.Labels)
+                        {
+                            <option value="@item.id">@item.label</option>
+                        }
+                    </select>
+                    <div class="labelsInputs">
+
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" class="btnSave">CREATE</button>
+                </div>
             </div>
-            <div>
-                <label asp-for="location">Location</label>
-                <input asp-for="location" required />
-            </div>
-            <div>
-                <label asp-for="area">Area</label>
-                <input asp-for="area" type="number" min="0" class="areaInput" required />
-                <span>m&sup2;</span>
-            </div>
-            <div>
-                <label asp-for="description">Description</label>
-                <input asp-for="description" required />
-            </div>
-            <div>
-                <label asp-for="idCategory">Category</label>
-                <select asp-for="idCategory" required>
-                    @foreach (Category item in this.ViewBag.Categories)
-                    {
-                        <option value="@item.id" >@item.name</option>
-                    }
-                </select>
-            </div>
-            <div>
-                <label for="imageFiles">Images</label>
-                <input type="file" id="imageFiles" name="imageFiles" accept=".jpg, .jpeg, .png" multiple />
-            </div>
+            
 
 
-            <div>
-                <button type="submit" class="btnSave">CREATE</button>
-            </div>
+
+
         </form>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="/js/labelsInput.js"></script>

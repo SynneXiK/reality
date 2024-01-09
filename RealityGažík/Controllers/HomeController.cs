@@ -17,7 +17,7 @@ namespace RealityGažík.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index(string? filter = null)
+        public IActionResult Index(string? filter = null, int idCat = 0)
         {
             List<Offer> offers = this.MyContext.Offers.ToList();
             List<Category> categories = this.MyContext.Categories.ToList();
@@ -28,13 +28,13 @@ namespace RealityGažík.Controllers
                 categories[i].count = categoriesCount[i];
             }
 
-            
+
+            Filter _filter = new Filter();
+            _filter.count = 6;
 
             this.ViewBag.Categories = categories;
 
             this.ViewBag.idUser = this.id;
-            Filter _filter = new Filter();
-            _filter.count = 6;
 
             List<string> regions = new List<string>();
 
@@ -50,15 +50,54 @@ namespace RealityGažík.Controllers
                 byte[] decodedJson = Convert.FromBase64String(filter);
                 string jsonString = Encoding.UTF8.GetString(decodedJson);
                 _filter = JsonSerializer.Deserialize<Filter>(jsonString)!;
-                _filter.highestPrice = 12966699;
-                _filter.lowestPrice = 0;
-                //offers = this.MyContext.Offers.Where(x => x.category == _filter.generalType).ToList();
-                offers = this.MyContext.Offers
-                    .Where(x => _filter.lowestPrice <= x.price && x.price <= _filter.highestPrice)
-                    .Where(x => x.idCategory == _filter.categoryId)
-                    .ToList();
-            }
 
+                offers = offers
+                    .Where(x => _filter.lowestPrice <= x.price && x.price <= _filter.highestPrice)
+                    .Where(x => _filter.areaMin <= x.area && x.area <= _filter.areaMax)
+                    .ToList();
+
+                if (_filter.region != "All")
+                {
+                    offers = offers
+                             .Where(x => x.location == _filter.region)
+                             .ToList();
+                }
+                if (_filter.categoryId != 0)
+                {
+                    offers = offers
+                        .Where(x => x.idCategory == _filter.categoryId)
+                        .ToList();
+                }
+            }
+            else if(this.HttpContext.Session.GetString("filter") != null)
+            {
+                string jsonString = this.HttpContext.Session.GetString("filter")!;
+                _filter = JsonSerializer.Deserialize<Filter>(jsonString)!;
+
+                offers = offers
+                    .Where(x => _filter.lowestPrice <= x.price && x.price <= _filter.highestPrice)
+                    .Where(x => _filter.areaMin <= x.area && x.area <= _filter.areaMax)
+                    .ToList();
+
+                if (_filter.region != "All")
+                {
+                    offers = offers
+                             .Where(x => x.location == _filter.region)
+                             .ToList();
+                }
+                if (_filter.categoryId != 0)
+                {
+                    offers = offers
+                        .Where(x => x.idCategory == _filter.categoryId)
+                        .ToList();
+                }
+
+
+            }
+            if(idCat != 0)
+            {
+                offers = offers.Where(x => x.idCategory == idCat).ToList();
+            }
 
             this.ViewBag.Offers = offers/*.OrderByDescending(x => x.id)*/.Take(Math.Max(6, _filter.count)).ToList();
             this.ViewBag.HighestPrice = offers.Max(x => x.price);
@@ -70,17 +109,7 @@ namespace RealityGažík.Controllers
             .ToList();
             this.ViewBag.favorites = favorites.Take(Math.Max(6, _filter.count)).ToList();
 
-            //var labelArea = this.MyContext.Labels.Where(x => x.label.Contains("plocha")).FirstOrDefault();
-            //List<Value> valuesArea = this.MyContext.Values.Where(x => x.idLabel == labelArea!.id).ToList();
-            //this.ViewBag.HighestArea = offers.Where(x => valuesArea.ForEach(v => v.idOffer == x.id));
-
-
-            //var pictureRoutes = this.MyContext.Images.Where(x => x.idOffer == offers.Take(Math.Max(6, count)));
             List<int> offerIds = offers.Select(o => o.id).ToList();
-            //this.ViewBag.mainImages = this.MyContext.Images
-            //    .Where(x => offerIds.Contains(x.idOffer) && x.main == true)
-            //    .GroupBy(x => x.idOffer)
-            //    .ToList();
 
             var mainImagesQuery = this.MyContext.Images
                 .Where(x => offerIds.Contains(x.idOffer) && x.main)
@@ -102,24 +131,11 @@ namespace RealityGažík.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
-        public IActionResult SendFilter(Filter filter)
+        public IActionResult RemoveFilter()
         {
-            string filterString = JsonSerializer.Serialize(filter);
-            byte[] jsonData = Encoding.UTF8.GetBytes(filterString);
-            string filterBase64 = Convert.ToBase64String(jsonData);
+            this.HttpContext.Session.Remove("filter");
 
-            return RedirectToAction("Index", new { filter = filterBase64 });
-        }
-        public IActionResult SimpleFilter(int filter, Filter filterGl)
-        {
-            filterGl.categoryId = filter;
-
-            string filterString = JsonSerializer.Serialize(filterGl);
-            byte[] jsonData = Encoding.UTF8.GetBytes(filterString);
-            string filterBase64 = Convert.ToBase64String(jsonData);
-
-            return RedirectToAction("Index", new { filter = filterBase64 });
+            return RedirectToAction("Index");
         }
         public List<int> GetCategories(List<Offer> offers, List<Category> categories)
         {

@@ -15,7 +15,7 @@
     <div class="typy">
         @foreach (Category item in this.ViewBag.Categories)
         {
-            <a asp-action="simplefilter" asp-route-filter="@item.id" asp-route-filterGl="@this.ViewBag.filterGl">
+            <a asp-action="Index" asp-route-idCat="@item.id">
                 <img src="@item.imgRoute" alt="@item.name" width="442" height="280">
                 <label>@item.name</label>
                 <div>
@@ -24,39 +24,39 @@
             </a>
         }
     </div>
-
+<div class="filterArea">
 
     <div class="range">
-    <div class="range-slider">
-        <span class="range-selected"></span>
+        <div class="range-slider">
+            <span class="range-selected"></span>
+        </div>
+        <div class="range-input">
+            <input type="range" class="min" min="0" max="@ViewBag.HighestPrice" value="0" step="100">
+            <input type="range" class="max" min="0" max="@ViewBag.HighestPrice" value="@ViewBag.HighestPrice" step="100">
+        </div>
+        <div class="range-price">
+            <label for="min1">Min</label>
+            <input type="number" name="min1" value="0" id="lowestPrice" min="0">
+            <label for="max1">Max</label>
+            <input type="number" name="max1" value="@ViewBag.HighestPrice" id="highestPrice" min="0">
+        </div>
     </div>
-    <div class="range-input">
-        <input type="range" class="min" min="0" max="@ViewBag.HighestPrice" value="0" step="100">
-        <input type="range" class="max" min="0" max="@ViewBag.HighestPrice" value="@ViewBag.Highest" step="100">
-    </div>
-    <div class="range-price">
-        <label for="min1">Min</label>
-        <input type="number" name="min1" value="0" id="lowestPrice">
-        <label for="max1">Max</label>
-        <input type="number" name="max1" value="@ViewBag.HighestPrice" id="highestPrice">
-    </div>
-</div>
 
-<div class="range">
-    <div class="range-slider">
-        <span class="range-selected"></span>
+    <div class="rangeArea">
+        <div class="range-sliderArea">
+            <span class="range-selectedArea"></span>
+        </div>
+        <div class="range-inputArea">
+            <input type="range" class="minArea" min="0" max="@ViewBag.HighestArea" value="0" step="5">
+            <input type="range" class="maxArea" min="0" max="@ViewBag.HighestArea" value="@ViewBag.HighestArea" step="5">
+        </div>
+        <div class="range-area">
+            <label for="min">Min</label>
+            <input type="number" name="min" value="0" id="areaMin" min="0">
+            <label for="max">Max</label>
+            <input type="number" name="max" value="@ViewBag.HighestArea" id="areaMax" min="0">
+        </div>
     </div>
-    <div class="range-input">
-        <input type="range" class="min" min="0" max="@ViewBag.HighestArea" value="0" step="5">
-        <input type="range" class="max" min="0" max="@ViewBag.HighestArea" value="@ViewBag.HighestArea" step="5">
-    </div>
-    <div class="range-price">
-        <label for="min">Min</label>
-        <input type="number" name="min" value="0" id="areaMin">
-        <label for="max">Max</label>
-        <input type="number" name="max" value="@ViewBag.HighestArea" id="areaMax">
-    </div>
-</div>
 
 
     <div class="dropdown">
@@ -69,8 +69,12 @@
             }
         </select>
     </div>
-    <button type="submit" id="submitFilter">POUŽÍT</button>
+    <div class="buttonsBox">
+        <button type="submit" id="submitFilter">POUŽÍT</button>
+        <a asp-action="removeFilter">RESET</a>
+    </div>
 
+</div>
 
     
 
@@ -90,7 +94,7 @@
 
             <div class="nabidka">
                 <a asp-controller="nabidka" asp-action="index" asp-route-id="@item.id">
-                <img src="Images/podklady/offers/@item.id/@mainImage.id.@{@mainImage.fileExtension}" alt="@item.name picture" />
+                <img src="Images/podklady/offers/@item.id/@mainImage.id.@{@mainImage.fileExtension}" alt="@item.name picture" height="280" width="440"/>
                     <div class="headline">@item.name</div>
                     <div class="rent">
                         <div>@item.price,-</div>
@@ -157,125 +161,5 @@
 
 <script src="js/indexSlider.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>
-     /*$("#test").on('click', function(e) {
-         e.preventDefault();
-         $.ajax({
-             url: '/api/test'
-         }).then(function(data) {
-            console.log(data);
-         });
-     })*/
-
-     //$("#test").on('click', function (e) {
-     //    console.log("test works");
-     //    e.preventDefault();
-     //    $.ajax({
-     //        url: '/api/html'
-     //    }).success(function (data) {
-     //        $(".nabidkaMenu").html(data);
-     //    });
-     //})
-
-    // $("#showmore").on('click', function (e) {
-    //     e.preventDefault();
-    //     var filter = {
-    //         lowestPrice: $("#lowestPrice").val(),
-    //         highestPrice: $("#highestPrice").val(),
-    //         region: $("#aspect").val(),
-    //         apType: "",
-    //         areaMin: $("#areaMin").val(),
-    //         areaMax: $("#areaMax").val(),
-    //         count: "",
-    //         categoryId: "",
-    //     }
-    //     console.log(filter);
-    //     $.ajax({
-    //         type: "POST",
-    //         url: '/api/offers',
-    //         data: filter,
-    //     }).then(function (data) {
-    //         $("#target").html(data);
-    //     });
-    // })
-    $("#submitFilter").on('click', function (e) {
-        e.preventDefault();
-        var filter = {
-            lowestPrice: $("#lowestPrice").val(),
-            highestPrice: $("#highestPrice").val(),
-            region: $("#aspect").val(),
-            areaMin: $("#areaMin").val(),
-            areaMax: $("#areaMax").val(),
-            count: $("#count").val(),
-            categoryId: $("#categoryid").val(),
-        }
-
-            const base64 = btoa(new URLSearchParams(filter).toString());
-            window.history.pushState(null, null, '?filter=' + base64);
-
-        console.log(filter);
-        $.ajax({
-            type: "POST",
-            url: '/api/offers',
-            data: filter,
-        }).then(function (data) {
-            console.log(data);
-            $(".nabidkaMenu").html(data);
-        });
-    })
-    $("#showmore").on('click', function (e) {
-        e.preventDefault();
-        var newCount = parseInt($("#count").val(), 10) + 6;
-        var filter = {
-            lowestPrice: $("#lowestPrice").val(),
-            highestPrice: $("#highestPrice").val(),
-            region: $("#aspect").val(),
-            areaMin: $("#areaMin").val(),
-            areaMax: $("#areaMax").val(),
-            count: newCount,
-            categoryId: $("#categoryid").val(),
-        }
-
-        const base64 = btoa(new URLSearchParams(filter).toString());
-        window.history.pushState(null, null, '?filter=' + base64);
-
-        console.log(filter);
-        $.ajax({
-            type: "POST",
-            url: '/api/offers',
-            data: filter,
-        }).then(function (data) {
-            console.log(data);
-            $(".nabidkaMenu").html(data);
-        });
-    })
-
-
-    const favorites = document.querySelectorAll('#favoriteSubmit');
-    favorites.forEach((input) => {
-        input.addEventListener('click', function (e) {
-            e.preventDefault();
-            let offer = input.childNodes[1];
-            console.log(input);
-
-
-            var formData = {
-                id: "0",
-                idOffer: $(offer).val(),
-                idUser: $("#idUser").val(),
-            };
-            $.ajax({
-                type: "POST",
-                url: "/api/favorite",
-                data: formData,
-            }).done(function (data) {
-                console.log(data);
-            });
-
-            let star = input.childNodes[3];
-            star.classList.toggle('bi-star-fill');
-            star.classList.toggle('bi-star');
-        })
-    })
-
-</script>
+<script src="/js/sendFilter.js"></script>
+<script src="/js/sendFavorite.js"></script>

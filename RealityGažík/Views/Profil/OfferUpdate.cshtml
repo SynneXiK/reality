@@ -2,77 +2,96 @@
 
 <link rel="stylesheet" href="/css/forms.css">
 <partial name="_profile"></partial>
-
+@{
+    List<Label> labels = this.ViewBag.Labels;
+    List<Value> values = this.ViewBag.Values;
+}
 <div>
     <div>
-        <form asp-action="SaveOffer" method="post" enctype="multipart/form-data">
-            <input hidden asp-for="id" value="@ViewBag.Offer.id" />
-            <div>
-                <label asp-for="name">Name</label>
-                <input asp-for="name" value="@ViewBag.Offer.name" />
-            </div>
-            <div>
-                <label asp-for="price">Price</label>
-                <input asp-for="price" value="@ViewBag.Offer.price" />
-            </div>
-            <div>
-                <label asp-for="location" >Location</label>
-                <input asp-for="location" value="@ViewBag.Offer.location" />
-            </div>
-            <div>
-                <label asp-for="area">Area</label>
-                <input asp-for="area" value="@ViewBag.Offer.area" type="number" min="0" class="areaInput" />
-                <span>m&sup2;</span>
-            </div>
-            <div>
-                <label asp-for="description">Description</label>
-                <input asp-for="description" value="@ViewBag.Offer.description" />
-            </div>
-            <div>
-                <label asp-for="idCategory">Category</label>
-                <select asp-for="idCategory">
-                    @foreach (Category item in this.ViewBag.Categories)
-                    {
-                        <option value="@item.id" selected="@(item.id == ViewBag.Offer.idCategory)">@item.name</option>
-                    }
-                </select>
-            </div>
-            <div>
-                <label for="imageFiles">Images</label>
-                <input type="file" id="imageFiles" name="imageFiles" accept=".jpg, .jpeg, .png" multiple />
-            </div>
-            <div>
-                <h3>Existing Images</h3>
-                <div class="allexistingImages">
-                    @foreach (Image image in ViewBag.Images)
-                    {
-                        <div class="existingimgBox">
-                            <img src="~/Images/podklady/offers/@ViewBag.Offer.id/@image.id.@{@image.fileExtension}" alt="Offer Image" class="existingImg" />
-                            <input type="checkbox" name="imagesToRemove" value="@image.id" />
-                            <label>Remove</label>
-                            <input type="radio" id="mainImageId" name="mainImageId" value="@image.id" @(image.id == this.ViewBag.MainId ? "checked" : "") />
-                            <label>Set as Main</label>
-                        </div>
-                    }
+        <form asp-action="SaveOffer" method="post" enctype="multipart/form-data" class="formOffer">
+            <input hidden asp-for="id" value="@ViewBag.Offer.id" id="offerid"/>
+            <div class="leftSide">
+                <div>
+                    <label asp-for="name">Name</label>
+                    <input asp-for="name" value="@ViewBag.Offer.name" />
+                </div>
+                <div>
+                    <label asp-for="price">Price</label>
+                    <input asp-for="price" value="@ViewBag.Offer.price" />
+                </div>
+                <div>
+                    <label asp-for="location">Location</label>
+                    <input asp-for="location" value="@ViewBag.Offer.location" />
+                </div>
+                <div>
+                    <label asp-for="area">Area</label>
+                    <input asp-for="area" value="@ViewBag.Offer.area" type="number" min="0" class="areaInput" />
+                    <span>m&sup2;</span>
+                </div>
+                <div>
+                    <label asp-for="description">Description</label>
+                    <input asp-for="description" value="@ViewBag.Offer.description" />
+                </div>
+                <div>
+                    <label asp-for="idCategory">Category</label>
+                    <select asp-for="idCategory">
+                        @foreach (Category item in this.ViewBag.Categories)
+                        {
+                            <option value="@item.id" selected="@(item.id == ViewBag.Offer.idCategory)">@item.name</option>
+                        }
+                    </select>
                 </div>
             </div>
-            <div>
-                <h4>Labels</h4>
-                <select id="labelSelect">
-                    @foreach (Label item in this.ViewBag.Labels)
-                    {
-                        <option value="@item.id">@item.label</option>
-                    }
-                </select>
-                
+            <div class="rightSide">
+                <div>
+                    <label for="imageFiles">Images</label>
+                    <input type="file" id="imageFiles" name="imageFiles" accept=".jpg, .jpeg, .png" multiple />
+                </div>
+                <div>
+                    <h3>Existing Images</h3>
+                    <div class="allexistingImages">
+                        @foreach (Image image in ViewBag.Images)
+                        {
+                            <div class="existingimgBox">
+                                <img src="~/Images/podklady/offers/@ViewBag.Offer.id/@image.id.@{
+                                    @image.fileExtension
+}" alt="Offer Image" class="existingImg" />
+                                <input type="checkbox" name="imagesToRemove" value="@image.id" />
+                                <label>Remove</label>
+                                <input type="radio" id="mainImageId" name="mainImageId" value="@image.id" @(image.id == this.ViewBag.MainId ? "checked" : "") />
+                                <label>Set as Main</label>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div>
+                    <h4>Labels</h4>
+                    <select id="labelSelect">
+                        @foreach (Label item in labels)
+                        {
+                            <option value="@item.id">@item.label</option>
+                        }
+                    </select>
+                    <div class="labelsInputs">
+                        @foreach (Value item in values)
+                        {
+                            <div>
+                                <input type="hidden" value="@labels[values.IndexOf(item)].id">
+                                <span>@labels[values.IndexOf(item)].label</span>
+                                <input type="text" value="@item.value">
+                                </div>
+                        }
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" class="btnSave" id="submitButton">SAVE</button>
+                </div>
             </div>
 
-            <div>
-                <button type="submit" class="btnSave">SAVE</button>
-            </div>
+
+
         </form>
     </div>
 </div>
-<script>
-    const labelSelect = document.querySelector('#labelSelect');
-</script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="/js/labelsInput.js"></script>

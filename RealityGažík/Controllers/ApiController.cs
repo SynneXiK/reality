@@ -87,6 +87,23 @@ namespace RealityGažík.Controllers
             this.TempData["Message"] = "Changes saved";
             return Json(true);
         }
+
+        
+        public IActionResult Value(Value newVal)
+        {
+            Value checkVal = this.context.Values.FirstOrDefault(x => x.idOffer == newVal.idOffer && x.idLabel == newVal.idLabel)!;
+            if(checkVal != null && checkVal.value != newVal.value)
+            {
+                checkVal.value = newVal.value;
+                this.context.Values.Update(checkVal);
+            }
+            else if (checkVal == null && newVal.value.Trim() != "")
+            {
+                this.context.Values.Add(newVal);
+            }
+            this.context.SaveChanges();
+            return Json(true);
+        }
         private void GetOffers(Filter filter)
         {
             this.offers = this.context.Offers.ToList();
