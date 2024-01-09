@@ -245,10 +245,13 @@ namespace RealityGažík.Controllers
 
             MyContext.SaveChanges();
 
-            List <Image> imagesToRemake = MyContext.Images.Where(x => x.idOffer == model.id).ToList();
+            List<Image> imagesToRemake = MyContext.Images.Where(x => x.idOffer == model.id).ToList();
             Image mainImg = MyContext.Images.Find(mainImageId)!;
             imagesToRemake.ForEach(x => x.main = false);
-            mainImg.main = true;
+            if(mainImg != null)
+                mainImg.main = true;
+            else
+                imagesToRemake.FirstOrDefault()!.main = true;
 
             MyContext.SaveChanges();
             this.TempData["Message"] = "Changes Saved";

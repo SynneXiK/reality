@@ -36,6 +36,7 @@ namespace RealityGažík.Controllers
                 .Where(x => labelIds.Contains(x.id))
                 .OrderBy(x => x.id)
                 .ToList();
+
             this.ViewBag.Labels = Labels;
 
             this.ViewBag.Seller = this.MyContext.Admins.FirstOrDefault(x => x.id == offer!.idBroker);
