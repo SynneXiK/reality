@@ -71,6 +71,7 @@
     </div>
     <button type="submit" id="submitFilter">POUŽÍT</button>
 
+
     
 
 
@@ -224,13 +225,14 @@
     })
     $("#showmore").on('click', function (e) {
         e.preventDefault();
+        var newCount = parseInt($("#count").val(), 10) + 6;
         var filter = {
             lowestPrice: $("#lowestPrice").val(),
             highestPrice: $("#highestPrice").val(),
             region: $("#aspect").val(),
             areaMin: $("#areaMin").val(),
             areaMax: $("#areaMax").val(),
-            count: $("#count").val() + 6,
+            count: newCount,
             categoryId: $("#categoryid").val(),
         }
 

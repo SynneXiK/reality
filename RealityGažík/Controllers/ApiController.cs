@@ -9,13 +9,14 @@ namespace RealityGažík.Controllers
     public class ApiController : BaseController
     {
         MyContext context = new MyContext();
+        List<Offer> offers = new List<Offer>();
         public IActionResult Test()
         {
             return Json(this.context.Messages.ToList());
         }
         public IActionResult Offers(Filter filter)
         {
-            List<Offer> offers = GetOffers(filter);
+            GetOffers(filter);
 
             List<string> regions = new List<string>();
 
@@ -29,12 +30,12 @@ namespace RealityGažík.Controllers
             List<Favorite> favorites = MyContext.Favorites
             .Where(x => x.idUser == this.id)
             .ToList();
-            this.ViewBag.favorites = favorites.Take(Math.Max(6, filter.count)).ToList();
+            this.ViewBag.favorites = favorites.Take(Math.Max(6, Math.Min(offers.Count, filter.count))).ToList();
 
 
             if (offers.Count > 0)
             {
-                this.ViewBag.Offers = offers.Take(Math.Max(6, filter.count)).ToList();
+                this.ViewBag.Offers = offers.Take(Math.Max(6, Math.Min(offers.Count,filter.count))).ToList();
                 this.ViewBag.HighestPrice = offers.Max(x => x.price);
                 this.ViewBag.HighestArea = offers.Max(x => x.area);
 
@@ -59,9 +60,10 @@ namespace RealityGažík.Controllers
 
             HttpContext.Session.SetString("filter", JsonSerializer.Serialize(filter)); //tojsonstring vlastni metoda
 
+            
             return PartialView("_Offers");
             //return Json(this.context.Messages.ToList());
-        }
+            }
 
         public IActionResult Html()
         {
@@ -85,9 +87,9 @@ namespace RealityGažík.Controllers
             this.TempData["Message"] = "Changes saved";
             return Json(true);
         }
-        private List<Offer> GetOffers(Filter filter)
+        private void GetOffers(Filter filter)
         {
-            List<Offer> offers = this.context.Offers.ToList();
+            this.offers = this.context.Offers.ToList();
 
             offers = offers
                 .Where(x => filter.lowestPrice <= x.price && x.price <= filter.highestPrice)
@@ -106,6 +108,7 @@ namespace RealityGažík.Controllers
                     .Where(x => x.idCategory == filter.categoryId)
                     .ToList();
             }
+
         }
     }
     
