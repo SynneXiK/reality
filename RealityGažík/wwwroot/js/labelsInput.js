@@ -22,28 +22,40 @@ document.addEventListener("DOMContentLoaded", function () {
 
         labelsDiv.appendChild(newDiv);
         selectElement.options[selectElement.selectedIndex].style.display = 'none';
+
     });
 });
 
 const submitButton = $('#submitButton');
 const hiddenId = $('#offerid').val();
 
-$('#submitButton').on('click', function () {
-    $('.labelsInputs div').each(function () {
+$('#submitButton').on('click', function (e) {
+    e.preventDefault();
+
+    console.log('meow');
+
+    const promises = $('.labelsInputs div').map(function () {
         const labelId = $(this).find('input[type="hidden"]').val();
         const inputValue = $(this).find('input[type="text"]').val();
+        console.log(inputValue);
 
-        var value = {
+        var newVal = {
             id: 0,
             idLabel: labelId,
             idOffer: hiddenId,
             value: inputValue,
         }
-        console.log(value);
-        $.ajax({
+
+        return $.ajax({
             type: "POST",
             url: '/api/value',
-            data: value,
+            data: newVal,
         });
     });
+
+    Promise.all(promises).then(function () {
+        console.log('xxx');
+        $('.formOffer').submit();
+    });
+    
 });

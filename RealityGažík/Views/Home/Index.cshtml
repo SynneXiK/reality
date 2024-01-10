@@ -86,7 +86,10 @@
             List<Favorite> favoriteOffers = this.ViewBag.favorites;
             List<Image> mainImages = this.ViewBag.mainImages;
         }
-        @foreach (Offer item in ViewBag.Offers)
+        @if(ViewBag.Offers != null)
+        {
+            
+        foreach (Offer item in ViewBag.Offers)
         {
             
             bool isFavorite = favoriteOffers.Where(x => x.idOffer == item.id).FirstOrDefault() != null;
@@ -126,8 +129,13 @@
                 
             </div>
         }
-   
-    </div>
+    }
+    else
+    {
+        <h1>Unlucky.. We don't have what you're looking for! :(</h1>
+    }
+</div>
+    
     @if (ViewBag.count <= (ViewBag.Offers.Count))
     {
 @*        <a asp-action="index" asp-route-count="@(ViewBag.count + 6)" asp-route-filter="@ViewBag.filter" class="zobrazitvse searchbutton txtAlign" id="showmore">ZOBRAZIT DALŠÍ</a>

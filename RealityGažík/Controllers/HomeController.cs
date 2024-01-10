@@ -20,6 +20,7 @@ namespace RealityGažík.Controllers
         public IActionResult Index(string? filter = null, int idCat = 0)
         {
             List<Offer> offers = this.MyContext.Offers.ToList();
+            List<Offer> offersForFilter = offers;
             List<Category> categories = this.MyContext.Categories.ToList();
 
             List<int> categoriesCount = this.GetCategories(offers, categories);
@@ -100,8 +101,8 @@ namespace RealityGažík.Controllers
             }
 
             this.ViewBag.Offers = offers/*.OrderByDescending(x => x.id)*/.Take(Math.Max(6, _filter.count)).ToList();
-            this.ViewBag.HighestPrice = offers.Max(x => x.price);
-            this.ViewBag.HighestArea = offers.Max(x => x.area);
+            this.ViewBag.HighestPrice = offersForFilter.Max(x => x.price);
+            this.ViewBag.HighestArea = offersForFilter.Max(x => x.area);
             
 
             List<Favorite> favorites = MyContext.Favorites
