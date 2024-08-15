@@ -121,21 +121,13 @@
         <div class="writeusHeader">Napište nám, ozveme se</div>
         @model Inquiry
         <form class="inputForm" asp-action="createinquiry" asp-route-id="@ViewBag.Offer.id">
-            @if (this.ViewBag.User != null)
-            {
-                Admin user = this.ViewBag.User;
                 
-                <input asp-for="name" class="namesurname" placeholder="Vaše jméno a příjmení" required value="@user.name">
-                <input asp-for="tel" class="telephone" placeholder="Telefon" required value="@user.tel">
-                <input asp-for="email" class="email" placeholder="E-mail" required value="@user.email">
-                <input asp-for="text" class="writeusamessage" placeholder="Napište nám zprávu" required>
-                <button type="submit" class="submitBtn">ODESLAT POPTÁVKU</button>
-            }
-            else
-            {
-                <input asp-for="name" class="namesurname" placeholder="Vaše jméno a příjmení" required>
-                <input asp-for="tel" class="telephone" placeholder="Telefon" required>
-                <input asp-for="email" class="email" placeholder="E-mail" required>
+            @{
+                Admin? user = (this.ViewBag.User != null) ? this.ViewBag.User : null;
+                
+                <input asp-for="name" class="namesurname" placeholder="Vaše jméno a příjmení" required value="@user?.name">
+                <input asp-for="tel" class="telephone" placeholder="Telefon" required value="@user?.tel">
+                <input asp-for="email" class="email" placeholder="E-mail" required value="@user?.email">
                 <input asp-for="text" class="writeusamessage" placeholder="Napište nám zprávu" required>
                 <button type="submit" class="submitBtn">ODESLAT POPTÁVKU</button>
             }

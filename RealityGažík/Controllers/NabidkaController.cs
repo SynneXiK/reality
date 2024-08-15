@@ -47,7 +47,7 @@ namespace RealityGažík.Controllers
 
             return View();
         }
-        public IActionResult CreateInquiry(Inquiry inquiry, int id, Admin? user)
+        public IActionResult CreateInquiry(Inquiry inquiry, int id, Admin? user) // FINISH THIS PLEASE ACTUALLY
         {
             var offer = this.MyContext.Offers.Find(id);
 
@@ -57,6 +57,7 @@ namespace RealityGažík.Controllers
             inquiry.idOffer = offer!.id;
             this.MyContext.Inquiries.Add(inquiry);
             this.MyContext.SaveChanges(); // abych získal id
+
             this.MyContext.Messages.Add(new Message{
                 idInquiry = inquiry.id,
                 idUser = this.id,

@@ -27,7 +27,7 @@ else
             <a class="oneMessage" asp-action="chat" asp-route-idInquiry="@item.id">
                 <div class="pfpAname">
                     <img src="/Images/podklady/admins/@user.username.@user.pfp" alt="pfp">
-                    <div class="usernameDiv">@item.name</div>
+                    <div class="usernameDiv">@user.name</div>
                 </div>
                 <div class="msgADate">
                     <div class="textVal">@this.ViewBag.LastMsg[inquiries.IndexOf(item)].text</div>
