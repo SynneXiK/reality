@@ -49,6 +49,7 @@ namespace RealityGažík.Controllers
 
             this.ViewBag.Messages = messages;
             this.ViewBag.id = this.id;
+            this.ViewBag.InquiryId = inq.id;
 
             int searchId = (this.id == ofr.idBroker) ? inq.idSender : inq.idOwner;
 

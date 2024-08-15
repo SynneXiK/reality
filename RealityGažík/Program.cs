@@ -1,3 +1,4 @@
+using RealityGažík.Hubs;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -5,6 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddSession();
+
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 
@@ -25,5 +28,10 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+//app.UseEndpoints(endpoints =>
+//{
+//    endpoints.MapHub<ChatHub>("/chatting");
+//});
+app.MapHub<ChatHub>("/chatting");
 
 app.Run();
