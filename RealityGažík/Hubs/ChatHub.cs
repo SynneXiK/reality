@@ -6,7 +6,7 @@ namespace RealityGažík.Hubs
 {
     public class ChatHub : Hub
     {
-        public async Task SendMessage(string user, string message, string inquiryId)
+        public async Task SendMessage(int user, string message, string inquiryId)
         {
             Console.WriteLine($"{user} wrote {message} on {inquiryId}");
 

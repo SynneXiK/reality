@@ -73,7 +73,6 @@ namespace RealityGažík.Controllers
                 this.MyContext.SaveChanges();
             }
 
-
             return RedirectToAction("chat", new { idInquiry = msg.idInquiry});
         }
     }
